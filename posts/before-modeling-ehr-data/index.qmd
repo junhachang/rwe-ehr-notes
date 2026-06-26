@@ -14,9 +14,6 @@ library(tidyverse)
 
 
 
-**Note: All examples in this post use synthetic toy data created for educational purposes. They do not contain real patient records, real patient identifiers, institutional data, or results from any specific health system. The examples are informed by literature, but they do not represent any actual patient or clinical case.**
-
-**Scope.** My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.
 
 
 ## Introduction
@@ -25,7 +22,7 @@ Duplicate records are one of the first things I check in EHR data because they c
 
 Some are true data errors. Some are repeated documentation. Some reflect different clinical or administrative sources representing related information. In other words, repeated rows are not always wrong, but unexplained repeated rows are dangerous. 
 
-This is easy to overlook. At first glance, the data may look fine: same patient, same date, same diagnosis, multiple rows. It is tempting to just remove duplicates with `distinct()` or `unique()` and then move on. But in EHR data, deduplication is not just automated coding step. It is a clinical and analytic decision.
+This is easy to overlook. At first glance, the data may look fine: same patient, same date, same diagnosis, multiple rows. It is tempting to just remove duplicates with `distinct()` or `unique()` and then move on. But in EHR data, deduplication is not just an automated coding step. It is a clinical and analytic decision.
 
 Before removing rows, I usually ask a simple question:
 
@@ -44,7 +41,7 @@ There are many other situations, but in this post, I walk through the three comm
 
 ## Example 1. Related diagnosis codes on the same date
 
-One common situation I see is multiple diagnoses codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that. 
+One common situation I see is multiple diagnosis codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that. 
 
 For example, if we are defining a sleep disorder cohort using ICD-10 codes, the same patient may have several sleep-related codes recorded on the same date. These codes may reflect related diagnoses, specific conditions, or non-specific documentation within the broader sleep-disorder category. 
 
@@ -73,7 +70,7 @@ This is why I try not to "clean" these rows too quickly. Cleaning without defini
 
 ### Why it matters
 
-If we count each diagnosis code as a separate patient or event, we may overestimate the prevalence of sleep disorders. But, if we collapse all sleep-related codes too early, we many lose clinically useful information about specific conditions (e.g., subtypes).
+If we count each diagnosis code as a separate patient or event, we may overestimate the prevalence of sleep disorders. But, if we collapse all sleep-related codes too early, we may lose clinically useful information about specific conditions (e.g., subtypes).
 
 ```{r}
 nrow(ehr_dx)
@@ -131,7 +128,7 @@ ehr_dx %>%
   )
 ```
 
-**Tip**: Once define structure, collapse for the analysis, but keep the information somewhere. 
+**Tip**: Once you define structure, collapse for the analysis, but keep the information somewhere. 
 
 ## Example 2. Merge-created duplicates
 
@@ -184,13 +181,13 @@ bad_merge <- diagnosis_data %>%
 bad_merge
 ```
 
-This create repeated rows for *AA001*. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. THe problem is not that *AA001* has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode. 
+This creates repeated rows for *AA001*. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. The problem is not that *AA001* has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode. 
 
 ### Why it matters
 
 For the simple question, **"Did this individual pick up zolpidem?"**, the error may be easy to notice. But for medication exposure calculations, this can become a serious problem. 
 
-If we calculate total medication burden, day supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by `PATID` alone can create a misleading picture of medication exposure. In this example, *AA001* would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question. 
+If we calculate total medication burden, days supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by `PATID` alone can create a misleading picture of medication exposure. In this example, *AA001* would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question. 
 
 This can lead to:
 
@@ -261,7 +258,7 @@ The important point is that the bad merge created repeated rows by linking all p
 
 Some duplicate rows are true technical errors. (Unfortunately) Unlike the earlier examples, these rows do not reflect different diagnosis subtypes, different data sources, or a meaningful one-to-many relationship. They are simply repeated records.
 
-This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where `distinct()` may acutally be appropriate, but only after confirming that the repeated rows are truly identical. 
+This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where `distinct()` may actually be appropriate, but only after confirming that the repeated rows are truly identical. 
 
 ### Toy data example
 
@@ -340,4 +337,8 @@ Before deduplicating, I usually ask three questions:
 The goal is not to make the dataset smaller. The goal is to make sure each row represents the intended analytic unit.
 
 In EHR data, “small” preprocessing decisions can become large analytic errors later. I hope sharing these practical examples helps others who are just starting to work with EHR data avoid some of these mistakes earlier.
+
+**Note: All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.**
+
+**Scope.** My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.
 

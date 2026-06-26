@@ -5,3 +5,7 @@ title: "About"
 I am Jun Ha Chang, PhD, a researcher working with real-world data, electronic health records, wearable sensor data, and digital biomarkers in neurodegenerative disorders.
 
 This site includes practical notes on EHR data quality, real-world data, real-world evidence, and reproducible R examples.
+
+Views expressed here are my own.
+
+All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.

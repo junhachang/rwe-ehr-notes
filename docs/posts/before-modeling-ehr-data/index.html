@@ -176,13 +176,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><strong>Note: All examples in this post use synthetic toy data created for educational purposes. They do not contain real patient records, real patient identifiers, institutional data, or results from any specific health system. The examples are informed by literature, but they do not represent any actual patient or clinical case.</strong></p>
-<p><strong>Scope.</strong> My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Duplicate records are one of the first things I check in EHR data because they can quietly distort almost every downstream analysis. But, the tricky part is that not all repeated rows mean the same thing.</p>
 <p>Some are true data errors. Some are repeated documentation. Some reflect different clinical or administrative sources representing related information. In other words, repeated rows are not always wrong, but unexplained repeated rows are dangerous.</p>
-<p>This is easy to overlook. At first glance, the data may look fine: same patient, same date, same diagnosis, multiple rows. It is tempting to just remove duplicates with <code>distinct()</code> or <code>unique()</code> and then move on. But in EHR data, deduplication is not just automated coding step. It is a clinical and analytic decision.</p>
+<p>This is easy to overlook. At first glance, the data may look fine: same patient, same date, same diagnosis, multiple rows. It is tempting to just remove duplicates with <code>distinct()</code> or <code>unique()</code> and then move on. But in EHR data, deduplication is not just an automated coding step. It is a clinical and analytic decision.</p>
 <p>Before removing rows, I usually ask a simple question:</p>
 <p><strong>What is one row supposed to represent?</strong></p>
 <ul>
@@ -204,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-1.-related-diagnosis-codes-on-the-same-date" class="level2">
 <h2 class="anchored" data-anchor-id="example-1.-related-diagnosis-codes-on-the-same-date">Example 1. Related diagnosis codes on the same date</h2>
-<p>One common situation I see is multiple diagnoses codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that.</p>
+<p>One common situation I see is multiple diagnosis codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that.</p>
 <p>For example, if we are defining a sleep disorder cohort using ICD-10 codes, the same patient may have several sleep-related codes recorded on the same date. These codes may reflect related diagnoses, specific conditions, or non-specific documentation within the broader sleep-disorder category.</p>
 <p>The problem is not simply that there are multiple rows. The problem is whether we know what those rows mean for the question we are asking.</p>
 <section id="toy-data-example" class="level3">
@@ -236,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="why-it-matters" class="level3">
 <h3 class="anchored" data-anchor-id="why-it-matters">Why it matters</h3>
-<p>If we count each diagnosis code as a separate patient or event, we may overestimate the prevalence of sleep disorders. But, if we collapse all sleep-related codes too early, we many lose clinically useful information about specific conditions (e.g., subtypes).</p>
+<p>If we count each diagnosis code as a separate patient or event, we may overestimate the prevalence of sleep disorders. But, if we collapse all sleep-related codes too early, we may lose clinically useful information about specific conditions (e.g., subtypes).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(ehr_dx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -314,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3 CC003                 1 G47.33                 </code></pre>
 </div>
 </div>
-<p><strong>Tip</strong>: Once define structure, collapse for the analysis, but keep the information somewhere.</p>
+<p><strong>Tip</strong>: Once you define structure, collapse for the analysis, but keep the information somewhere.</p>
 </section>
 </section>
 <section id="example-2.-merge-created-duplicates" class="level2">
@@ -375,12 +373,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #   DAYS_SUPPLY_DISPENSED &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p>This create repeated rows for <em>AA001</em>. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. THe problem is not that <em>AA001</em> has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode.</p>
+<p>This creates repeated rows for <em>AA001</em>. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. The problem is not that <em>AA001</em> has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode.</p>
 </section>
 <section id="why-it-matters-1" class="level3">
 <h3 class="anchored" data-anchor-id="why-it-matters-1">Why it matters</h3>
 <p>For the simple question, <strong>“Did this individual pick up zolpidem?”</strong>, the error may be easy to notice. But for medication exposure calculations, this can become a serious problem.</p>
-<p>If we calculate total medication burden, day supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by <code>PATID</code> alone can create a misleading picture of medication exposure. In this example, <em>AA001</em> would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question.</p>
+<p>If we calculate total medication burden, days supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by <code>PATID</code> alone can create a misleading picture of medication exposure. In this example, <em>AA001</em> would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question.</p>
 <p>This can lead to:</p>
 <ul>
 <li>overcounting the number of prescribed medications linked to an encounter;<br>
@@ -475,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-3.-technical-duplication" class="level2">
 <h2 class="anchored" data-anchor-id="example-3.-technical-duplication">Example 3. Technical duplication</h2>
 <p>Some duplicate rows are true technical errors. (Unfortunately) Unlike the earlier examples, these rows do not reflect different diagnosis subtypes, different data sources, or a meaningful one-to-many relationship. They are simply repeated records.</p>
-<p>This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where <code>distinct()</code> may acutally be appropriate, but only after confirming that the repeated rows are truly identical.</p>
+<p>This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where <code>distinct()</code> may actually be appropriate, but only after confirming that the repeated rows are truly identical.</p>
 <section id="toy-data-example-2" class="level3">
 <h3 class="anchored" data-anchor-id="toy-data-example-2">Toy data example</h3>
 <div class="cell">
@@ -576,6 +574,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>The goal is not to make the dataset smaller. The goal is to make sure each row represents the intended analytic unit.</p>
 <p>In EHR data, “small” preprocessing decisions can become large analytic errors later. I hope sharing these practical examples helps others who are just starting to work with EHR data avoid some of these mistakes earlier.</p>
+<p><strong>Note: All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.</strong></p>
+<p><strong>Scope.</strong> My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.</p>
 
 
 </section>
