@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+I am Jun Ha Chang, PhD, a researcher working with real-world data, electronic health records, wearable sensor data, and digital biomarkers in neurodegenerative disorders.
+
+This site includes practical notes on EHR data quality, real-world data, real-world evidence, and reproducible R examples.

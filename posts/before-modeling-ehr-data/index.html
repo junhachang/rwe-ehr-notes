@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-06-26">
+
+<title>Duplicate Records in EHR Data – Jun Ha’s Little Research Lab</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Jun Ha’s Little Research Lab</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Duplicate Records in EHR Data</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">EHR</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 26, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><strong>Note: All examples in this post use synthetic toy data created for educational purposes. They do not contain real patient records, real patient identifiers, institutional data, or results from any specific health system. The examples are informed by literature, but they do not represent any actual patient or clinical case.</strong></p>
+<p><strong>Scope.</strong> My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Duplicate records are one of the first things I check in EHR data because they can quietly distort almost every downstream analysis. But, the tricky part is that not all repeated rows mean the same thing.</p>
+<p>Some are true data errors. Some are repeated documentation. Some reflect different clinical or administrative sources representing related information. In other words, repeated rows are not always wrong, but unexplained repeated rows are dangerous.</p>
+<p>This is easy to overlook. At first glance, the data may look fine: same patient, same date, same diagnosis, multiple rows. It is tempting to just remove duplicates with <code>distinct()</code> or <code>unique()</code> and then move on. But in EHR data, deduplication is not just automated coding step. It is a clinical and analytic decision.</p>
+<p>Before removing rows, I usually ask a simple question:</p>
+<p><strong>What is one row supposed to represent?</strong></p>
+<ul>
+<li>A patient?<br>
+</li>
+<li>A diagnosis code?</li>
+<li>A unique medication?<br>
+</li>
+<li>A pharmacy dispensing record?</li>
+</ul>
+<p>The answer changes what should be kept or removed.</p>
+<p>There are many other situations, but in this post, I walk through the three common situations where repeated rows appear in EHR data and explain why they should not all be handled the same way.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Post1.jpg" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>My rough planning note I made before structuring an EHR dataset.</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-1.-related-diagnosis-codes-on-the-same-date" class="level2">
+<h2 class="anchored" data-anchor-id="example-1.-related-diagnosis-codes-on-the-same-date">Example 1. Related diagnosis codes on the same date</h2>
+<p>One common situation I see is multiple diagnoses codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that.</p>
+<p>For example, if we are defining a sleep disorder cohort using ICD-10 codes, the same patient may have several sleep-related codes recorded on the same date. These codes may reflect related diagnoses, specific conditions, or non-specific documentation within the broader sleep-disorder category.</p>
+<p>The problem is not simply that there are multiple rows. The problem is whether we know what those rows mean for the question we are asking.</p>
+<section id="toy-data-example" class="level3">
+<h3 class="anchored" data-anchor-id="toy-data-example">Toy data example</h3>
+<p>Suppose we extracted diagnosis records for patients with sleep disorders using G47.xx codes. The following table shows a small subset of the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>( <span class="sc">~</span>PATID, <span class="sc">~</span>DATE_DX, <span class="sc">~</span>ICD10, <span class="sc">~</span>ICD10_TXT, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"G47.00"</span>, <span class="st">"Insomnia, unspecified"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"G47.33"</span>, <span class="st">"Obstructive sleep apnea"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"G47.9"</span>, <span class="st">"Sleep disorder, unspecified"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"BB002"</span>, <span class="st">"2026-02-10"</span>, <span class="st">"G47.00"</span>, <span class="st">"Insomnia, unspecified"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"CC003"</span>, <span class="st">"2026-03-05"</span>, <span class="st">"G47.33"</span>, <span class="st">"Obstructive sleep apnea"</span> )</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ehr_dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  PATID DATE_DX    ICD10  ICD10_TXT                  
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;                      
+1 AA001 2026-01-15 G47.00 Insomnia, unspecified      
+2 AA001 2026-01-15 G47.33 Obstructive sleep apnea    
+3 AA001 2026-01-15 G47.9  Sleep disorder, unspecified
+4 BB002 2026-02-10 G47.00 Insomnia, unspecified      
+5 CC003 2026-03-05 G47.33 Obstructive sleep apnea    </code></pre>
+</div>
+</div>
+<p>In this toy dataset, individual “AA001” has three sleep-related diagnosis codes on the same date. Whether this is a problem depends on our question.</p>
+<p>If the goal is to identify whether an individual has any sleep disorder, “AA001” should likely be counted once. If the goal is to examine specific sleep-related diagnosis and clinical complexity, these codes should be maintained because AA001 has insomnia (G47.00), OSA (G47.33), and unspecified sleep disorders (G47.9).</p>
+<p>This is why I try not to “clean” these rows too quickly. Cleaning without defining the target structure can remove information that may be useful later.</p>
+</section>
+<section id="why-it-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-it-matters">Why it matters</h3>
+<p>If we count each diagnosis code as a separate patient or event, we may overestimate the prevalence of sleep disorders. But, if we collapse all sleep-related codes too early, we many lose clinically useful information about specific conditions (e.g., subtypes).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(ehr_dx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>There are five diagnosis rows. But if we count unique patients, there are only three patients:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(ehr_dx<span class="sc">$</span>PATID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>This difference matters. If we confuse diagnosis rows with patients, we may overestimate disease burden, exposure frequency, or clinical complexity.</p>
+</section>
+<section id="how-to-check" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-check">How to check</h3>
+<p>A simple first check is to compare the number of rows with the number of unique patients.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_rows =</span> <span class="fu">n</span>(), </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unique_patients =</span> <span class="fu">n_distinct</span>(PATID)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  n_rows n_unique_patients
+   &lt;int&gt;             &lt;int&gt;
+1      5                 3</code></pre>
+</div>
+</div>
+<p>Next, check how many diagnosis codes each patient has on each date.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(PATID, DATE_DX, <span class="at">name =</span> <span class="st">"n_diagnosis_codes"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_diagnosis_codes <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  PATID DATE_DX    n_diagnosis_codes
+  &lt;chr&gt; &lt;chr&gt;                  &lt;int&gt;
+1 AA001 2026-01-15                 3</code></pre>
+</div>
+</div>
+<p>If the goal is to create a patient-level sleep disorder cohort, we can collapse the data to one row per patient.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sleep_cohort_patient_level <span class="ot">&lt;-</span> ehr_dx <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(PATID, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sleep_cohort_patient_level</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  PATID DATE_DX    ICD10  ICD10_TXT              
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;                  
+1 AA001 2026-01-15 G47.00 Insomnia, unspecified  
+2 BB002 2026-02-10 G47.00 Insomnia, unspecified  
+3 CC003 2026-03-05 G47.33 Obstructive sleep apnea</code></pre>
+</div>
+</div>
+<p>However, I usually prefer keeping diagnosis-code information separately for later use. Reviewers, collaborators, or stakeholders may ask which specific diagnoses were included. Also, I may not need the subtype information today, but I often regret not keeping it later.</p>
+<p>One way to keep this information is to summarize the unique diagnosis codes for each patient.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(PATID) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unique_dx_codes =</span> <span class="fu">n_distinct</span>(ICD10),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">dx_codes =</span> <span class="fu">paste</span>(<span class="fu">unique</span>(ICD10), <span class="at">collapse =</span> <span class="st">" | "</span>),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  PATID n_unique_dx_codes dx_codes               
+  &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;                  
+1 AA001                 3 G47.00 | G47.33 | G47.9
+2 BB002                 1 G47.00                 
+3 CC003                 1 G47.33                 </code></pre>
+</div>
+</div>
+<p><strong>Tip</strong>: Once define structure, collapse for the analysis, but keep the information somewhere.</p>
+</section>
+</section>
+<section id="example-2.-merge-created-duplicates" class="level2">
+<h2 class="anchored" data-anchor-id="example-2.-merge-created-duplicates">Example 2. Merge-created duplicates</h2>
+<p>In EHR data, we often combine information from multiple sources: billing records, encounter diagnoses, clinician visit records, medication orders, pharmacy dispensing records, and problem lists. When these sources are merged, the same clinical episode may appear more than once for the same patient.</p>
+<p>Suppose we want to identify patients who were newly diagnosed with insomnia, prescribed zolpidem, and actually picked up the medication from the pharmacy. This sounds simple, but it requires linking at least three sources: diagnosis records, medication orders, and pharmacy dispensing records.</p>
+<p>The challenge is that each source has a different meaning:</p>
+<ul>
+<li>a diagnosis record indicates that insomnia was documented;</li>
+<li>a medication order indicates that zolpidem was prescribed;</li>
+<li>a pharmacy dispensing record indicates that the medication was actually picked up or dispensed.</li>
+</ul>
+<p>If we merge these sources without defining the analytic unit, one clinical episode can easily turn into multiple rows.</p>
+<section id="toy-data-example-1" class="level3">
+<h3 class="anchored" data-anchor-id="toy-data-example-1">Toy data example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>diagnosis_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>PATID,  <span class="sc">~</span>DATE_DX, <span class="sc">~</span>ENCOUNTER_ID, <span class="sc">~</span>ICD10, <span class="sc">~</span>ICD10_TXT,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>,    <span class="st">"E1001"</span>,      <span class="st">"G47.00"</span>,        <span class="st">"Insomnia, unspecified"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB002"</span>, <span class="st">"2026-02-10"</span>,    <span class="st">"E1002"</span>,      <span class="st">"G47.00"</span>,        <span class="st">"Insomnia, unspecified"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CC003"</span>, <span class="st">"2026-03-05"</span>,    <span class="st">"E1003"</span>,      <span class="st">"G47.00"</span>,        <span class="st">"Insomnia, unspecified"</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>medication_order_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>PATID,  <span class="sc">~</span>DATE_ORDER,  <span class="sc">~</span>ENCOUNTER_ID, <span class="sc">~</span>ATC_CODE, <span class="sc">~</span>RX_NAME, <span class="sc">~</span>DOSE, <span class="sc">~</span>DAYS_SUPPLY_ORDERED,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"E1001"</span>, <span class="st">"N05CF02"</span>,  <span class="st">"zolpidem"</span>,  <span class="st">"5 mg"</span>, <span class="dv">30</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB002"</span>, <span class="st">"2026-02-10"</span>, <span class="st">"E1002"</span>, <span class="st">"N05CF02"</span>,  <span class="st">"zolpidem"</span>,  <span class="st">"5 mg"</span>, <span class="dv">30</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CC003"</span>, <span class="st">"2026-03-05"</span>, <span class="st">"E1003"</span>, <span class="st">"N05CF02"</span>,  <span class="st">"zolpidem"</span>,  <span class="st">"5 mg"</span>, <span class="dv">30</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>pharmacy_dispensing_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>PATID,  <span class="sc">~</span>DATE_DISPENSE, <span class="sc">~</span>RX_NAME, <span class="sc">~</span>ATC_CODE,  <span class="sc">~</span>DOSE,    <span class="sc">~</span>DAYS_SUPPLY_DISPENSED,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-17"</span>,   <span class="st">"zolpidem"</span>,       <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,   <span class="dv">30</span>,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-17"</span>,   <span class="st">"atorvastatin"</span>,   <span class="st">"C10AA05"</span>, <span class="st">"20 mg"</span>,  <span class="dv">30</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-17"</span>,   <span class="st">"metformin"</span>,      <span class="st">"A10BA02"</span>, <span class="st">"500 mg"</span>, <span class="dv">30</span>,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB002"</span>, <span class="st">"2026-02-10"</span>,   <span class="st">"zolpidem"</span>,       <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,   <span class="dv">30</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># CC003 had a medication order, but no dispensing record</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now suppose we merge the dispensing data by “PATID” only.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>bad_merge <span class="ot">&lt;-</span> diagnosis_data <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(medication_order_data, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"PATID"</span>, <span class="st">"ENCOUNTER_ID"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(pharmacy_dispensing_data, <span class="at">by =</span> <span class="st">"PATID"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>bad_merge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 15
+  PATID DATE_DX    ENCOUNTER_ID ICD10  ICD10_TXT DATE_ORDER ATC_CODE.x RX_NAME.x
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;    
+1 AA001 2026-01-15 E1001        G47.00 Insomnia… 2026-01-15 N05CF02    zolpidem 
+2 AA001 2026-01-15 E1001        G47.00 Insomnia… 2026-01-15 N05CF02    zolpidem 
+3 AA001 2026-01-15 E1001        G47.00 Insomnia… 2026-01-15 N05CF02    zolpidem 
+4 BB002 2026-02-10 E1002        G47.00 Insomnia… 2026-02-10 N05CF02    zolpidem 
+5 CC003 2026-03-05 E1003        G47.00 Insomnia… 2026-03-05 N05CF02    zolpidem 
+# ℹ 7 more variables: DOSE.x &lt;chr&gt;, DAYS_SUPPLY_ORDERED &lt;dbl&gt;,
+#   DATE_DISPENSE &lt;chr&gt;, RX_NAME.y &lt;chr&gt;, ATC_CODE.y &lt;chr&gt;, DOSE.y &lt;chr&gt;,
+#   DAYS_SUPPLY_DISPENSED &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>This create repeated rows for <em>AA001</em>. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. THe problem is not that <em>AA001</em> has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode.</p>
+</section>
+<section id="why-it-matters-1" class="level3">
+<h3 class="anchored" data-anchor-id="why-it-matters-1">Why it matters</h3>
+<p>For the simple question, <strong>“Did this individual pick up zolpidem?”</strong>, the error may be easy to notice. But for medication exposure calculations, this can become a serious problem.</p>
+<p>If we calculate total medication burden, day supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by <code>PATID</code> alone can create a misleading picture of medication exposure. In this example, <em>AA001</em> would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question.</p>
+<p>This can lead to:</p>
+<ul>
+<li>overcounting the number of prescribed medications linked to an encounter;<br>
+</li>
+<li>inflating total days supplied;<br>
+</li>
+<li>assigning unrelated medications to the wrong diagnosis;<br>
+</li>
+<li>misclassifying medication exposure;<br>
+</li>
+</ul>
+</section>
+<section id="how-to-check-1" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-check-1">How to check</h3>
+<p>First, check whether the merge increased the number of rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>diagnosis_data <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">original_diagnosis_rows =</span> <span class="fu">n</span>(),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">original_patients =</span> <span class="fu">n_distinct</span>(PATID)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  original_diagnosis_rows original_patients
+                    &lt;int&gt;             &lt;int&gt;
+1                       3                 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>bad_merge <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">merged_rows =</span> <span class="fu">n</span>(),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">merged_patients =</span> <span class="fu">n_distinct</span>(PATID)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  merged_rows merged_patients
+        &lt;int&gt;           &lt;int&gt;
+1           5               3</code></pre>
+</div>
+</div>
+<p>If the row count increased, do not automatically remove duplicates. First check whether the increase is clinically meaningful or caused by an overly broad join.</p>
+<p>For this case, we only need zolpidem dispensing records. One simple approach is to filter the dispensing data before merging.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pharmacy_dispensing_data_zolpidem <span class="ot">&lt;-</span> pharmacy_dispensing_data <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(RX_NAME <span class="sc">==</span> <span class="st">"zolpidem"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>better_merge <span class="ot">&lt;-</span> diagnosis_data <span class="sc">%&gt;%</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(medication_order_data, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"PATID"</span>, <span class="st">"ENCOUNTER_ID"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    pharmacy_dispensing_data_zolpidem,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"PATID"</span>, <span class="st">"RX_NAME"</span>, <span class="st">"ATC_CODE"</span>, <span class="st">"DOSE"</span>),</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_ORDER"</span>, <span class="st">"_DISPENSE"</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>better_merge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 12
+  PATID DATE_DX   ENCOUNTER_ID ICD10 ICD10_TXT DATE_ORDER ATC_CODE RX_NAME DOSE 
+  &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;
+1 AA001 2026-01-… E1001        G47.… Insomnia… 2026-01-15 N05CF02  zolpid… 5 mg 
+2 BB002 2026-02-… E1002        G47.… Insomnia… 2026-02-10 N05CF02  zolpid… 5 mg 
+3 CC003 2026-03-… E1003        G47.… Insomnia… 2026-03-05 N05CF02  zolpid… 5 mg 
+# ℹ 3 more variables: DAYS_SUPPLY_ORDERED &lt;dbl&gt;, DATE_DISPENSE &lt;chr&gt;,
+#   DAYS_SUPPLY_DISPENSED &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Now we can answer the original question: who had an insomnia diagnosis, received a zolpidem order, and had evidence of pharmacy dispensing?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>insomnia_zolpidem_dispensed <span class="ot">&lt;-</span> better_merge <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    ICD10 <span class="sc">==</span> <span class="st">"G47.00"</span>, </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    RX_NAME <span class="sc">==</span> <span class="st">"zolpidem"</span>, </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    ATC_CODE <span class="sc">==</span> <span class="st">"N05CF02"</span>, </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(DATE_DISPENSE)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(PATID, ENCOUNTER_ID, DATE_DX, ICD10, RX_NAME, ATC_CODE, DATE_ORDER, DATE_DISPENSE, DOSE) </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>insomnia_zolpidem_dispensed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 9
+  PATID ENCOUNTER_ID DATE_DX    ICD10  RX_NAME ATC_CODE DATE_ORDER DATE_DISPENSE
+  &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;        
+1 AA001 E1001        2026-01-15 G47.00 zolpid… N05CF02  2026-01-15 2026-01-17   
+2 BB002 E1002        2026-02-10 G47.00 zolpid… N05CF02  2026-02-10 2026-02-10   
+# ℹ 1 more variable: DOSE &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>In this toy example, <em>AA001</em> and <em>BB002</em> meet the full definition. Both had an insomnia diagnosis, a zolpidem order, and a matching pharmacy dispensing record. <em>CC003</em> had an insomnia diagnosis and a zolpidem order, but no dispensing record, so CC003 should not be classified as having picked up zolpidem.</p>
+<p>The important point is that the bad merge created repeated rows by linking all pharmacy records for AA001 to the insomnia-zolpidem episode. This is not a problem to fix with <code>distinct()</code>. The better solution is to fix the merge logic.</p>
+<p><strong>Tip</strong>: If a merge increases the numbber of rows, do not immediately deduplicate; first check whether the join keys were too broad.</p>
+</section>
+</section>
+<section id="example-3.-technical-duplication" class="level2">
+<h2 class="anchored" data-anchor-id="example-3.-technical-duplication">Example 3. Technical duplication</h2>
+<p>Some duplicate rows are true technical errors. (Unfortunately) Unlike the earlier examples, these rows do not reflect different diagnosis subtypes, different data sources, or a meaningful one-to-many relationship. They are simply repeated records.</p>
+<p>This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where <code>distinct()</code> may acutally be appropriate, but only after confirming that the repeated rows are truly identical.</p>
+<section id="toy-data-example-2" class="level3">
+<h3 class="anchored" data-anchor-id="toy-data-example-2">Toy data example</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>example3_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>PATID,  <span class="sc">~</span>DATE_DX,      <span class="sc">~</span>ENCOUNTER_ID, <span class="sc">~</span>ICD10,   <span class="sc">~</span>RX_NAME,   <span class="sc">~</span>ATC_CODE,  <span class="sc">~</span>DOSE,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"E1001"</span>,       <span class="st">"G47.00"</span>, <span class="st">"zolpidem"</span>, <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"E1001"</span>,       <span class="st">"G47.00"</span>, <span class="st">"zolpidem"</span>, <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB002"</span>, <span class="st">"2026-02-10"</span>, <span class="st">"E1002"</span>,       <span class="st">"G47.00"</span>, <span class="st">"zolpidem"</span>, <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CC003"</span>, <span class="st">"2026-03-05"</span>, <span class="st">"E1003"</span>,       <span class="st">"G47.00"</span>, <span class="st">"zolpidem"</span>, <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>example3_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 7
+  PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE 
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;
+1 AA001 2026-01-15 E1001        G47.00 zolpidem N05CF02  5 mg 
+2 AA001 2026-01-15 E1001        G47.00 zolpidem N05CF02  5 mg 
+3 BB002 2026-02-10 E1002        G47.00 zolpidem N05CF02  5 mg 
+4 CC003 2026-03-05 E1003        G47.00 zolpidem N05CF02  5 mg </code></pre>
+</div>
+</div>
+<p>In this example, the first two rows are identical. They have the same patient ID, date, encounter ID, diagnosis code, medication name, ATC code, and dose. There is no additional clinical information in the second row.</p>
+</section>
+<section id="why-it-matters-2" class="level3">
+<h3 class="anchored" data-anchor-id="why-it-matters-2">Why it matters</h3>
+<p>Technical duplicates can inflate counts and distort downstream summaries.</p>
+<p>For example, if we count the number of zolpidem-related records, <em>AA001</em> is counted twice even though there is only one clinical episode.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>example3_data <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(PATID, DATE_DX, ENCOUNTER_ID, ICD10, RX_NAME, ATC_CODE, DOSE, <span class="at">name =</span> <span class="st">"n_rows"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+  PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE  n_rows
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt;
+1 AA001 2026-01-15 E1001        G47.00 zolpidem N05CF02  5 mg       2
+2 BB002 2026-02-10 E1002        G47.00 zolpidem N05CF02  5 mg       1
+3 CC003 2026-03-05 E1003        G47.00 zolpidem N05CF02  5 mg       1</code></pre>
+</div>
+</div>
+<p>If we later calculate medication exposure, visit frequency, or diagnosis counts, this duplicated row may make the patient appear to have more records than they actually do.</p>
+</section>
+<section id="how-to-check-2" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-check-2">How to check</h3>
+<p>A simple check is to count repeated rows across the variables that should define a unique record.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>example3_data <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(PATID, DATE_DX, ENCOUNTER_ID, ICD10, RX_NAME, ATC_CODE, DOSE, <span class="at">name =</span> <span class="st">"n_rows"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_rows <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE  n_rows
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt;
+1 AA001 2026-01-15 E1001        G47.00 zolpidem N05CF02  5 mg       2</code></pre>
+</div>
+</div>
+<p>If the duplicated rows are truly identical and do not represent separate clinical events, they can be removed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>example3_data_clean <span class="ot">&lt;-</span> example3_data <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>example3_data_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 7
+  PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE 
+  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;
+1 AA001 2026-01-15 E1001        G47.00 zolpidem N05CF02  5 mg 
+2 BB002 2026-02-10 E1002        G47.00 zolpidem N05CF02  5 mg 
+3 CC003 2026-03-05 E1003        G47.00 zolpidem N05CF02  5 mg </code></pre>
+</div>
+</div>
+<p>Then compare the number of rows before and after removing exact duplicates.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rows_before =</span> <span class="fu">nrow</span>(example3_data),</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rows_after =</span> <span class="fu">nrow</span>(example3_data_clean)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  rows_before rows_after
+        &lt;int&gt;      &lt;int&gt;
+1           4          3</code></pre>
+</div>
+</div>
+<p><strong>Tip:</strong> Use <code>distinct()</code> only after confirming that the repeated rows are truly identical.</p>
+</section>
+</section>
+<section id="final-thought" class="level2">
+<h2 class="anchored" data-anchor-id="final-thought">Final thought</h2>
+<p>Deduplication sounds like a simple preprocessing step. In practice, I have found that it is one of those small steps that people often rush through because the table looks “clean enough” at first glance.</p>
+<p>That is where the risk starts.</p>
+<p>Repeated rows in EHR data are not always errors. Some repeated rows reflect clinically meaningful information, some are created during merging, and some are true technical duplicates. Treating all of them the same way can quietly change the cohort, inflate exposure counts, or remove useful clinical information.</p>
+<p>Before deduplicating, I usually ask three questions:</p>
+<ol type="1">
+<li>Do the repeated rows represent different clinical information?</li>
+<li>Were the repeated rows created by the merge?</li>
+<li>Are the rows truly identical technical duplicates?</li>
+</ol>
+<p>The goal is not to make the dataset smaller. The goal is to make sure each row represents the intended analytic unit.</p>
+<p>In EHR data, “small” preprocessing decisions can become large analytic errors later. I hope sharing these practical examples helps others who are just starting to work with EHR data avoid some of these mistakes earlier.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
