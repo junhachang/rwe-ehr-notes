@@ -12,15 +12,11 @@ categories: [EHR]
 library(tidyverse)
 ```
 
-
-
-
-
 ## Introduction
 
-Duplicate records are one of the first things I check in EHR data because they can quietly distort almost every downstream analysis. But, the tricky part is that not all repeated rows mean the same thing. 
+Duplicate records are one of the first things I check in EHR data because they can quietly distort almost every downstream analysis. But, the tricky part is that not all repeated rows mean the same thing.
 
-Some are true data errors. Some are repeated documentation. Some reflect different clinical or administrative sources representing related information. In other words, repeated rows are not always wrong, but unexplained repeated rows are dangerous. 
+Some are true data errors. Some are repeated documentation. Some reflect different clinical or administrative sources representing related information. In other words, repeated rows are not always wrong, but unexplained repeated rows are dangerous.
 
 This is easy to overlook. At first glance, the data may look fine: same patient, same date, same diagnosis, multiple rows. It is tempting to just remove duplicates with `distinct()` or `unique()` and then move on. But in EHR data, deduplication is not just an automated coding step. It is a clinical and analytic decision.
 
@@ -28,28 +24,28 @@ Before removing rows, I usually ask a simple question:
 
 **What is one row supposed to represent?**
 
-- A patient?  
-- A diagnosis code? 
-- A unique medication?  
-- A pharmacy dispensing record? 
+-   A patient?\
+-   A diagnosis code?
+-   A unique medication?\
+-   A pharmacy dispensing record?
 
-The answer changes what should be kept or removed. 
+The answer changes what should be kept or removed.
 
-There are many other situations, but in this post, I walk through the three common situations where repeated rows appear in EHR data and explain why they should not all be handled the same way. 
+There are many other situations, but in this post, I walk through the three common situations where repeated rows appear in EHR data and explain why they should not all be handled the same way.
 
 ![My rough planning note I made before structuring an EHR dataset.](Post1.jpg){fig-align="center" width="75%"}
 
 ## Example 1. Related diagnosis codes on the same date
 
-One common situation I see is multiple diagnosis codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that. 
+One common situation I see is multiple diagnosis codes for the same patient on the same date. At first glance, this looks like a duplicate problem. Sometimes, it is. But often, it is more complicated than that.
 
-For example, if we are defining a sleep disorder cohort using ICD-10 codes, the same patient may have several sleep-related codes recorded on the same date. These codes may reflect related diagnoses, specific conditions, or non-specific documentation within the broader sleep-disorder category. 
+For example, if we are defining a sleep disorder cohort using ICD-10 codes, the same patient may have several sleep-related codes recorded on the same date. These codes may reflect related diagnoses, specific conditions, or non-specific documentation within the broader sleep-disorder category.
 
-The problem is not simply that there are multiple rows. The problem is whether we know what those rows mean for the question we are asking. 
+The problem is not simply that there are multiple rows. The problem is whether we know what those rows mean for the question we are asking.
 
 ### Toy data example
 
-Suppose we extracted diagnosis records for patients with sleep disorders using G47.xx codes. The following table shows a small subset of the data: 
+Suppose we extracted diagnosis records for patients with sleep disorders using G47.xx codes. The following table shows a small subset of the data:
 
 ```{r}
 ehr_dx <- tibble::tribble( ~PATID, ~DATE_DX, ~ICD10, ~ICD10_TXT, 
@@ -66,7 +62,7 @@ In this toy dataset, individual “AA001” has three sleep-related diagnosis co
 
 If the goal is to identify whether an individual has any sleep disorder, “AA001” should likely be counted once. If the goal is to examine specific sleep-related diagnosis and clinical complexity, these codes should be maintained because AA001 has insomnia (G47.00), OSA (G47.33), and unspecified sleep disorders (G47.9).
 
-This is why I try not to "clean" these rows too quickly. Cleaning without defining the target structure can remove information that may be useful later. 
+This is why I try not to "clean" these rows too quickly. Cleaning without defining the target structure can remove information that may be useful later.
 
 ### Why it matters
 
@@ -113,10 +109,9 @@ sleep_cohort_patient_level <- ehr_dx %>%
 sleep_cohort_patient_level
 ```
 
-However, I usually prefer keeping diagnosis-code information separately for later use. Reviewers, collaborators, or stakeholders may ask which specific diagnoses were included. Also, I may not need the subtype information today, but I often regret not keeping it later. 
+However, I usually prefer keeping diagnosis-code information separately for later use. Reviewers, collaborators, or stakeholders may ask which specific diagnoses were included. Also, I may not need the subtype information today, but I often regret not keeping it later.
 
-One way to keep this information is to summarize the unique diagnosis codes for each patient. 
-
+One way to keep this information is to summarize the unique diagnosis codes for each patient.
 
 ```{r}
 ehr_dx %>%
@@ -128,7 +123,7 @@ ehr_dx %>%
   )
 ```
 
-**Tip**: Once you define structure, collapse for the analysis, but keep the information somewhere. 
+**Tip**: Once you define structure, collapse for the analysis, but keep the information somewhere.
 
 ## Example 2. Merge-created duplicates
 
@@ -142,7 +137,7 @@ The challenge is that each source has a different meaning:
 -   a medication order indicates that zolpidem was prescribed;
 -   a pharmacy dispensing record indicates that the medication was actually picked up or dispensed.
 
-If we merge these sources without defining the analytic unit, one clinical episode can easily turn into multiple rows. 
+If we merge these sources without defining the analytic unit, one clinical episode can easily turn into multiple rows.
 
 ### Toy data example
 
@@ -171,7 +166,7 @@ pharmacy_dispensing_data <- tribble(
 )
 ```
 
-Now suppose we merge the dispensing data by "PATID" only. 
+Now suppose we merge the dispensing data by "PATID" only.
 
 ```{r}
 bad_merge <- diagnosis_data %>%
@@ -181,13 +176,13 @@ bad_merge <- diagnosis_data %>%
 bad_merge
 ```
 
-This creates repeated rows for *AA001*. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. The problem is not that *AA001* has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode. 
+This creates repeated rows for *AA001*. The insomnia-zolpidem pair is now linked not only to zolpidem, but also to atorvastatin and metformin. The problem is not that *AA001* has multiple medications. The problem is that the merge attached unrelated medications to the wrong clinical episode.
 
 ### Why it matters
 
-For the simple question, **"Did this individual pick up zolpidem?"**, the error may be easy to notice. But for medication exposure calculations, this can become a serious problem. 
+For the simple question, **"Did this individual pick up zolpidem?"**, the error may be easy to notice. But for medication exposure calculations, this can become a serious problem.
 
-If we calculate total medication burden, days supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by `PATID` alone can create a misleading picture of medication exposure. In this example, *AA001* would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question. 
+If we calculate total medication burden, days supplied, or number of medications after the insomnia diagnosis based on prescription data, a broad merge by `PATID` alone can create a misleading picture of medication exposure. In this example, *AA001* would look like they had three medications attached to the insomnia-zolpidem episode, even though only zolpidem is relevant to the question.
 
 This can lead to:
 
@@ -198,7 +193,7 @@ This can lead to:
 
 ### How to check
 
-First, check whether the merge increased the number of rows. 
+First, check whether the merge increased the number of rows.
 
 ```{r}
 diagnosis_data %>%
@@ -214,9 +209,9 @@ bad_merge %>%
   )
 ```
 
-If the row count increased, do not automatically remove duplicates. First check whether the increase is clinically meaningful or caused by an overly broad join. 
+If the row count increased, do not automatically remove duplicates. First check whether the increase is clinically meaningful or caused by an overly broad join.
 
-For this case, we only need zolpidem dispensing records. One simple approach is to filter the dispensing data before merging. 
+For this case, we only need zolpidem dispensing records. One simple approach is to filter the dispensing data before merging.
 
 ```{r}
 pharmacy_dispensing_data_zolpidem <- pharmacy_dispensing_data %>%
@@ -258,7 +253,7 @@ The important point is that the bad merge created repeated rows by linking all p
 
 Some duplicate rows are true technical errors. (Unfortunately) Unlike the earlier examples, these rows do not reflect different diagnosis subtypes, different data sources, or a meaningful one-to-many relationship. They are simply repeated records.
 
-This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where `distinct()` may actually be appropriate, but only after confirming that the repeated rows are truly identical. 
+This can happen during data extraction, SQL joins, repeated pulls, or file appending. This is the type of duplicate where `distinct()` may actually be appropriate, but only after confirming that the repeated rows are truly identical.
 
 ### Toy data example
 
@@ -317,8 +312,7 @@ tibble(
 )
 ```
 
-
-**Tip:** Use `distinct()` only after confirming that the repeated rows are truly identical. 
+**Tip:** Use `distinct()` only after confirming that the repeated rows are truly identical.
 
 ## Final thought
 
@@ -330,9 +324,9 @@ Repeated rows in EHR data are not always errors. Some repeated rows reflect clin
 
 Before deduplicating, I usually ask three questions:
 
-1. Do the repeated rows represent different clinical information?
-2. Were the repeated rows created by the merge?
-3. Are the rows truly identical technical duplicates?
+1.  Do the repeated rows represent different clinical information?
+2.  Were the repeated rows created by the merge?
+3.  Are the rows truly identical technical duplicates?
 
 The goal is not to make the dataset smaller. The goal is to make sure each row represents the intended analytic unit.
 
@@ -341,4 +335,3 @@ In EHR data, “small” preprocessing decisions can become large analytic error
 **Note: All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.**
 
 **Scope.** My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.
-
