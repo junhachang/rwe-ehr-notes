@@ -24,7 +24,7 @@ Before removing rows, I usually ask a simple question:
 
 **What is one row supposed to represent?**
 
--   A patient?\
+-   A patient?
 -   A diagnosis code?
 -   A unique medication?\
 -   A pharmacy dispensing record?

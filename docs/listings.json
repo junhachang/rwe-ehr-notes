@@ -2,8 +2,6 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/sql-participant-table/R/generate_synthetic_ehr.html",
-      "/posts/sql-participant-table/index2.html",
       "/posts/before-modeling-ehr-data/index.html"
     ]
   }

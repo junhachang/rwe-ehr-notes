@@ -1,0 +1,175 @@
+---
+title: "Cohort Feasibility Assessment Using Synthetic EHR Data"
+author: "Jun Ha Chang"
+date: "2026-06-29"
+categories: [SQL, R, Clinical Data Science, Real-World Data]
+format:
+  html:
+    code-fold: true
+    code-tools: true
+execute:
+  warning: false
+  message: false
+---
+
+```{r, hide=TRUE}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+```
+
+# Research question
+
+Even before you start analyzing your data and think about model or even start grant application, we need to first check whether we have enough data to do that.
+
+In this post, suppose that we want to test feasibility of our thought (association between sleep disorders and incident Alzheimer's disease risk). The goal of this post is to test feasibility: **how many patients meet basic cohort criteria, and what are their simple demographics?**
+
+For this example, I used three synthetic EHR tables: patients, diagnoses, and encounters. The data are fully synthetic and are intended to mimic common relational EHR structures. You can create your own using R code that I shared and found in : ... (add path or repositories)
+
+The final output will be:
+
+1.  A cohort attrition table
+2.  A simple demographic summary of the final feasible cohort.
+
+## Cohort definition
+
+First of all, we need to define our cohort. For this example, we will define our cohort as follows:
+
+-   Has at least one sleep disorder diagnosis.
+-   Index date is the first sleep disorder diagnosis date.
+-   Age is at least 20 years old at index date.
+-   Has no Alzheimer's disease diagnosis before or on the index date.
+-   Has at least 365 days of observed follow-up after index date.
+
+This is the minimum criteria for our cohort. In practice, you may have more complex criteria, but the logic will be similar.
+
+## Load data into SQLite
+
+```{r}
+# Libraries for this project, you can ignore as it is mostly for data manipulation and database connection in R environments. -----
+library(DBI) # connect to databases and send data or queries to them.
+library(RSQLite) # SQLite database driver for R
+library(dplyr) # data manipulation and analysis
+library(readr) # read CSV files into R
+
+con <- dbConnect(SQLite(), ":memory:") # create an in-memory SQLite database for demonstration purposes. In practice, you would connect to your actual database.
+
+# I save the synthetic data to CSV files for demonstration purposes. In practice, you would load your actual EHR data from your database or other sources.
+patients <- read_csv("data/synthetic_patients.csv") %>%
+  mutate(BIRTH_DATE = as.character(BIRTH_DATE),
+         DEATH_DATE = as.character(DEATH_DATE))
+diagnoses <- read_csv("data/synthetic_diagnoses.csv") %>%
+  mutate(DX_DATE = as.character(DX_DATE))
+encounters <- read_csv("data/synthetic_encounters.csv") %>%
+  mutate(ENCOUNTER_DATE = as.character(ENCOUNTER_DATE))
+
+dbWriteTable(con, "patients", patients, overwrite = TRUE)
+dbWriteTable(con, "diagnoses", diagnoses, overwrite = TRUE)
+dbWriteTable(con, "encounters", encounters, overwrite = TRUE)
+```
+
+This creates a temporary SQLite database in memory and loads the 3 synthetic EHR tables into it.
+
+## Data structure
+
+This project uses three synthetic EHR-style tables. The important point is that the tables do not have the same unit of analysis.
+
+| Table | Unit of analysis | Key columns | Role in feasibility test |
+|------------------|------------------|------------------|------------------|
+| `patients` | One row per patient | `PATID`, `BIRTH_DATE`, `DEATH_DATE`, `SEX`, `RACE` | Defines baseline demographics and death date |
+| `diagnoses` | Multiple rows per patient | `PATID`, `ICD10`, `ICD10_TXT`, `DX_DATE` | Defines sleep disorder index date and Alzheimer’s disease diagnosis |
+| `encounters` | Multiple rows per patient | `PATID`, `ENCOUNTER_ID`, `ENCOUNTER_DATE`, `ENCOUNTER_TYPE` | Defines EHR activity, baseline lookback, and follow-up |
+
+The three tables are linked by `PATID`.
+
+```{mermaid}
+erDiagram
+    patients ||--o{ diagnoses : "PATID"
+    patients ||--o{ encounters : "PATID"
+
+    patients {
+        string PATID
+        date BIRTH_DATE
+        date DEATH_DATE
+        string SEX
+        string RACE
+    }
+
+    diagnoses {
+        string PATID
+        string ICD10
+        string ICD10_TXT
+        date DX_DATE
+    }
+
+    encounters {
+        string PATID
+        string ENCOUNTER_ID
+        date ENCOUNTER_DATE
+        string ENCOUNTER_TYPE
+    }
+```
+
+This structure matters because joining diagnosis or encounter records directly to the patient table can create duplicate patient rows. For feasibility assessment, the final output must return to one row per patient.
+
+Let's quickly check first three rows of each data structure. I highly recommend to look at what it looks like to better understand the type/class of the values so that you can grasp some idea what it looks like.
+
+If it is not formatted version, in many cases, you will see the different format even within a column. For example, Patient A may have YYYY-MM-DD, Patient B may have MM/DD/YYYY, and Patient C may have MM/DD/YY, etc. However, in this example, I already cleared and all uniformly formatted. But just be aware of it.
+
+```{sql connection=con}
+SELECT *
+FROM patients
+LIMIT 3;
+```
+
+It is not uncommon that individuals have more than one diagnosis codes.
+
+```{sql connection=con}
+SELECT *
+FROM diagnoses
+LIMIT 3;
+```
+
+```{sql connection=con}
+SELECT *
+FROM encounters
+LIMIT 3;
+```
+
+## Step 1. Check the source tables
+
+Before defining the cohort, first thing to do is check the basic size of each table (number of unique patients)
+
+```{sql connection=con}
+SELECT COUNT(*) AS n_pat_in_dx
+FROM patients;
+
+
+SELECT COUNT(*) AS n_pat_in_dx
+       COUNT(DISTINCT PATID) AS n_pat_in_dx
+FROM diagnoses;
+
+SELECT COUNT(*) AS n_pat_in_encounter
+       COUNT(DISTINCT PATID) AS n_pat_in_encounter
+FROM encounters
+
+```
+
+```{sql connection=con}
+SELECT COUNT(*) AS n_patients
+FROM patients;
+```
+
+```{sql connection=con}
+SELECT COUNT(*) AS n_diagnosis_records,
+       COUNT(DISTINCT PATID) AS n_patients_with_diagnoses
+FROM diagnoses;
+```
+
+```{sql connection=con}
+SELECT COUNT(*) AS n_encounter_records,
+       COUNT(DISTINCT PATID) AS n_patients_with_encounters
+FROM encounters;
+```
