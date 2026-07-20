@@ -1,96 +1,80 @@
 ---
 title: "Cohort Feasibility Assessment Using Synthetic EHR Data"
+subtitle: "From three relational tables to a one-row-per-patient cohort"
+description: "A reproducible SQL walkthrough for defining an index date, applying eligibility criteria, tracking cohort attrition, and summarizing a synthetic sleep disorder–Alzheimer's disease cohort."
 author: "Jun Ha Chang"
-date: "2026-06-29"
-categories: [SQL, R, Clinical Data Science, Real-World Data]
+date: "2026-07-20"
+categories: [SQL, EHR, Clinical Data Science, Real-World Data]
 format:
   html:
+    toc: true
+    toc-location: left
+    toc-title: "In this post"
+    toc-depth: 2
     code-fold: true
     code-tools: true
+    code-summary: "Show code"
+    code-overflow: wrap
 execute:
   warning: false
   message: false
 ---
 
-```{r, hide=TRUE}
-#| echo: false
-#| warning: false
-#| message: false
+::: {.callout-note appearance="simple"}
+**EHR Data Workflow · Post 2**
 
-library(tidyverse)
-```
+[← Post 1: Duplicate Records in EHR Data](../before-modeling-ehr-data/index.qmd) · [View the source and synthetic data on GitHub](https://github.com/junhachang/rwe-ehr-notes/tree/main/posts/sql-participant-table)
+:::
 
-# Research question
+Before choosing a model—or promising one in a grant—I want to know whether the cohort actually exists in the data.
 
-Even before you start analyzing your data and think about model or even start grant application, we need to first check whether we have enough data to do that.
+In this walkthrough, I use three small synthetic EHR tables to answer a practical feasibility question:
 
-In this post, suppose that we want to test feasibility of our thought (association between sleep disorders and incident Alzheimer's disease risk). The goal of this post is to test feasibility: **how many patients meet basic cohort criteria, and what are their simple demographics?**
+> Among adults with a documented sleep disorder, how many meet basic eligibility criteria for a study of incident Alzheimer's disease, and what does the final cohort look like?
 
-For this example, I used three synthetic EHR tables: patients, diagnoses, and encounters. The data are fully synthetic and are intended to mimic common relational EHR structures. You can create your own using R code that I shared and found in : ... (add path or repositories)
+The workflow produces two useful deliverables:
 
-The final output will be:
+1. a sequential cohort attrition table; and
+2. a demographic summary of the final analytic cohort.
 
-1.  A cohort attrition table
-2.  A simple demographic summary of the final feasible cohort.
+The key design decision is simple: **reduce each source table to one row per patient before joining it to the participant master table.** This prevents a many-to-many join from quietly changing the cohort size.
 
-## Cohort definition
+## 1. Define the question before writing SQL
 
-First of all, we need to define our cohort. For this example, we will define our cohort as follows:
+For this example, cohort entry is the first documented sleep disorder diagnosis. The study end date is June 30, 2026.
 
--   Has at least one sleep disorder diagnosis.
--   Index date is the first sleep disorder diagnosis date.
--   Age is at least 20 years old at index date.
--   Has no Alzheimer's disease diagnosis before or on the index date.
--   Has at least 365 days of observed follow-up after index date.
+A patient enters the final cohort if she or he:
 
-This is the minimum criteria for our cohort. In practice, you may have more complex criteria, but the logic will be similar.
+- has at least one sleep disorder diagnosis (`G47%`);
+- is at least 50 years old at the first sleep disorder diagnosis;
+- has no Alzheimer's disease diagnosis (`G30%`) on or before that index date; and
+- has at least 365 days between the index date and the last observed date.
 
-## Load data into SQLite
+An Alzheimer's disease diagnosis after the index date and on or before the last observed date is classified as an incident event.
 
-```{r}
-# Libraries for this project, you can ignore as it is mostly for data manipulation and database connection in R environments. -----
-library(DBI) # connect to databases and send data or queries to them.
-library(RSQLite) # SQLite database driver for R
-library(dplyr) # data manipulation and analysis
-library(readr) # read CSV files into R
+::: {.callout-warning appearance="simple"}
+The `G47%` and `G30%` patterns are intentionally simplified for teaching. A real study needs a prespecified, clinically reviewed phenotype that defines included codes, diagnosis settings, confirmation rules, and coding systems.
+:::
 
-con <- dbConnect(SQLite(), ":memory:") # create an in-memory SQLite database for demonstration purposes. In practice, you would connect to your actual database.
+The 365-day follow-up rule is also a **feasibility screen**, not a ready-made survival-analysis decision. Conditioning eligibility on future observation can change the risk set. In a formal time-to-event analysis, I would replace it with a defensible observation requirement or an explicitly defined lag period.
 
-# I save the synthetic data to CSV files for demonstration purposes. In practice, you would load your actual EHR data from your database or other sources.
-patients <- read_csv("data/synthetic_patients.csv") %>%
-  mutate(BIRTH_DATE = as.character(BIRTH_DATE),
-         DEATH_DATE = as.character(DEATH_DATE))
-diagnoses <- read_csv("data/synthetic_diagnoses.csv") %>%
-  mutate(DX_DATE = as.character(DX_DATE))
-encounters <- read_csv("data/synthetic_encounters.csv") %>%
-  mutate(ENCOUNTER_DATE = as.character(ENCOUNTER_DATE))
+## 2. Understand the source tables
 
-dbWriteTable(con, "patients", patients, overwrite = TRUE)
-dbWriteTable(con, "diagnoses", diagnoses, overwrite = TRUE)
-dbWriteTable(con, "encounters", encounters, overwrite = TRUE)
-```
+This project uses three synthetic EHR-style tables. They are linked by `PATID`, but they do not share the same unit of analysis.
 
-This creates a temporary SQLite database in memory and loads the 3 synthetic EHR tables into it.
-
-## Data structure
-
-This project uses three synthetic EHR-style tables. The important point is that the tables do not have the same unit of analysis.
-
-| Table | Unit of analysis | Key columns | Role in feasibility test |
-|------------------|------------------|------------------|------------------|
-| `patients` | One row per patient | `PATID`, `BIRTH_DATE`, `DEATH_DATE`, `SEX`, `RACE` | Defines baseline demographics and death date |
-| `diagnoses` | Multiple rows per patient | `PATID`, `ICD10`, `ICD10_TXT`, `DX_DATE` | Defines sleep disorder index date and Alzheimer’s disease diagnosis |
-| `encounters` | Multiple rows per patient | `PATID`, `ENCOUNTER_ID`, `ENCOUNTER_DATE`, `ENCOUNTER_TYPE` | Defines EHR activity, baseline lookback, and follow-up |
-
-The three tables are linked by `PATID`.
+| Table | Unit of analysis | Key columns | Role in this workflow |
+|---|---|---|---|
+| `patients` | One row per patient | `PATID`, `BIRTH_DATE`, `DEATH_DATE`, `SEX`, `RACE` | Demographics and death date |
+| `diagnoses` | Multiple rows per patient | `PATID`, `ICD10`, `ICD10_TXT`, `DX_DATE` | Sleep disorder index and Alzheimer's disease dates |
+| `encounters` | Multiple rows per patient | `PATID`, `ENCOUNTER_ID`, `ENCOUNTER_DATE`, `ENCOUNTER_TYPE` | Observed EHR activity and follow-up |
 
 ```{mermaid}
 erDiagram
-    patients ||--o{ diagnoses : "PATID"
-    patients ||--o{ encounters : "PATID"
+    patients ||--o{ diagnoses : PATID
+    patients ||--o{ encounters : PATID
 
     patients {
-        string PATID
+        string PATID PK
         date BIRTH_DATE
         date DEATH_DATE
         string SEX
@@ -98,78 +82,425 @@ erDiagram
     }
 
     diagnoses {
-        string PATID
+        string PATID FK
         string ICD10
         string ICD10_TXT
         date DX_DATE
     }
 
     encounters {
-        string PATID
+        string PATID FK
         string ENCOUNTER_ID
         date ENCOUNTER_DATE
         string ENCOUNTER_TYPE
     }
 ```
 
-This structure matters because joining diagnosis or encounter records directly to the patient table can create duplicate patient rows. For feasibility assessment, the final output must return to one row per patient.
+The files are available here: [patients](data/synthetic_patients.csv), [diagnoses](data/synthetic_diagnoses.csv), and [encounters](data/synthetic_encounters.csv). All values are synthetic.
 
-Let's quickly check first three rows of each data structure. I highly recommend to look at what it looks like to better understand the type/class of the values so that you can grasp some idea what it looks like.
+### Load the CSV files into SQLite
 
-If it is not formatted version, in many cases, you will see the different format even within a column. For example, Patient A may have YYYY-MM-DD, Patient B may have MM/DD/YYYY, and Patient C may have MM/DD/YY, etc. However, in this example, I already cleared and all uniformly formatted. But just be aware of it.
+The setup code creates a temporary SQLite database in memory, reads every field as text, and loads the three CSV files as relational tables. Reading ISO-formatted dates as text is intentional: SQLite's `DATE()` and `JULIANDAY()` functions can parse them consistently.
 
-```{sql connection=con}
+```{r}
+#| label: load-synthetic-data
+
+library(DBI)
+library(RSQLite)
+library(readr)
+
+con <- dbConnect(SQLite(), ":memory:")
+
+read_ehr_csv <- function(path) {
+  read_csv(
+    path,
+    col_types = cols(.default = col_character()),
+    na = c("", "NA")
+  )
+}
+
+patients <- read_ehr_csv("data/synthetic_patients.csv")
+diagnoses <- read_ehr_csv("data/synthetic_diagnoses.csv")
+encounters <- read_ehr_csv("data/synthetic_encounters.csv")
+
+dbWriteTable(con, "patients", patients, overwrite = TRUE)
+dbWriteTable(con, "diagnoses", diagnoses, overwrite = TRUE)
+dbWriteTable(con, "encounters", encounters, overwrite = TRUE)
+```
+
+If you are working directly in a clinical data warehouse, this loading step disappears; `con` would point to the database rather than to an in-memory SQLite instance.
+
+## 3. Audit the source tables
+
+I start with both record counts and unique-patient counts. A table can contain hundreds of rows without containing hundreds of patients.
+
+```{sql, connection=con}
+SELECT
+    'patients' AS source_table,
+    COUNT(*) AS n_rows,
+    COUNT(DISTINCT PATID) AS n_unique_patients
+FROM patients
+
+UNION ALL
+
+SELECT
+    'diagnoses',
+    COUNT(*),
+    COUNT(DISTINCT PATID)
+FROM diagnoses
+
+UNION ALL
+
+SELECT
+    'encounters',
+    COUNT(*),
+    COUNT(DISTINCT PATID)
+FROM encounters;
+```
+
+The synthetic files contain 100 patients, 279 diagnosis records, and 809 encounter records. The difference between rows and patients is expected because diagnoses and encounters are one-to-many tables.
+
+I also inspect a few raw rows before transforming anything. This catches unexpected column types, inconsistent date formats, and obvious coding surprises early.
+
+```{sql, connection=con}
 SELECT *
 FROM patients
 LIMIT 3;
 ```
 
-It is not uncommon that individuals have more than one diagnosis codes.
-
-```{sql connection=con}
+```{sql, connection=con}
 SELECT *
 FROM diagnoses
-LIMIT 3;
+ORDER BY PATID, DX_DATE
+LIMIT 5;
 ```
 
-```{sql connection=con}
+```{sql, connection=con}
 SELECT *
 FROM encounters
-LIMIT 3;
+ORDER BY PATID, ENCOUNTER_DATE
+LIMIT 5;
 ```
 
-## Step 1. Check the source tables
+## 4. Reduce each event table to one row per patient
 
-Before defining the cohort, first thing to do is check the basic size of each table (number of unique patients)
+The `diagnoses` and `encounters` tables cannot be joined safely in their raw form: a patient with five diagnoses and ten encounters could produce 50 rows. Instead, I first create three patient-level views.
 
-```{sql connection=con}
-SELECT COUNT(*) AS n_pat_in_dx
-FROM patients;
+### First sleep disorder diagnosis
 
+```{sql, connection=con}
+#| output: false
 
-SELECT COUNT(*) AS n_pat_in_dx
-       COUNT(DISTINCT PATID) AS n_pat_in_dx
-FROM diagnoses;
+CREATE TEMP VIEW sleep_index AS
+SELECT
+    PATID,
+    MIN(DATE(DX_DATE)) AS INDEX_DATE
+FROM diagnoses
+WHERE ICD10 LIKE 'G47%'
+GROUP BY PATID;
+```
 
-SELECT COUNT(*) AS n_pat_in_encounter
-       COUNT(DISTINCT PATID) AS n_pat_in_encounter
+### First Alzheimer's disease diagnosis
+
+```{sql, connection=con}
+#| output: false
+
+CREATE TEMP VIEW ad_index AS
+SELECT
+    PATID,
+    MIN(DATE(DX_DATE)) AS FIRST_AD_DATE
+FROM diagnoses
+WHERE ICD10 LIKE 'G30%'
+GROUP BY PATID;
+```
+
+### Encounter boundaries
+
+```{sql, connection=con}
+#| output: false
+
+CREATE TEMP VIEW encounter_bounds AS
+SELECT
+    PATID,
+    MIN(DATE(ENCOUNTER_DATE)) AS FIRST_ENCOUNTER_DATE,
+    MAX(DATE(ENCOUNTER_DATE)) AS LAST_ENCOUNTER_DATE
 FROM encounters
-
+GROUP BY PATID;
 ```
 
-```{sql connection=con}
-SELECT COUNT(*) AS n_patients
-FROM patients;
+Each view now contains no more than one row per patient. That invariant is what makes the next join predictable.
+
+```{sql, connection=con}
+SELECT 'sleep_index' AS derived_table,
+       COUNT(*) AS n_rows,
+       COUNT(DISTINCT PATID) AS n_unique_patients
+FROM sleep_index
+
+UNION ALL
+
+SELECT 'ad_index', COUNT(*), COUNT(DISTINCT PATID)
+FROM ad_index
+
+UNION ALL
+
+SELECT 'encounter_bounds', COUNT(*), COUNT(DISTINCT PATID)
+FROM encounter_bounds;
 ```
 
-```{sql connection=con}
-SELECT COUNT(*) AS n_diagnosis_records,
-       COUNT(DISTINCT PATID) AS n_patients_with_diagnoses
-FROM diagnoses;
+## 5. Build the participant master table
+
+The participant master table combines demographics, index and outcome dates, observation boundaries, and eligibility flags. Its unit of analysis is one patient—not one diagnosis or encounter.
+
+```{mermaid}
+flowchart TD
+    A["Three source tables"] --> B["Patient-level dates"]
+    B --> C["Participant master"]
+    C --> D["Eligibility criteria"]
+    D --> E["Attrition and summary"]
 ```
 
-```{sql connection=con}
-SELECT COUNT(*) AS n_encounter_records,
-       COUNT(DISTINCT PATID) AS n_patients_with_encounters
-FROM encounters;
+```{sql, connection=con}
+#| output: false
+
+CREATE TEMP VIEW cohort_master AS
+WITH assembled AS (
+    SELECT
+        p.PATID,
+        DATE(p.BIRTH_DATE) AS BIRTH_DATE,
+        DATE(p.DEATH_DATE) AS DEATH_DATE,
+        p.SEX,
+        p.RACE,
+        s.INDEX_DATE,
+        a.FIRST_AD_DATE,
+        e.FIRST_ENCOUNTER_DATE,
+        e.LAST_ENCOUNTER_DATE,
+        CAST(
+            (JULIANDAY(s.INDEX_DATE) - JULIANDAY(p.BIRTH_DATE)) / 365.25
+            AS INTEGER
+        ) AS AGE_AT_INDEX,
+        CASE
+            WHEN p.DEATH_DATE IS NOT NULL
+                 AND DATE(p.DEATH_DATE) <= DATE('2026-06-30')
+                THEN DATE(p.DEATH_DATE)
+            WHEN e.LAST_ENCOUNTER_DATE IS NULL
+                THEN NULL
+            WHEN DATE(e.LAST_ENCOUNTER_DATE) > DATE('2026-06-30')
+                THEN DATE('2026-06-30')
+            ELSE DATE(e.LAST_ENCOUNTER_DATE)
+        END AS LAST_OBS_DATE
+    FROM patients AS p
+    INNER JOIN sleep_index AS s
+        ON p.PATID = s.PATID
+    LEFT JOIN ad_index AS a
+        ON p.PATID = a.PATID
+    LEFT JOIN encounter_bounds AS e
+        ON p.PATID = e.PATID
+),
+flagged AS (
+    SELECT
+        *,
+        CASE
+            WHEN FIRST_AD_DATE IS NOT NULL
+                 AND FIRST_AD_DATE <= INDEX_DATE
+                THEN 1
+            ELSE 0
+        END AS PREVALENT_AD,
+        CAST(
+            JULIANDAY(LAST_OBS_DATE) - JULIANDAY(INDEX_DATE)
+            AS INTEGER
+        ) AS FOLLOWUP_DAYS
+    FROM assembled
+)
+SELECT
+    *,
+    CASE
+        WHEN FIRST_AD_DATE > INDEX_DATE
+             AND FIRST_AD_DATE <= LAST_OBS_DATE
+            THEN 1
+        ELSE 0
+    END AS AD_STATUS
+FROM flagged;
+```
+
+There are several deliberate choices here:
+
+- `INNER JOIN sleep_index` limits the master table to patients with a sleep disorder.
+- `LEFT JOIN` retains those patients even if they have no Alzheimer's disease diagnosis or no encounter summary.
+- death ends observation when it occurs before the study cutoff;
+- otherwise, the last encounter—capped at the study end—defines the last observed date; and
+- prevalent and incident Alzheimer's disease are distinguished relative to the same index date.
+
+Here is what the patient-level output looks like:
+
+```{sql, connection=con}
+SELECT
+    PATID,
+    INDEX_DATE,
+    AGE_AT_INDEX,
+    FIRST_AD_DATE,
+    LAST_OBS_DATE,
+    FOLLOWUP_DAYS,
+    PREVALENT_AD,
+    AD_STATUS
+FROM cohort_master
+ORDER BY PATID
+LIMIT 10;
+```
+
+For example, synthetic patient `P0001` enters the cohort on December 2, 2024, at age 72. The first Alzheimer's disease diagnosis occurs later, on January 2, 2026, and before the last observed date. The record is therefore classified as incident Alzheimer's disease (`AD_STATUS = 1`).
+
+## 6. Apply criteria sequentially
+
+A single final count is not enough. Sequential attrition shows which eligibility rule costs the most patients and makes the cohort definition auditable.
+
+```{sql, connection=con}
+WITH stages AS (
+    SELECT
+        1 AS step,
+        'Patients with a sleep disorder diagnosis' AS criterion,
+        COUNT(*) AS n
+    FROM cohort_master
+
+    UNION ALL
+
+    SELECT
+        2,
+        'Age 50 years or older at index',
+        COUNT(*)
+    FROM cohort_master
+    WHERE AGE_AT_INDEX >= 50
+
+    UNION ALL
+
+    SELECT
+        3,
+        'No Alzheimer''s disease on or before index',
+        COUNT(*)
+    FROM cohort_master
+    WHERE AGE_AT_INDEX >= 50
+      AND PREVALENT_AD = 0
+
+    UNION ALL
+
+    SELECT
+        4,
+        'At least 365 days of follow-up',
+        COUNT(*)
+    FROM cohort_master
+    WHERE AGE_AT_INDEX >= 50
+      AND PREVALENT_AD = 0
+      AND FOLLOWUP_DAYS >= 365
+)
+SELECT
+    step,
+    criterion,
+    n,
+    LAG(n) OVER (ORDER BY step) - n AS excluded_at_step
+FROM stages
+ORDER BY step;
+```
+
+The sample narrows from 55 patients with a sleep disorder diagnosis to 27 patients in the final cohort. The table also shows exactly where the other 28 patients were excluded.
+
+Now I save the final eligibility logic as another patient-level view.
+
+```{sql, connection=con}
+#| output: false
+
+CREATE TEMP VIEW sleep_ad_cohort AS
+SELECT *
+FROM cohort_master
+WHERE AGE_AT_INDEX >= 50
+  AND PREVALENT_AD = 0
+  AND FOLLOWUP_DAYS >= 365;
+```
+
+## 7. Summarize the feasible cohort
+
+For feasibility, I want a compact answer: total patients, outcome events, age, sex, race, and follow-up. I do not need a publication-ready Table 1 yet.
+
+```{sql, connection=con}
+SELECT
+    CASE AD_STATUS
+        WHEN 1 THEN 'Incident AD'
+        ELSE 'No incident AD'
+    END AS outcome_group,
+    COUNT(*) AS n,
+    ROUND(AVG(AGE_AT_INDEX), 1) AS mean_age,
+    SUM(CASE WHEN SEX = 'Female' THEN 1 ELSE 0 END) AS female_n,
+    ROUND(
+        100.0 * SUM(CASE WHEN SEX = 'Female' THEN 1 ELSE 0 END) / COUNT(*),
+        1
+    ) AS female_pct,
+    ROUND(AVG(FOLLOWUP_DAYS) / 365.25, 1) AS mean_followup_years
+FROM sleep_ad_cohort
+GROUP BY AD_STATUS
+ORDER BY AD_STATUS;
+```
+
+```{sql, connection=con}
+SELECT
+    CASE AD_STATUS
+        WHEN 1 THEN 'Incident AD'
+        ELSE 'No incident AD'
+    END AS outcome_group,
+    RACE,
+    COUNT(*) AS n,
+    ROUND(
+        100.0 * COUNT(*)
+        / SUM(COUNT(*)) OVER (PARTITION BY AD_STATUS),
+        1
+    ) AS pct_within_group
+FROM sleep_ad_cohort
+GROUP BY AD_STATUS, RACE
+ORDER BY AD_STATUS, RACE;
+```
+
+The final synthetic cohort contains 27 patients and only 2 incident Alzheimer's disease events. That is **not enough for a meaningful adjusted time-to-event model**. This is not a failed workflow; it is the point of a feasibility assessment. The screen tells us to reconsider the data source, study window, outcome definition, or analytic ambition before investing in a model that the data cannot support.
+
+## 8. Run patient-level quality checks
+
+Before exporting the cohort, I verify that the final table still has one row per patient and that core dates are plausible.
+
+```{sql, connection=con}
+SELECT
+    COUNT(*) AS n_rows,
+    COUNT(DISTINCT PATID) AS n_unique_patients,
+    COUNT(*) - COUNT(DISTINCT PATID) AS duplicate_patient_rows,
+    SUM(CASE WHEN INDEX_DATE IS NULL THEN 1 ELSE 0 END) AS missing_index_dates,
+    SUM(CASE WHEN AGE_AT_INDEX < 0 THEN 1 ELSE 0 END) AS impossible_ages,
+    SUM(CASE WHEN FOLLOWUP_DAYS < 0 THEN 1 ELSE 0 END) AS negative_followup
+FROM sleep_ad_cohort;
+```
+
+For this example, the final table has 27 rows and 27 unique patients, with no missing index dates, impossible ages, or negative follow-up values.
+
+These checks are intentionally basic. In a real EHR study, I would also inspect diagnosis provenance, repeated code requirements, encounter gaps, death-date completeness, out-of-network care, and whether the chosen observation rule has the same meaning across sites.
+
+## What to take away
+
+The most important output is not the final SQL view. It is the chain of decisions that makes the view interpretable:
+
+1. define the research question and time origin;
+2. identify the unit of analysis in each source table;
+3. reduce event tables to one row per patient before joining;
+4. apply eligibility rules sequentially;
+5. count outcome events—not only patients; and
+6. stop when the data do not support the planned analysis.
+
+That last step is easy to skip. A cohort can be large enough to look impressive and still contain too few events for the proposed model.
+
+### SQL dialect note
+
+This post uses SQLite. Other database systems use different date functions—for example, `DATEDIFF()` rather than `JULIANDAY()`—but the cohort logic is portable. Translate the date syntax, not the study design.
+
+::: {.callout-important appearance="simple"}
+**Data disclosure:** All examples are synthetic and were created for educational purposes. They contain no real patient records, identifiers, institutional data, or results from a specific health system.
+:::
+
+```{r}
+#| label: disconnect
+#| include: false
+
+dbDisconnect(con)
 ```
