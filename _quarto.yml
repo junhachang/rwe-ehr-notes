@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Jun Ha's Little Research Lab"
+  google-analytics: "G-BVKYCF1CL8"
   navbar:
     right:
       - about.qmd
