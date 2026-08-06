@@ -2,7 +2,7 @@
 title: "Cohort Feasibility Assessment"
 description: "A reproducible SQL walkthrough for defining an index date, applying eligilbity criteria, tracking cohort attrition, and summarizing a synthetic sleep disorders-Alzheimer's disease cohort"
 author: "Jun Ha Chang"
-date: "2026-08-15"
+date: "2026-08-11"
 categories: [SQL, EHR, R, RWE]
 
 format:
