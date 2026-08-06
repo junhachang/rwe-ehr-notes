@@ -2,6 +2,15 @@
 title: "Duplicate Records in EHR Data"
 date: 2026-06-26
 categories: [EHR]
+
+toc: true
+toc-depth: 3
+toc-location: left
+
+code-fold: show
+code-summary: "Show code"
+
+page-layout: article
 ---
 
 ```{r, hide=TRUE}
@@ -335,3 +344,9 @@ In EHR data, “small” preprocessing decisions can become large analytic error
 **Note: All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.**
 
 **Scope.** My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.
+
+> ## 📚 Real-World Data Engineering Series
+>
+> 📍 Part 1: Duplicate Records in EHR Data\
+> ⏳ Part 2: Cohort Feasibility Assessment (current)\
+> ⏳ Part 3: Defining Baseline Lookback and Follow-up (coming soon)

@@ -1,280 +1,2749 @@
 "PATID","ICD10","ICD10_TXT","DX_DATE"
-"P0001","E78.5","Hyperlipidemia, unspecified",2018-08-08
-"P0001","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-08-09
-"P0001","G47.9","Sleep disorder, unspecified",2024-12-02
-"P0001","I10","Essential hypertension",2025-12-22
-"P0001","G30.9","Alzheimer's disease, unspecified",2026-01-02
-"P0002","I10","Essential hypertension",2017-06-05
-"P0003","E11.9","Type 2 diabetes mellitus without complications",2019-01-21
-"P0003","E78.5","Hyperlipidemia, unspecified",2019-11-20
-"P0004","G47.33","Obstructive sleep apnea",2018-12-15
-"P0005","E78.5","Hyperlipidemia, unspecified",2019-04-08
-"P0005","E78.5","Hyperlipidemia, unspecified",2022-10-07
-"P0005","I10","Essential hypertension",2024-02-11
-"P0005","I10","Essential hypertension",2024-05-29
-"P0005","M19.90","Osteoarthritis, unspecified site",2024-06-06
-"P0006","M19.90","Osteoarthritis, unspecified site",2016-12-31
-"P0006","M19.90","Osteoarthritis, unspecified site",2023-05-02
-"P0007","M19.90","Osteoarthritis, unspecified site",2025-12-07
-"P0008","I10","Essential hypertension",2016-10-29
-"P0008","E78.5","Hyperlipidemia, unspecified",2023-11-01
-"P0009","M19.90","Osteoarthritis, unspecified site",2016-05-18
-"P0009","G47.00","Insomnia disorder",2024-03-29
-"P0010","E78.5","Hyperlipidemia, unspecified",2017-05-15
-"P0010","G47.9","Sleep disorder, unspecified",2017-06-10
-"P0010","E78.5","Hyperlipidemia, unspecified",2018-01-18
-"P0010","I10","Essential hypertension",2020-09-28
-"P0011","M19.90","Osteoarthritis, unspecified site",2017-06-29
-"P0011","E78.5","Hyperlipidemia, unspecified",2019-08-24
-"P0011","E78.5","Hyperlipidemia, unspecified",2021-07-30
-"P0011","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-11-26
-"P0011","G30.1","Alzheimer's disease with late onset",2025-03-12
-"P0012","M19.90","Osteoarthritis, unspecified site",2020-04-10
-"P0012","I10","Essential hypertension",2026-06-01
-"P0014","M19.90","Osteoarthritis, unspecified site",2017-12-25
-"P0014","E11.9","Type 2 diabetes mellitus without complications",2018-12-11
-"P0014","G47.33","Obstructive sleep apnea",2020-04-22
-"P0016","G47.33","Obstructive sleep apnea",2016-10-22
-"P0016","E11.9","Type 2 diabetes mellitus without complications",2025-11-01
-"P0017","E11.9","Type 2 diabetes mellitus without complications",2016-11-01
-"P0017","G47.33","Obstructive sleep apnea",2017-10-15
-"P0017","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-12-24
-"P0017","E78.5","Hyperlipidemia, unspecified",2025-05-25
-"P0018","G47.33","Obstructive sleep apnea",2021-02-02
-"P0018","M19.90","Osteoarthritis, unspecified site",2022-01-25
-"P0018","I10","Essential hypertension",2022-08-18
-"P0018","E78.5","Hyperlipidemia, unspecified",2025-09-23
-"P0019","I10","Essential hypertension",2016-11-26
-"P0019","G47.00","Insomnia disorder",2024-11-22
-"P0020","G47.00","Insomnia disorder",2016-07-27
-"P0020","M19.90","Osteoarthritis, unspecified site",2019-09-06
-"P0020","E78.5","Hyperlipidemia, unspecified",2023-08-20
-"P0021","M19.90","Osteoarthritis, unspecified site",2016-01-19
-"P0021","G30.1","Alzheimer's disease with late onset",2022-04-19
-"P0022","M19.90","Osteoarthritis, unspecified site",2018-07-11
-"P0022","I10","Essential hypertension",2023-04-01
-"P0023","I10","Essential hypertension",2020-01-12
-"P0024","E78.5","Hyperlipidemia, unspecified",2019-06-12
-"P0024","G47.00","Insomnia disorder",2021-05-21
-"P0025","E11.9","Type 2 diabetes mellitus without complications",2016-04-06
-"P0025","E11.9","Type 2 diabetes mellitus without complications",2020-05-27
-"P0025","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-02-10
-"P0026","M19.90","Osteoarthritis, unspecified site",2019-08-08
-"P0027","G30.1","Alzheimer's disease with late onset",2017-05-12
-"P0027","M19.90","Osteoarthritis, unspecified site",2019-07-12
-"P0027","G47.33","Obstructive sleep apnea",2023-06-19
-"P0028","G47.00","Insomnia disorder",2017-11-14
-"P0028","M19.90","Osteoarthritis, unspecified site",2021-05-03
-"P0028","I10","Essential hypertension",2023-08-24
-"P0029","G47.00","Insomnia disorder",2018-03-21
-"P0029","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-02-07
-"P0029","M19.90","Osteoarthritis, unspecified site",2019-06-12
-"P0030","G30.1","Alzheimer's disease with late onset",2020-12-13
-"P0030","M19.90","Osteoarthritis, unspecified site",2025-03-29
-"P0031","G47.00","Insomnia disorder",2017-01-27
-"P0031","E78.5","Hyperlipidemia, unspecified",2025-09-07
-"P0032","G47.00","Insomnia disorder",2019-04-01
-"P0032","M19.90","Osteoarthritis, unspecified site",2020-08-23
-"P0032","I10","Essential hypertension",2021-03-22
-"P0032","M19.90","Osteoarthritis, unspecified site",2025-01-17
-"P0033","E78.5","Hyperlipidemia, unspecified",2016-06-19
-"P0033","I10","Essential hypertension",2021-10-02
-"P0034","E78.5","Hyperlipidemia, unspecified",2019-01-12
-"P0034","I10","Essential hypertension",2022-12-02
-"P0034","G47.00","Insomnia disorder",2024-12-10
-"P0034","E78.5","Hyperlipidemia, unspecified",2025-06-10
-"P0035","E78.5","Hyperlipidemia, unspecified",2018-05-07
-"P0035","G47.00","Insomnia disorder",2025-05-09
-"P0037","E78.5","Hyperlipidemia, unspecified",2019-01-21
-"P0037","G47.33","Obstructive sleep apnea",2019-10-29
-"P0037","E78.5","Hyperlipidemia, unspecified",2023-01-31
-"P0038","I10","Essential hypertension",2017-06-25
-"P0039","E11.9","Type 2 diabetes mellitus without complications",2022-06-08
-"P0040","G30.1","Alzheimer's disease with late onset",2025-03-07
-"P0041","E78.5","Hyperlipidemia, unspecified",2016-03-19
-"P0041","I10","Essential hypertension",2018-07-12
-"P0041","M19.90","Osteoarthritis, unspecified site",2018-12-26
-"P0041","G47.00","Insomnia disorder",2023-03-16
-"P0041","E78.5","Hyperlipidemia, unspecified",2024-12-09
-"P0041","E78.5","Hyperlipidemia, unspecified",2025-08-13
-"P0042","E78.5","Hyperlipidemia, unspecified",2016-05-23
-"P0042","I10","Essential hypertension",2016-06-17
-"P0042","E78.5","Hyperlipidemia, unspecified",2018-07-03
-"P0042","E78.5","Hyperlipidemia, unspecified",2019-06-10
-"P0042","I10","Essential hypertension",2024-08-26
-"P0042","M19.90","Osteoarthritis, unspecified site",2025-02-20
-"P0043","E11.9","Type 2 diabetes mellitus without complications",2016-08-22
-"P0043","G47.33","Obstructive sleep apnea",2022-07-03
-"P0043","I10","Essential hypertension",2025-11-21
-"P0044","I10","Essential hypertension",2017-09-05
-"P0044","E78.5","Hyperlipidemia, unspecified",2025-05-10
-"P0046","G47.33","Obstructive sleep apnea",2021-06-14
-"P0046","E11.9","Type 2 diabetes mellitus without complications",2021-09-22
-"P0046","I10","Essential hypertension",2024-10-05
-"P0047","G47.00","Insomnia disorder",2017-07-29
-"P0047","E78.5","Hyperlipidemia, unspecified",2018-08-01
-"P0047","I10","Essential hypertension",2019-01-12
-"P0047","E11.9","Type 2 diabetes mellitus without complications",2019-02-13
-"P0047","E78.5","Hyperlipidemia, unspecified",2020-07-03
-"P0048","M19.90","Osteoarthritis, unspecified site",2020-01-31
-"P0048","G47.00","Insomnia disorder",2023-12-11
-"P0049","I10","Essential hypertension",2019-07-12
-"P0049","G30.1","Alzheimer's disease with late onset",2020-01-31
-"P0049","M19.90","Osteoarthritis, unspecified site",2021-11-27
-"P0049","G47.00","Insomnia disorder",2026-03-02
-"P0050","G47.9","Sleep disorder, unspecified",2016-09-03
-"P0050","I10","Essential hypertension",2024-02-22
-"P0051","E78.5","Hyperlipidemia, unspecified",2025-04-14
-"P0051","M19.90","Osteoarthritis, unspecified site",2025-08-25
-"P0052","G47.00","Insomnia disorder",2019-02-09
-"P0052","I10","Essential hypertension",2019-09-11
-"P0053","E78.5","Hyperlipidemia, unspecified",2017-02-18
-"P0053","E78.5","Hyperlipidemia, unspecified",2017-10-22
-"P0053","I10","Essential hypertension",2022-06-12
-"P0053","I10","Essential hypertension",2022-10-17
-"P0054","E11.9","Type 2 diabetes mellitus without complications",2018-06-16
-"P0054","I10","Essential hypertension",2019-03-29
-"P0054","E11.9","Type 2 diabetes mellitus without complications",2021-02-16
-"P0054","G30.1","Alzheimer's disease with late onset",2023-12-17
-"P0055","G47.33","Obstructive sleep apnea",2018-02-28
-"P0055","I10","Essential hypertension",2025-01-17
-"P0055","M19.90","Osteoarthritis, unspecified site",2025-07-09
-"P0056","I10","Essential hypertension",2019-01-09
-"P0056","G47.00","Insomnia disorder",2020-07-28
-"P0056","G30.9","Alzheimer's disease, unspecified",2020-09-02
-"P0056","I10","Essential hypertension",2021-02-02
-"P0056","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-02-22
-"P0056","I10","Essential hypertension",2025-12-07
-"P0057","E78.5","Hyperlipidemia, unspecified",2019-01-24
-"P0057","E78.5","Hyperlipidemia, unspecified",2020-10-10
-"P0057","E11.9","Type 2 diabetes mellitus without complications",2022-03-29
-"P0057","I10","Essential hypertension",2023-05-03
-"P0057","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-07-11
-"P0057","E78.5","Hyperlipidemia, unspecified",2026-05-16
-"P0058","G47.33","Obstructive sleep apnea",2016-08-24
-"P0058","E78.5","Hyperlipidemia, unspecified",2019-01-10
-"P0058","E78.5","Hyperlipidemia, unspecified",2021-06-30
-"P0059","G30.1","Alzheimer's disease with late onset",2017-09-12
-"P0059","I10","Essential hypertension",2019-06-15
-"P0060","M19.90","Osteoarthritis, unspecified site",2016-12-20
-"P0060","I10","Essential hypertension",2023-02-21
-"P0061","E78.5","Hyperlipidemia, unspecified",2019-04-02
-"P0061","M19.90","Osteoarthritis, unspecified site",2021-10-06
-"P0062","E11.9","Type 2 diabetes mellitus without complications",2017-02-23
-"P0062","E11.9","Type 2 diabetes mellitus without complications",2018-03-10
-"P0062","I10","Essential hypertension",2022-08-20
-"P0062","G47.33","Obstructive sleep apnea",2025-07-01
-"P0063","I10","Essential hypertension",2021-12-25
-"P0063","I10","Essential hypertension",2022-10-13
-"P0063","I10","Essential hypertension",2024-01-29
-"P0064","I10","Essential hypertension",2016-08-18
-"P0064","G47.9","Sleep disorder, unspecified",2017-05-24
-"P0064","E78.5","Hyperlipidemia, unspecified",2022-10-23
-"P0064","M19.90","Osteoarthritis, unspecified site",2023-05-15
-"P0064","M19.90","Osteoarthritis, unspecified site",2024-04-06
-"P0065","I10","Essential hypertension",2017-04-10
-"P0065","E78.5","Hyperlipidemia, unspecified",2018-08-21
-"P0065","E11.9","Type 2 diabetes mellitus without complications",2025-09-14
-"P0065","G47.33","Obstructive sleep apnea",2025-10-10
-"P0066","E78.5","Hyperlipidemia, unspecified",2019-05-05
-"P0066","G47.33","Obstructive sleep apnea",2024-01-28
-"P0067","M19.90","Osteoarthritis, unspecified site",2018-01-15
-"P0067","I10","Essential hypertension",2020-01-14
-"P0067","G47.9","Sleep disorder, unspecified",2022-04-21
-"P0067","E11.9","Type 2 diabetes mellitus without complications",2023-01-29
-"P0068","I10","Essential hypertension",2022-01-30
-"P0068","I10","Essential hypertension",2023-08-13
-"P0068","M19.90","Osteoarthritis, unspecified site",2026-05-08
-"P0069","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-05-13
-"P0069","I10","Essential hypertension",2020-12-15
-"P0069","M19.90","Osteoarthritis, unspecified site",2022-03-08
-"P0069","G47.33","Obstructive sleep apnea",2022-07-26
-"P0070","E78.5","Hyperlipidemia, unspecified",2016-12-01
-"P0070","I10","Essential hypertension",2018-10-22
-"P0070","I10","Essential hypertension",2021-06-18
-"P0071","G47.33","Obstructive sleep apnea",2019-06-09
-"P0072","M19.90","Osteoarthritis, unspecified site",2020-05-24
-"P0072","E78.5","Hyperlipidemia, unspecified",2020-06-03
-"P0072","G47.33","Obstructive sleep apnea",2023-06-04
-"P0072","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-02-21
-"P0073","I10","Essential hypertension",2019-06-01
-"P0074","G30.1","Alzheimer's disease with late onset",2017-04-03
-"P0074","M19.90","Osteoarthritis, unspecified site",2021-03-16
-"P0074","E78.5","Hyperlipidemia, unspecified",2023-08-02
-"P0074","I10","Essential hypertension",2023-12-11
-"P0074","G47.00","Insomnia disorder",2025-01-16
-"P0075","E78.5","Hyperlipidemia, unspecified",2022-04-30
-"P0075","I10","Essential hypertension",2022-12-08
-"P0076","G47.33","Obstructive sleep apnea",2018-02-13
-"P0076","M19.90","Osteoarthritis, unspecified site",2021-06-03
-"P0076","M19.90","Osteoarthritis, unspecified site",2025-02-05
-"P0077","G47.00","Insomnia disorder",2023-07-08
-"P0077","E78.5","Hyperlipidemia, unspecified",2025-08-01
-"P0079","I10","Essential hypertension",2016-07-04
-"P0079","I10","Essential hypertension",2017-12-27
-"P0079","G47.33","Obstructive sleep apnea",2018-06-28
-"P0080","I10","Essential hypertension",2016-05-10
-"P0080","G47.00","Insomnia disorder",2019-05-22
-"P0081","G47.33","Obstructive sleep apnea",2022-01-14
-"P0081","M19.90","Osteoarthritis, unspecified site",2025-10-01
-"P0082","E11.9","Type 2 diabetes mellitus without complications",2016-08-29
-"P0082","G30.9","Alzheimer's disease, unspecified",2017-01-28
-"P0082","I10","Essential hypertension",2018-11-03
-"P0082","I10","Essential hypertension",2023-01-09
-"P0082","E78.5","Hyperlipidemia, unspecified",2024-10-07
-"P0083","G47.33","Obstructive sleep apnea",2016-01-05
-"P0083","M19.90","Osteoarthritis, unspecified site",2017-01-17
-"P0083","E78.5","Hyperlipidemia, unspecified",2018-01-11
-"P0083","I10","Essential hypertension",2020-10-02
-"P0084","G30.9","Alzheimer's disease, unspecified",2016-11-18
-"P0084","G47.33","Obstructive sleep apnea",2021-11-13
-"P0084","I10","Essential hypertension",2025-12-07
-"P0085","G47.00","Insomnia disorder",2019-12-22
-"P0085","E11.9","Type 2 diabetes mellitus without complications",2022-01-11
-"P0085","I10","Essential hypertension",2026-06-06
-"P0086","E78.5","Hyperlipidemia, unspecified",2018-03-08
-"P0086","G30.9","Alzheimer's disease, unspecified",2023-03-04
-"P0086","E11.9","Type 2 diabetes mellitus without complications",2025-03-28
-"P0086","G47.00","Insomnia disorder",2025-06-28
-"P0087","E78.5","Hyperlipidemia, unspecified",2016-05-30
-"P0087","G30.1","Alzheimer's disease with late onset",2021-09-17
-"P0087","E78.5","Hyperlipidemia, unspecified",2025-06-07
-"P0087","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-02-19
-"P0088","I10","Essential hypertension",2022-05-27
-"P0089","E78.5","Hyperlipidemia, unspecified",2022-04-03
-"P0089","I10","Essential hypertension",2023-07-25
-"P0089","G47.00","Insomnia disorder",2024-05-15
-"P0090","G30.0","Alzheimer's disease with early onset",2018-01-24
-"P0090","M19.90","Osteoarthritis, unspecified site",2019-02-19
-"P0090","I10","Essential hypertension",2021-07-06
-"P0090","E78.5","Hyperlipidemia, unspecified",2021-12-02
-"P0091","G47.33","Obstructive sleep apnea",2018-10-16
-"P0091","M19.90","Osteoarthritis, unspecified site",2019-08-20
-"P0092","E78.5","Hyperlipidemia, unspecified",2016-02-19
-"P0092","M19.90","Osteoarthritis, unspecified site",2018-07-27
-"P0093","G30.1","Alzheimer's disease with late onset",2016-10-18
-"P0093","I10","Essential hypertension",2017-08-20
-"P0093","G47.00","Insomnia disorder",2018-06-04
-"P0093","M19.90","Osteoarthritis, unspecified site",2023-03-11
-"P0093","E78.5","Hyperlipidemia, unspecified",2024-12-01
-"P0093","I10","Essential hypertension",2025-07-29
-"P0094","E11.9","Type 2 diabetes mellitus without complications",2021-04-21
-"P0094","E11.9","Type 2 diabetes mellitus without complications",2023-10-18
-"P0094","G47.00","Insomnia disorder",2025-04-11
-"P0094","G30.1","Alzheimer's disease with late onset",2025-08-14
-"P0095","E78.5","Hyperlipidemia, unspecified",2016-09-18
-"P0095","G47.33","Obstructive sleep apnea",2016-11-14
-"P0096","E11.9","Type 2 diabetes mellitus without complications",2016-02-14
-"P0096","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-02-09
-"P0096","E11.9","Type 2 diabetes mellitus without complications",2018-10-02
-"P0096","I10","Essential hypertension",2020-05-01
-"P0096","I10","Essential hypertension",2020-11-18
-"P0096","I10","Essential hypertension",2026-01-24
-"P0097","G47.00","Insomnia disorder",2020-09-28
-"P0097","I10","Essential hypertension",2022-04-13
-"P0098","I10","Essential hypertension",2016-01-11
-"P0098","M19.90","Osteoarthritis, unspecified site",2024-05-04
-"P0099","E78.5","Hyperlipidemia, unspecified",2020-01-02
-"P0099","G47.33","Obstructive sleep apnea",2020-05-01
-"P0100","I10","Essential hypertension",2020-05-18
-"P0100","E78.5","Hyperlipidemia, unspecified",2021-04-19
+"P0001","M19.90","Osteoarthritis, unspecified site",2017-07-15
+"P0001","I10","Essential hypertension",2021-11-18
+"P0002","M19.90","Osteoarthritis, unspecified site",2017-11-29
+"P0002","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-12-29
+"P0002","M19.90","Osteoarthritis, unspecified site",2021-06-29
+"P0003","I10","Essential hypertension",2017-10-02
+"P0003","E11.9","Type 2 diabetes mellitus without complications",2022-11-27
+"P0003","I10","Essential hypertension",2024-01-20
+"P0003","I10","Essential hypertension",2026-02-05
+"P0003","E11.9","Type 2 diabetes mellitus without complications",2026-04-01
+"P0004","G47.33","Obstructive sleep apnea",2023-02-02
+"P0004","E78.5","Hyperlipidemia, unspecified",2025-06-29
+"P0004","M19.90","Osteoarthritis, unspecified site",2026-01-28
+"P0005","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-06-13
+"P0005","I10","Essential hypertension",2020-05-15
+"P0005","I10","Essential hypertension",2025-09-02
+"P0006","E78.5","Hyperlipidemia, unspecified",2017-02-14
+"P0006","G47.33","Obstructive sleep apnea",2018-01-03
+"P0006","M19.90","Osteoarthritis, unspecified site",2018-01-16
+"P0006","I10","Essential hypertension",2020-04-02
+"P0006","M19.90","Osteoarthritis, unspecified site",2020-09-19
+"P0006","M19.90","Osteoarthritis, unspecified site",2021-12-22
+"P0007","E11.9","Type 2 diabetes mellitus without complications",2016-11-22
+"P0007","G47.33","Obstructive sleep apnea",2019-02-22
+"P0008","I10","Essential hypertension",2017-09-25
+"P0008","I10","Essential hypertension",2023-09-28
+"P0008","M19.90","Osteoarthritis, unspecified site",2025-12-24
+"P0009","I10","Essential hypertension",2016-09-11
+"P0009","M19.90","Osteoarthritis, unspecified site",2018-01-19
+"P0009","E11.9","Type 2 diabetes mellitus without complications",2020-10-05
+"P0009","E78.5","Hyperlipidemia, unspecified",2021-07-16
+"P0010","G30.1","Alzheimer's disease with late onset",2026-06-29
+"P0011","E78.5","Hyperlipidemia, unspecified",2020-06-26
+"P0011","G47.00","Insomnia disorder",2022-03-08
+"P0011","G30.1","Alzheimer's disease with late onset",2024-02-04
+"P0012","E78.5","Hyperlipidemia, unspecified",2020-07-20
+"P0013","G47.9","Sleep disorder, unspecified",2016-10-28
+"P0013","I10","Essential hypertension",2017-05-31
+"P0013","M19.90","Osteoarthritis, unspecified site",2023-10-24
+"P0014","I10","Essential hypertension",2018-05-23
+"P0014","E78.5","Hyperlipidemia, unspecified",2019-10-25
+"P0014","G47.33","Obstructive sleep apnea",2023-03-10
+"P0015","I10","Essential hypertension",2017-10-01
+"P0015","G47.00","Insomnia disorder",2025-07-17
+"P0016","G47.00","Insomnia disorder",2024-04-18
+"P0016","G30.9","Alzheimer's disease, unspecified",2025-08-21
+"P0016","E78.5","Hyperlipidemia, unspecified",2026-06-04
+"P0017","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-10-29
+"P0018","E78.5","Hyperlipidemia, unspecified",2022-02-09
+"P0018","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-08-09
+"P0018","E11.9","Type 2 diabetes mellitus without complications",2022-12-01
+"P0019","E78.5","Hyperlipidemia, unspecified",2017-08-06
+"P0019","I10","Essential hypertension",2017-11-11
+"P0019","G47.33","Obstructive sleep apnea",2019-01-10
+"P0020","E11.9","Type 2 diabetes mellitus without complications",2021-03-09
+"P0020","I10","Essential hypertension",2023-06-23
+"P0021","M19.90","Osteoarthritis, unspecified site",2018-03-17
+"P0021","G47.33","Obstructive sleep apnea",2018-09-01
+"P0021","G30.0","Alzheimer's disease with early onset",2018-11-26
+"P0021","I10","Essential hypertension",2021-12-09
+"P0021","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-01-22
+"P0022","E78.5","Hyperlipidemia, unspecified",2023-08-17
+"P0023","G47.9","Sleep disorder, unspecified",2016-01-06
+"P0023","G30.0","Alzheimer's disease with early onset",2024-07-04
+"P0024","G47.33","Obstructive sleep apnea",2022-05-22
+"P0025","I10","Essential hypertension",2017-06-15
+"P0025","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-05-24
+"P0025","I10","Essential hypertension",2026-03-07
+"P0026","M19.90","Osteoarthritis, unspecified site",2018-02-19
+"P0026","I10","Essential hypertension",2024-10-09
+"P0026","G47.33","Obstructive sleep apnea",2025-07-13
+"P0027","I10","Essential hypertension",2020-10-27
+"P0027","M19.90","Osteoarthritis, unspecified site",2023-05-22
+"P0027","I10","Essential hypertension",2026-01-07
+"P0027","E78.5","Hyperlipidemia, unspecified",2026-02-05
+"P0028","E78.5","Hyperlipidemia, unspecified",2018-11-11
+"P0028","G47.00","Insomnia disorder",2020-04-30
+"P0028","I10","Essential hypertension",2021-10-13
+"P0028","G30.0","Alzheimer's disease with early onset",2022-05-26
+"P0029","E11.9","Type 2 diabetes mellitus without complications",2016-07-05
+"P0029","E78.5","Hyperlipidemia, unspecified",2019-07-21
+"P0029","E11.9","Type 2 diabetes mellitus without complications",2020-03-06
+"P0030","I10","Essential hypertension",2018-03-16
+"P0031","E78.5","Hyperlipidemia, unspecified",2018-05-29
+"P0031","E78.5","Hyperlipidemia, unspecified",2019-01-06
+"P0031","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-12-22
+"P0031","M19.90","Osteoarthritis, unspecified site",2023-09-07
+"P0032","I10","Essential hypertension",2016-08-21
+"P0033","I10","Essential hypertension",2018-01-01
+"P0033","I10","Essential hypertension",2018-11-28
+"P0033","G30.9","Alzheimer's disease, unspecified",2020-08-14
+"P0034","G30.1","Alzheimer's disease with late onset",2016-10-03
+"P0034","E78.5","Hyperlipidemia, unspecified",2022-08-02
+"P0035","M19.90","Osteoarthritis, unspecified site",2016-10-10
+"P0035","G30.0","Alzheimer's disease with early onset",2016-12-26
+"P0035","E78.5","Hyperlipidemia, unspecified",2022-03-06
+"P0035","E78.5","Hyperlipidemia, unspecified",2022-05-15
+"P0035","G47.00","Insomnia disorder",2024-03-01
+"P0036","G47.33","Obstructive sleep apnea",2020-09-15
+"P0037","E78.5","Hyperlipidemia, unspecified",2017-07-09
+"P0037","E11.9","Type 2 diabetes mellitus without complications",2021-12-07
+"P0037","I10","Essential hypertension",2023-03-21
+"P0037","G47.33","Obstructive sleep apnea",2025-05-11
+"P0038","E78.5","Hyperlipidemia, unspecified",2022-06-06
+"P0039","E78.5","Hyperlipidemia, unspecified",2018-02-12
+"P0040","I10","Essential hypertension",2017-06-19
+"P0040","I10","Essential hypertension",2017-11-22
+"P0040","I10","Essential hypertension",2019-02-14
+"P0040","E11.9","Type 2 diabetes mellitus without complications",2021-07-12
+"P0040","M19.90","Osteoarthritis, unspecified site",2022-04-08
+"P0040","I10","Essential hypertension",2023-06-24
+"P0041","G30.1","Alzheimer's disease with late onset",2017-07-24
+"P0041","G47.33","Obstructive sleep apnea",2018-12-31
+"P0042","G47.00","Insomnia disorder",2019-05-06
+"P0042","M19.90","Osteoarthritis, unspecified site",2022-12-05
+"P0043","G30.1","Alzheimer's disease with late onset",2017-01-12
+"P0043","M19.90","Osteoarthritis, unspecified site",2017-03-31
+"P0043","I10","Essential hypertension",2024-02-23
+"P0044","G30.1","Alzheimer's disease with late onset",2017-11-02
+"P0044","I10","Essential hypertension",2021-02-14
+"P0044","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-11-05
+"P0044","G47.33","Obstructive sleep apnea",2026-06-05
+"P0046","G47.33","Obstructive sleep apnea",2018-07-23
+"P0046","G30.1","Alzheimer's disease with late onset",2018-12-31
+"P0046","I10","Essential hypertension",2020-12-28
+"P0046","E11.9","Type 2 diabetes mellitus without complications",2026-05-10
+"P0047","I10","Essential hypertension",2018-02-20
+"P0048","E78.5","Hyperlipidemia, unspecified",2017-09-19
+"P0048","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-02-18
+"P0048","I10","Essential hypertension",2022-01-08
+"P0048","G30.1","Alzheimer's disease with late onset",2026-04-28
+"P0049","I10","Essential hypertension",2019-07-10
+"P0050","E78.5","Hyperlipidemia, unspecified",2020-03-05
+"P0050","M19.90","Osteoarthritis, unspecified site",2023-12-27
+"P0051","M19.90","Osteoarthritis, unspecified site",2021-02-10
+"P0051","G47.33","Obstructive sleep apnea",2022-10-09
+"P0051","M19.90","Osteoarthritis, unspecified site",2024-03-12
+"P0052","M19.90","Osteoarthritis, unspecified site",2016-06-27
+"P0052","I10","Essential hypertension",2020-01-23
+"P0052","E78.5","Hyperlipidemia, unspecified",2020-12-05
+"P0053","E78.5","Hyperlipidemia, unspecified",2017-04-18
+"P0053","I10","Essential hypertension",2017-09-23
+"P0053","E78.5","Hyperlipidemia, unspecified",2018-07-15
+"P0053","E78.5","Hyperlipidemia, unspecified",2019-06-10
+"P0053","G30.1","Alzheimer's disease with late onset",2019-12-06
+"P0053","G47.33","Obstructive sleep apnea",2022-01-19
+"P0054","E78.5","Hyperlipidemia, unspecified",2024-03-30
+"P0055","I10","Essential hypertension",2016-01-17
+"P0055","E78.5","Hyperlipidemia, unspecified",2019-01-16
+"P0055","M19.90","Osteoarthritis, unspecified site",2020-11-18
+"P0055","E11.9","Type 2 diabetes mellitus without complications",2021-04-12
+"P0055","G47.33","Obstructive sleep apnea",2021-10-22
+"P0056","E78.5","Hyperlipidemia, unspecified",2020-03-29
+"P0056","E11.9","Type 2 diabetes mellitus without complications",2023-03-07
+"P0056","I10","Essential hypertension",2024-08-29
+"P0057","I10","Essential hypertension",2019-02-16
+"P0057","E11.9","Type 2 diabetes mellitus without complications",2019-08-03
+"P0057","I10","Essential hypertension",2023-04-13
+"P0058","I10","Essential hypertension",2020-12-08
+"P0058","G47.00","Insomnia disorder",2022-08-10
+"P0058","M19.90","Osteoarthritis, unspecified site",2025-07-09
+"P0058","E11.9","Type 2 diabetes mellitus without complications",2025-08-14
+"P0058","E78.5","Hyperlipidemia, unspecified",2025-11-20
+"P0059","M19.90","Osteoarthritis, unspecified site",2017-05-03
+"P0059","E78.5","Hyperlipidemia, unspecified",2019-02-15
+"P0059","G47.00","Insomnia disorder",2022-07-01
+"P0060","M19.90","Osteoarthritis, unspecified site",2017-06-27
+"P0060","G47.9","Sleep disorder, unspecified",2025-10-28
+"P0061","M19.90","Osteoarthritis, unspecified site",2024-01-18
+"P0062","I10","Essential hypertension",2022-01-07
+"P0063","G47.9","Sleep disorder, unspecified",2019-01-27
+"P0063","I10","Essential hypertension",2020-08-14
+"P0063","M19.90","Osteoarthritis, unspecified site",2024-12-30
+"P0064","I10","Essential hypertension",2016-09-06
+"P0064","I10","Essential hypertension",2021-02-03
+"P0064","M19.90","Osteoarthritis, unspecified site",2021-06-30
+"P0064","G30.0","Alzheimer's disease with early onset",2025-09-11
+"P0065","G47.00","Insomnia disorder",2021-09-18
+"P0065","G30.1","Alzheimer's disease with late onset",2022-02-28
+"P0066","E11.9","Type 2 diabetes mellitus without complications",2016-04-10
+"P0066","E78.5","Hyperlipidemia, unspecified",2017-09-07
+"P0066","I10","Essential hypertension",2022-09-17
+"P0067","G47.9","Sleep disorder, unspecified",2018-10-25
+"P0067","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-06-05
+"P0068","E11.9","Type 2 diabetes mellitus without complications",2020-08-09
+"P0068","G47.33","Obstructive sleep apnea",2026-05-10
+"P0069","G30.1","Alzheimer's disease with late onset",2016-03-07
+"P0069","E78.5","Hyperlipidemia, unspecified",2016-08-22
+"P0069","I10","Essential hypertension",2019-05-12
+"P0069","E78.5","Hyperlipidemia, unspecified",2021-04-04
+"P0070","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-03-02
+"P0070","G47.9","Sleep disorder, unspecified",2019-11-05
+"P0071","I10","Essential hypertension",2018-02-16
+"P0071","I10","Essential hypertension",2024-05-25
+"P0071","G47.00","Insomnia disorder",2024-07-23
+"P0072","M19.90","Osteoarthritis, unspecified site",2016-04-27
+"P0072","M19.90","Osteoarthritis, unspecified site",2018-11-28
+"P0072","E11.9","Type 2 diabetes mellitus without complications",2022-03-04
+"P0072","G47.33","Obstructive sleep apnea",2022-08-23
+"P0072","G30.9","Alzheimer's disease, unspecified",2026-01-07
+"P0073","I10","Essential hypertension",2017-01-16
+"P0073","I10","Essential hypertension",2019-07-05
+"P0073","E78.5","Hyperlipidemia, unspecified",2023-09-24
+"P0074","E11.9","Type 2 diabetes mellitus without complications",2019-08-24
+"P0074","G30.1","Alzheimer's disease with late onset",2023-10-03
+"P0074","I10","Essential hypertension",2024-03-17
+"P0075","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-03-29
+"P0075","E78.5","Hyperlipidemia, unspecified",2025-10-08
+"P0077","G47.00","Insomnia disorder",2021-05-09
+"P0077","I10","Essential hypertension",2023-11-15
+"P0078","E11.9","Type 2 diabetes mellitus without complications",2022-11-22
+"P0079","G47.33","Obstructive sleep apnea",2021-08-29
+"P0080","E78.5","Hyperlipidemia, unspecified",2016-11-16
+"P0080","E78.5","Hyperlipidemia, unspecified",2019-08-21
+"P0080","E11.9","Type 2 diabetes mellitus without complications",2020-09-06
+"P0080","I10","Essential hypertension",2021-01-05
+"P0080","I10","Essential hypertension",2026-03-02
+"P0081","E11.9","Type 2 diabetes mellitus without complications",2018-08-27
+"P0081","I10","Essential hypertension",2022-12-14
+"P0081","E11.9","Type 2 diabetes mellitus without complications",2023-06-12
+"P0081","I10","Essential hypertension",2023-10-16
+"P0082","E78.5","Hyperlipidemia, unspecified",2019-08-12
+"P0082","I10","Essential hypertension",2020-06-21
+"P0082","G47.9","Sleep disorder, unspecified",2020-06-26
+"P0083","E11.9","Type 2 diabetes mellitus without complications",2017-06-19
+"P0083","E78.5","Hyperlipidemia, unspecified",2020-01-03
+"P0083","E11.9","Type 2 diabetes mellitus without complications",2024-10-26
+"P0083","M19.90","Osteoarthritis, unspecified site",2025-10-09
+"P0084","G47.00","Insomnia disorder",2016-05-30
+"P0084","E11.9","Type 2 diabetes mellitus without complications",2020-03-23
+"P0084","E11.9","Type 2 diabetes mellitus without complications",2022-03-19
+"P0085","I10","Essential hypertension",2020-09-14
+"P0085","E78.5","Hyperlipidemia, unspecified",2021-08-27
+"P0085","G47.33","Obstructive sleep apnea",2023-04-09
+"P0086","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-03-08
+"P0086","I10","Essential hypertension",2019-12-14
+"P0087","M19.90","Osteoarthritis, unspecified site",2025-05-26
+"P0087","E78.5","Hyperlipidemia, unspecified",2025-10-15
+"P0088","G30.1","Alzheimer's disease with late onset",2016-10-01
+"P0088","I10","Essential hypertension",2019-11-18
+"P0089","M19.90","Osteoarthritis, unspecified site",2017-02-23
+"P0089","E78.5","Hyperlipidemia, unspecified",2022-02-12
+"P0089","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-04-11
+"P0091","I10","Essential hypertension",2016-03-13
+"P0091","E11.9","Type 2 diabetes mellitus without complications",2017-05-17
+"P0091","E78.5","Hyperlipidemia, unspecified",2018-07-15
+"P0091","I10","Essential hypertension",2020-06-28
+"P0091","I10","Essential hypertension",2025-01-07
+"P0092","E11.9","Type 2 diabetes mellitus without complications",2018-08-16
+"P0092","M19.90","Osteoarthritis, unspecified site",2023-08-31
+"P0092","I10","Essential hypertension",2024-07-19
+"P0093","E78.5","Hyperlipidemia, unspecified",2017-01-25
+"P0093","G47.33","Obstructive sleep apnea",2018-12-07
+"P0093","E78.5","Hyperlipidemia, unspecified",2023-07-16
+"P0094","I10","Essential hypertension",2018-05-04
+"P0094","I10","Essential hypertension",2021-05-14
+"P0094","E11.9","Type 2 diabetes mellitus without complications",2022-05-07
+"P0094","M19.90","Osteoarthritis, unspecified site",2022-07-13
+"P0094","G47.9","Sleep disorder, unspecified",2023-12-04
+"P0094","I10","Essential hypertension",2025-02-19
+"P0095","M19.90","Osteoarthritis, unspecified site",2017-12-15
+"P0095","G47.00","Insomnia disorder",2024-10-25
+"P0095","I10","Essential hypertension",2025-03-31
+"P0096","E78.5","Hyperlipidemia, unspecified",2023-12-15
+"P0096","G47.00","Insomnia disorder",2025-07-04
+"P0097","I10","Essential hypertension",2016-08-18
+"P0097","E11.9","Type 2 diabetes mellitus without complications",2017-02-01
+"P0097","E78.5","Hyperlipidemia, unspecified",2024-06-11
+"P0097","E78.5","Hyperlipidemia, unspecified",2024-10-28
+"P0098","G47.33","Obstructive sleep apnea",2026-05-08
+"P0099","E78.5","Hyperlipidemia, unspecified",2016-10-06
+"P0099","G30.9","Alzheimer's disease, unspecified",2017-06-20
+"P0099","E11.9","Type 2 diabetes mellitus without complications",2019-09-07
+"P0099","I10","Essential hypertension",2023-10-13
+"P0099","M19.90","Osteoarthritis, unspecified site",2026-06-02
+"P0100","I10","Essential hypertension",2019-01-26
+"P0100","I10","Essential hypertension",2020-09-07
+"P0100","I10","Essential hypertension",2024-09-22
+"P0101","E11.9","Type 2 diabetes mellitus without complications",2020-09-22
+"P0101","I10","Essential hypertension",2021-07-12
+"P0101","E78.5","Hyperlipidemia, unspecified",2021-07-19
+"P0101","M19.90","Osteoarthritis, unspecified site",2024-10-25
+"P0102","I10","Essential hypertension",2017-07-04
+"P0103","I10","Essential hypertension",2017-07-26
+"P0103","I10","Essential hypertension",2018-12-03
+"P0103","E78.5","Hyperlipidemia, unspecified",2023-03-29
+"P0103","G47.00","Insomnia disorder",2025-07-12
+"P0104","G47.9","Sleep disorder, unspecified",2019-05-05
+"P0105","E11.9","Type 2 diabetes mellitus without complications",2020-12-27
+"P0105","M19.90","Osteoarthritis, unspecified site",2023-04-02
+"P0105","I10","Essential hypertension",2024-11-27
+"P0106","I10","Essential hypertension",2017-02-11
+"P0106","E78.5","Hyperlipidemia, unspecified",2017-09-09
+"P0106","I10","Essential hypertension",2018-08-28
+"P0106","I10","Essential hypertension",2020-08-03
+"P0106","E78.5","Hyperlipidemia, unspecified",2020-08-23
+"P0106","E78.5","Hyperlipidemia, unspecified",2021-08-16
+"P0106","G47.33","Obstructive sleep apnea",2024-12-17
+"P0107","I10","Essential hypertension",2018-07-11
+"P0107","G47.33","Obstructive sleep apnea",2023-11-28
+"P0108","E11.9","Type 2 diabetes mellitus without complications",2020-01-02
+"P0108","I10","Essential hypertension",2021-04-09
+"P0109","I10","Essential hypertension",2019-03-14
+"P0109","I10","Essential hypertension",2025-03-30
+"P0110","I10","Essential hypertension",2017-05-08
+"P0110","M19.90","Osteoarthritis, unspecified site",2020-08-30
+"P0111","M19.90","Osteoarthritis, unspecified site",2020-05-20
+"P0112","E78.5","Hyperlipidemia, unspecified",2016-01-18
+"P0112","G47.33","Obstructive sleep apnea",2016-03-12
+"P0112","G30.1","Alzheimer's disease with late onset",2020-07-25
+"P0113","G47.33","Obstructive sleep apnea",2024-12-05
+"P0114","E78.5","Hyperlipidemia, unspecified",2024-08-22
+"P0115","E78.5","Hyperlipidemia, unspecified",2021-09-14
+"P0115","I10","Essential hypertension",2022-02-21
+"P0115","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-06-26
+"P0116","E11.9","Type 2 diabetes mellitus without complications",2024-03-28
+"P0116","I10","Essential hypertension",2025-12-06
+"P0117","M19.90","Osteoarthritis, unspecified site",2020-11-25
+"P0117","G47.33","Obstructive sleep apnea",2021-02-25
+"P0118","E11.9","Type 2 diabetes mellitus without complications",2019-09-06
+"P0118","G47.00","Insomnia disorder",2020-04-18
+"P0118","E78.5","Hyperlipidemia, unspecified",2022-10-30
+"P0118","I10","Essential hypertension",2025-06-18
+"P0118","I10","Essential hypertension",2026-04-09
+"P0119","E78.5","Hyperlipidemia, unspecified",2020-01-09
+"P0120","E78.5","Hyperlipidemia, unspecified",2021-08-05
+"P0121","G47.33","Obstructive sleep apnea",2016-10-21
+"P0121","I10","Essential hypertension",2018-08-20
+"P0121","I10","Essential hypertension",2020-09-07
+"P0121","E11.9","Type 2 diabetes mellitus without complications",2021-02-04
+"P0122","M19.90","Osteoarthritis, unspecified site",2016-06-12
+"P0122","E78.5","Hyperlipidemia, unspecified",2016-12-08
+"P0122","E78.5","Hyperlipidemia, unspecified",2018-07-15
+"P0123","I10","Essential hypertension",2019-06-16
+"P0124","I10","Essential hypertension",2017-11-20
+"P0124","I10","Essential hypertension",2020-05-23
+"P0124","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-03-02
+"P0125","G47.00","Insomnia disorder",2022-04-22
+"P0126","E78.5","Hyperlipidemia, unspecified",2020-10-26
+"P0126","I10","Essential hypertension",2023-08-04
+"P0126","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-01-20
+"P0126","E11.9","Type 2 diabetes mellitus without complications",2026-06-08
+"P0127","I10","Essential hypertension",2020-03-30
+"P0129","G47.00","Insomnia disorder",2017-11-18
+"P0130","E78.5","Hyperlipidemia, unspecified",2021-07-10
+"P0130","E11.9","Type 2 diabetes mellitus without complications",2024-10-18
+"P0131","G30.1","Alzheimer's disease with late onset",2022-04-22
+"P0131","E78.5","Hyperlipidemia, unspecified",2023-03-31
+"P0131","I10","Essential hypertension",2025-04-14
+"P0132","E78.5","Hyperlipidemia, unspecified",2019-12-06
+"P0132","I10","Essential hypertension",2020-08-28
+"P0132","E11.9","Type 2 diabetes mellitus without complications",2022-06-20
+"P0134","E11.9","Type 2 diabetes mellitus without complications",2022-02-03
+"P0134","G47.00","Insomnia disorder",2023-04-13
+"P0134","I10","Essential hypertension",2023-11-09
+"P0134","G30.9","Alzheimer's disease, unspecified",2026-05-23
+"P0135","M19.90","Osteoarthritis, unspecified site",2018-02-26
+"P0135","M19.90","Osteoarthritis, unspecified site",2019-06-02
+"P0135","G47.33","Obstructive sleep apnea",2020-05-17
+"P0135","M19.90","Osteoarthritis, unspecified site",2020-05-29
+"P0136","G47.00","Insomnia disorder",2020-08-08
+"P0136","I10","Essential hypertension",2021-04-11
+"P0136","E78.5","Hyperlipidemia, unspecified",2025-01-18
+"P0137","E11.9","Type 2 diabetes mellitus without complications",2022-08-23
+"P0137","I10","Essential hypertension",2023-10-11
+"P0137","G47.00","Insomnia disorder",2024-07-30
+"P0138","G47.33","Obstructive sleep apnea",2020-08-21
+"P0138","E78.5","Hyperlipidemia, unspecified",2021-08-16
+"P0138","I10","Essential hypertension",2022-07-12
+"P0138","E78.5","Hyperlipidemia, unspecified",2023-01-06
+"P0139","M19.90","Osteoarthritis, unspecified site",2017-07-16
+"P0139","G47.33","Obstructive sleep apnea",2018-07-31
+"P0139","I10","Essential hypertension",2021-04-17
+"P0139","I10","Essential hypertension",2026-05-14
+"P0139","I10","Essential hypertension",2026-05-19
+"P0141","G47.33","Obstructive sleep apnea",2020-04-30
+"P0142","G47.9","Sleep disorder, unspecified",2022-04-09
+"P0143","G47.00","Insomnia disorder",2016-12-10
+"P0143","E78.5","Hyperlipidemia, unspecified",2023-12-24
+"P0144","G47.9","Sleep disorder, unspecified",2021-06-20
+"P0144","I10","Essential hypertension",2021-12-07
+"P0145","G47.9","Sleep disorder, unspecified",2021-10-08
+"P0145","I10","Essential hypertension",2025-01-24
+"P0146","E78.5","Hyperlipidemia, unspecified",2022-07-08
+"P0147","M19.90","Osteoarthritis, unspecified site",2016-01-12
+"P0147","I10","Essential hypertension",2020-09-05
+"P0147","I10","Essential hypertension",2022-10-28
+"P0147","I10","Essential hypertension",2025-05-07
+"P0147","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-01-09
+"P0148","E78.5","Hyperlipidemia, unspecified",2016-08-15
+"P0149","G47.9","Sleep disorder, unspecified",2026-04-13
+"P0150","I10","Essential hypertension",2018-11-13
+"P0150","G30.1","Alzheimer's disease with late onset",2021-10-23
+"P0150","G47.33","Obstructive sleep apnea",2025-02-10
+"P0151","M19.90","Osteoarthritis, unspecified site",2016-01-07
+"P0151","I10","Essential hypertension",2018-08-04
+"P0151","I10","Essential hypertension",2023-09-07
+"P0152","I10","Essential hypertension",2017-05-09
+"P0153","E11.9","Type 2 diabetes mellitus without complications",2017-01-10
+"P0153","G47.00","Insomnia disorder",2021-07-18
+"P0153","I10","Essential hypertension",2022-12-18
+"P0153","M19.90","Osteoarthritis, unspecified site",2024-07-24
+"P0154","E78.5","Hyperlipidemia, unspecified",2017-04-09
+"P0154","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-05-25
+"P0154","G47.33","Obstructive sleep apnea",2024-02-23
+"P0155","G47.33","Obstructive sleep apnea",2018-10-25
+"P0155","I10","Essential hypertension",2020-09-03
+"P0156","I10","Essential hypertension",2017-07-18
+"P0156","I10","Essential hypertension",2020-03-13
+"P0156","E78.5","Hyperlipidemia, unspecified",2021-02-09
+"P0156","G47.00","Insomnia disorder",2026-04-18
+"P0157","I10","Essential hypertension",2016-03-13
+"P0157","I10","Essential hypertension",2022-12-24
+"P0157","G47.00","Insomnia disorder",2025-07-07
+"P0158","I10","Essential hypertension",2017-01-12
+"P0158","G47.00","Insomnia disorder",2025-07-01
+"P0158","I10","Essential hypertension",2026-02-09
+"P0159","I10","Essential hypertension",2024-07-07
+"P0159","I10","Essential hypertension",2024-08-08
+"P0159","I10","Essential hypertension",2024-10-02
+"P0161","I10","Essential hypertension",2016-03-09
+"P0161","G47.33","Obstructive sleep apnea",2017-01-19
+"P0161","E78.5","Hyperlipidemia, unspecified",2022-09-02
+"P0162","G47.00","Insomnia disorder",2021-12-16
+"P0163","I10","Essential hypertension",2021-07-07
+"P0163","I10","Essential hypertension",2026-02-01
+"P0164","I10","Essential hypertension",2016-05-31
+"P0164","E11.9","Type 2 diabetes mellitus without complications",2017-01-12
+"P0164","G30.9","Alzheimer's disease, unspecified",2017-08-03
+"P0165","M19.90","Osteoarthritis, unspecified site",2021-01-30
+"P0165","I10","Essential hypertension",2021-10-08
+"P0166","I10","Essential hypertension",2019-01-11
+"P0166","G47.00","Insomnia disorder",2022-09-16
+"P0167","G47.33","Obstructive sleep apnea",2024-04-06
+"P0167","G30.0","Alzheimer's disease with early onset",2024-09-24
+"P0168","G30.1","Alzheimer's disease with late onset",2025-05-23
+"P0169","G47.33","Obstructive sleep apnea",2016-01-10
+"P0169","I10","Essential hypertension",2021-09-03
+"P0169","G30.0","Alzheimer's disease with early onset",2025-04-06
+"P0170","M19.90","Osteoarthritis, unspecified site",2022-07-12
+"P0171","G47.00","Insomnia disorder",2022-03-09
+"P0171","E11.9","Type 2 diabetes mellitus without complications",2026-03-30
+"P0172","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-12-17
+"P0172","E78.5","Hyperlipidemia, unspecified",2023-01-14
+"P0172","I10","Essential hypertension",2023-08-09
+"P0173","M19.90","Osteoarthritis, unspecified site",2016-11-11
+"P0173","I10","Essential hypertension",2021-09-05
+"P0173","G47.00","Insomnia disorder",2026-03-12
+"P0174","M19.90","Osteoarthritis, unspecified site",2017-05-02
+"P0174","G47.33","Obstructive sleep apnea",2019-10-21
+"P0174","E78.5","Hyperlipidemia, unspecified",2024-02-22
+"P0175","I10","Essential hypertension",2020-06-24
+"P0175","M19.90","Osteoarthritis, unspecified site",2023-01-16
+"P0175","G47.00","Insomnia disorder",2024-08-31
+"P0176","G47.00","Insomnia disorder",2019-01-18
+"P0176","I10","Essential hypertension",2023-01-26
+"P0176","E11.9","Type 2 diabetes mellitus without complications",2025-11-17
+"P0177","E11.9","Type 2 diabetes mellitus without complications",2020-02-24
+"P0178","E11.9","Type 2 diabetes mellitus without complications",2019-05-02
+"P0178","G47.00","Insomnia disorder",2026-05-19
+"P0179","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-03-15
+"P0179","G47.33","Obstructive sleep apnea",2019-07-03
+"P0179","I10","Essential hypertension",2021-04-05
+"P0180","G47.00","Insomnia disorder",2023-01-29
+"P0181","I10","Essential hypertension",2018-06-11
+"P0181","E78.5","Hyperlipidemia, unspecified",2021-04-19
+"P0181","G47.9","Sleep disorder, unspecified",2025-06-25
+"P0181","I10","Essential hypertension",2026-01-08
+"P0182","I10","Essential hypertension",2025-03-17
+"P0183","I10","Essential hypertension",2017-08-09
+"P0183","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-09-15
+"P0183","E78.5","Hyperlipidemia, unspecified",2018-11-07
+"P0183","E11.9","Type 2 diabetes mellitus without complications",2020-07-02
+"P0183","I10","Essential hypertension",2021-12-19
+"P0184","E78.5","Hyperlipidemia, unspecified",2016-07-28
+"P0184","M19.90","Osteoarthritis, unspecified site",2017-06-13
+"P0185","I10","Essential hypertension",2017-01-29
+"P0185","E11.9","Type 2 diabetes mellitus without complications",2017-03-27
+"P0185","E11.9","Type 2 diabetes mellitus without complications",2018-10-17
+"P0185","E11.9","Type 2 diabetes mellitus without complications",2020-07-19
+"P0185","G47.33","Obstructive sleep apnea",2025-10-16
+"P0186","I10","Essential hypertension",2016-06-24
+"P0186","M19.90","Osteoarthritis, unspecified site",2020-09-24
+"P0187","E78.5","Hyperlipidemia, unspecified",2019-05-30
+"P0187","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-07-17
+"P0187","I10","Essential hypertension",2021-12-26
+"P0187","E78.5","Hyperlipidemia, unspecified",2024-03-30
+"P0188","M19.90","Osteoarthritis, unspecified site",2019-03-30
+"P0188","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-06-28
+"P0188","G47.33","Obstructive sleep apnea",2023-03-04
+"P0189","M19.90","Osteoarthritis, unspecified site",2017-07-11
+"P0189","I10","Essential hypertension",2017-10-24
+"P0189","E78.5","Hyperlipidemia, unspecified",2023-09-06
+"P0190","I10","Essential hypertension",2020-06-29
+"P0190","E11.9","Type 2 diabetes mellitus without complications",2024-07-19
+"P0191","M19.90","Osteoarthritis, unspecified site",2021-03-12
+"P0191","M19.90","Osteoarthritis, unspecified site",2023-09-11
+"P0193","G47.00","Insomnia disorder",2017-06-05
+"P0193","I10","Essential hypertension",2022-04-15
+"P0195","G47.33","Obstructive sleep apnea",2020-12-16
+"P0195","E11.9","Type 2 diabetes mellitus without complications",2021-06-14
+"P0195","I10","Essential hypertension",2025-07-20
+"P0196","E78.5","Hyperlipidemia, unspecified",2017-02-04
+"P0196","M19.90","Osteoarthritis, unspecified site",2018-01-22
+"P0196","G47.33","Obstructive sleep apnea",2018-10-20
+"P0196","G30.0","Alzheimer's disease with early onset",2019-08-23
+"P0196","E78.5","Hyperlipidemia, unspecified",2023-12-20
+"P0197","E11.9","Type 2 diabetes mellitus without complications",2016-05-14
+"P0197","G47.00","Insomnia disorder",2020-04-15
+"P0197","E11.9","Type 2 diabetes mellitus without complications",2020-06-21
+"P0197","I10","Essential hypertension",2020-11-02
+"P0197","M19.90","Osteoarthritis, unspecified site",2021-01-03
+"P0197","M19.90","Osteoarthritis, unspecified site",2021-09-07
+"P0198","G47.33","Obstructive sleep apnea",2018-05-02
+"P0198","I10","Essential hypertension",2021-02-17
+"P0198","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-08-19
+"P0199","I10","Essential hypertension",2016-06-02
+"P0199","M19.90","Osteoarthritis, unspecified site",2018-10-27
+"P0199","G30.1","Alzheimer's disease with late onset",2020-05-10
+"P0199","G47.33","Obstructive sleep apnea",2024-06-19
+"P0200","I10","Essential hypertension",2018-04-10
+"P0200","E11.9","Type 2 diabetes mellitus without complications",2021-02-10
+"P0200","G30.0","Alzheimer's disease with early onset",2023-10-30
+"P0200","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-04-28
+"P0201","G47.33","Obstructive sleep apnea",2025-04-03
+"P0201","M19.90","Osteoarthritis, unspecified site",2026-02-27
+"P0202","I10","Essential hypertension",2019-12-08
+"P0202","I10","Essential hypertension",2025-02-17
+"P0203","G47.00","Insomnia disorder",2019-05-28
+"P0203","E78.5","Hyperlipidemia, unspecified",2020-08-02
+"P0203","E78.5","Hyperlipidemia, unspecified",2025-01-23
+"P0204","G30.1","Alzheimer's disease with late onset",2017-08-14
+"P0204","G47.33","Obstructive sleep apnea",2018-09-06
+"P0205","G47.00","Insomnia disorder",2017-03-24
+"P0205","I10","Essential hypertension",2025-01-02
+"P0207","I10","Essential hypertension",2020-10-06
+"P0207","G47.00","Insomnia disorder",2023-04-11
+"P0207","E78.5","Hyperlipidemia, unspecified",2023-07-28
+"P0208","G47.33","Obstructive sleep apnea",2020-04-02
+"P0209","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-08-12
+"P0209","G30.1","Alzheimer's disease with late onset",2023-01-22
+"P0209","E11.9","Type 2 diabetes mellitus without complications",2023-08-05
+"P0210","I10","Essential hypertension",2020-04-08
+"P0210","G30.9","Alzheimer's disease, unspecified",2021-05-15
+"P0210","I10","Essential hypertension",2022-08-26
+"P0211","G47.9","Sleep disorder, unspecified",2017-02-18
+"P0211","E78.5","Hyperlipidemia, unspecified",2018-09-25
+"P0212","E78.5","Hyperlipidemia, unspecified",2021-11-10
+"P0213","G30.1","Alzheimer's disease with late onset",2017-10-02
+"P0214","I10","Essential hypertension",2018-02-05
+"P0214","M19.90","Osteoarthritis, unspecified site",2018-06-29
+"P0215","M19.90","Osteoarthritis, unspecified site",2016-08-17
+"P0215","I10","Essential hypertension",2021-11-11
+"P0216","G47.33","Obstructive sleep apnea",2016-04-27
+"P0216","I10","Essential hypertension",2017-01-22
+"P0216","I10","Essential hypertension",2017-12-17
+"P0216","G30.1","Alzheimer's disease with late onset",2022-02-17
+"P0216","I10","Essential hypertension",2022-09-03
+"P0216","I10","Essential hypertension",2023-12-03
+"P0217","E78.5","Hyperlipidemia, unspecified",2016-01-22
+"P0217","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-11-24
+"P0217","E78.5","Hyperlipidemia, unspecified",2026-06-16
+"P0218","E11.9","Type 2 diabetes mellitus without complications",2018-11-28
+"P0218","G47.00","Insomnia disorder",2019-07-29
+"P0218","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-02-28
+"P0219","G47.00","Insomnia disorder",2024-06-05
+"P0219","I10","Essential hypertension",2026-05-08
+"P0220","E11.9","Type 2 diabetes mellitus without complications",2016-02-05
+"P0220","G47.00","Insomnia disorder",2022-09-16
+"P0221","E78.5","Hyperlipidemia, unspecified",2018-03-15
+"P0221","E11.9","Type 2 diabetes mellitus without complications",2025-08-23
+"P0222","E11.9","Type 2 diabetes mellitus without complications",2019-10-28
+"P0222","I10","Essential hypertension",2020-11-04
+"P0222","M19.90","Osteoarthritis, unspecified site",2022-10-09
+"P0222","G47.00","Insomnia disorder",2024-05-08
+"P0222","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-02-23
+"P0223","E78.5","Hyperlipidemia, unspecified",2017-05-01
+"P0223","I10","Essential hypertension",2019-08-09
+"P0223","E78.5","Hyperlipidemia, unspecified",2021-02-23
+"P0223","G30.9","Alzheimer's disease, unspecified",2024-07-09
+"P0224","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-02-10
+"P0224","E78.5","Hyperlipidemia, unspecified",2016-04-19
+"P0224","G47.33","Obstructive sleep apnea",2026-01-01
+"P0225","G47.9","Sleep disorder, unspecified",2020-05-06
+"P0225","E78.5","Hyperlipidemia, unspecified",2023-11-06
+"P0225","E11.9","Type 2 diabetes mellitus without complications",2025-06-29
+"P0226","E11.9","Type 2 diabetes mellitus without complications",2024-12-19
+"P0226","G47.9","Sleep disorder, unspecified",2025-06-27
+"P0227","G47.00","Insomnia disorder",2018-12-05
+"P0227","M19.90","Osteoarthritis, unspecified site",2021-02-11
+"P0227","I10","Essential hypertension",2022-12-22
+"P0228","G47.9","Sleep disorder, unspecified",2017-03-18
+"P0228","E78.5","Hyperlipidemia, unspecified",2017-11-02
+"P0228","I10","Essential hypertension",2017-12-30
+"P0228","E78.5","Hyperlipidemia, unspecified",2018-08-26
+"P0228","M19.90","Osteoarthritis, unspecified site",2025-05-03
+"P0229","M19.90","Osteoarthritis, unspecified site",2024-01-14
+"P0230","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-06-30
+"P0230","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-08-25
+"P0230","G47.33","Obstructive sleep apnea",2021-08-24
+"P0230","G30.1","Alzheimer's disease with late onset",2023-09-30
+"P0230","E78.5","Hyperlipidemia, unspecified",2025-05-14
+"P0231","E11.9","Type 2 diabetes mellitus without complications",2020-04-21
+"P0231","E78.5","Hyperlipidemia, unspecified",2022-12-29
+"P0232","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-07-13
+"P0232","I10","Essential hypertension",2019-02-02
+"P0233","G47.00","Insomnia disorder",2020-03-22
+"P0234","I10","Essential hypertension",2018-11-03
+"P0234","M19.90","Osteoarthritis, unspecified site",2019-08-17
+"P0235","I10","Essential hypertension",2016-12-20
+"P0235","G47.33","Obstructive sleep apnea",2017-05-08
+"P0235","E78.5","Hyperlipidemia, unspecified",2018-07-05
+"P0235","E11.9","Type 2 diabetes mellitus without complications",2019-04-04
+"P0235","I10","Essential hypertension",2024-06-13
+"P0236","G47.33","Obstructive sleep apnea",2021-01-25
+"P0236","I10","Essential hypertension",2022-08-25
+"P0236","I10","Essential hypertension",2024-11-22
+"P0236","M19.90","Osteoarthritis, unspecified site",2025-06-04
+"P0237","E11.9","Type 2 diabetes mellitus without complications",2019-07-04
+"P0237","E78.5","Hyperlipidemia, unspecified",2021-12-13
+"P0237","E78.5","Hyperlipidemia, unspecified",2021-12-20
+"P0238","I10","Essential hypertension",2017-02-28
+"P0238","E11.9","Type 2 diabetes mellitus without complications",2023-05-27
+"P0238","G30.1","Alzheimer's disease with late onset",2025-11-06
+"P0239","M19.90","Osteoarthritis, unspecified site",2017-06-01
+"P0239","G30.1","Alzheimer's disease with late onset",2024-01-23
+"P0240","I10","Essential hypertension",2018-08-11
+"P0241","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-05-20
+"P0241","E78.5","Hyperlipidemia, unspecified",2022-07-26
+"P0241","G47.33","Obstructive sleep apnea",2025-03-21
+"P0241","G30.9","Alzheimer's disease, unspecified",2026-04-09
+"P0242","E78.5","Hyperlipidemia, unspecified",2020-04-13
+"P0242","M19.90","Osteoarthritis, unspecified site",2021-08-25
+"P0243","I10","Essential hypertension",2020-02-29
+"P0243","E78.5","Hyperlipidemia, unspecified",2022-09-08
+"P0243","E78.5","Hyperlipidemia, unspecified",2023-07-31
+"P0244","E11.9","Type 2 diabetes mellitus without complications",2025-06-14
+"P0245","E78.5","Hyperlipidemia, unspecified",2019-05-08
+"P0245","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-01-28
+"P0246","E78.5","Hyperlipidemia, unspecified",2018-11-28
+"P0247","I10","Essential hypertension",2021-10-12
+"P0247","G47.33","Obstructive sleep apnea",2022-06-09
+"P0247","E78.5","Hyperlipidemia, unspecified",2023-09-24
+"P0248","E78.5","Hyperlipidemia, unspecified",2017-09-21
+"P0248","E11.9","Type 2 diabetes mellitus without complications",2019-01-23
+"P0248","G47.00","Insomnia disorder",2019-08-24
+"P0248","E78.5","Hyperlipidemia, unspecified",2020-09-12
+"P0248","G30.1","Alzheimer's disease with late onset",2024-08-10
+"P0249","G47.33","Obstructive sleep apnea",2022-07-14
+"P0249","G30.1","Alzheimer's disease with late onset",2023-04-18
+"P0250","G47.33","Obstructive sleep apnea",2020-01-16
+"P0250","I10","Essential hypertension",2025-12-31
+"P0251","G47.33","Obstructive sleep apnea",2021-12-21
+"P0251","I10","Essential hypertension",2023-04-25
+"P0252","G30.0","Alzheimer's disease with early onset",2025-07-28
+"P0253","E78.5","Hyperlipidemia, unspecified",2016-08-29
+"P0253","I10","Essential hypertension",2018-01-02
+"P0254","I10","Essential hypertension",2019-03-16
+"P0255","E11.9","Type 2 diabetes mellitus without complications",2023-11-16
+"P0255","G47.33","Obstructive sleep apnea",2025-04-04
+"P0255","E78.5","Hyperlipidemia, unspecified",2026-05-27
+"P0256","G47.9","Sleep disorder, unspecified",2021-02-23
+"P0256","G30.1","Alzheimer's disease with late onset",2022-07-27
+"P0257","G47.00","Insomnia disorder",2020-08-08
+"P0257","I10","Essential hypertension",2022-07-28
+"P0257","G30.9","Alzheimer's disease, unspecified",2023-06-04
+"P0258","G30.9","Alzheimer's disease, unspecified",2017-11-19
+"P0258","I10","Essential hypertension",2024-09-17
+"P0259","G47.9","Sleep disorder, unspecified",2020-06-02
+"P0259","M19.90","Osteoarthritis, unspecified site",2023-11-19
+"P0259","I10","Essential hypertension",2025-06-10
+"P0260","E78.5","Hyperlipidemia, unspecified",2017-09-16
+"P0260","E11.9","Type 2 diabetes mellitus without complications",2018-09-04
+"P0260","I10","Essential hypertension",2019-09-13
+"P0263","E78.5","Hyperlipidemia, unspecified",2017-08-21
+"P0263","I10","Essential hypertension",2020-01-14
+"P0263","M19.90","Osteoarthritis, unspecified site",2022-03-26
+"P0264","G47.33","Obstructive sleep apnea",2016-09-16
+"P0264","E11.9","Type 2 diabetes mellitus without complications",2017-12-09
+"P0266","I10","Essential hypertension",2019-08-06
+"P0266","E78.5","Hyperlipidemia, unspecified",2020-08-21
+"P0266","E78.5","Hyperlipidemia, unspecified",2021-07-10
+"P0266","E78.5","Hyperlipidemia, unspecified",2021-10-14
+"P0266","G47.33","Obstructive sleep apnea",2022-09-18
+"P0267","E78.5","Hyperlipidemia, unspecified",2018-05-04
+"P0267","I10","Essential hypertension",2021-12-03
+"P0267","I10","Essential hypertension",2024-06-25
+"P0267","E78.5","Hyperlipidemia, unspecified",2024-10-29
+"P0268","I10","Essential hypertension",2016-01-31
+"P0268","M19.90","Osteoarthritis, unspecified site",2016-10-27
+"P0268","E78.5","Hyperlipidemia, unspecified",2023-10-14
+"P0268","G47.00","Insomnia disorder",2024-01-29
+"P0269","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-06-04
+"P0269","G30.9","Alzheimer's disease, unspecified",2021-08-19
+"P0269","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-11-16
+"P0269","E78.5","Hyperlipidemia, unspecified",2024-12-19
+"P0269","I10","Essential hypertension",2026-05-01
+"P0270","M19.90","Osteoarthritis, unspecified site",2022-09-19
+"P0270","G47.9","Sleep disorder, unspecified",2025-03-11
+"P0270","M19.90","Osteoarthritis, unspecified site",2025-10-23
+"P0271","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-07-19
+"P0271","I10","Essential hypertension",2019-12-13
+"P0271","M19.90","Osteoarthritis, unspecified site",2022-06-22
+"P0271","I10","Essential hypertension",2026-03-13
+"P0272","I10","Essential hypertension",2025-11-07
+"P0273","G47.33","Obstructive sleep apnea",2025-09-19
+"P0274","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-05-28
+"P0274","M19.90","Osteoarthritis, unspecified site",2021-11-20
+"P0274","I10","Essential hypertension",2022-04-23
+"P0274","E11.9","Type 2 diabetes mellitus without complications",2025-02-27
+"P0274","G47.33","Obstructive sleep apnea",2026-01-25
+"P0275","G47.00","Insomnia disorder",2016-04-30
+"P0275","E78.5","Hyperlipidemia, unspecified",2021-12-28
+"P0276","I10","Essential hypertension",2019-09-24
+"P0276","G47.9","Sleep disorder, unspecified",2023-10-03
+"P0276","E11.9","Type 2 diabetes mellitus without complications",2024-03-02
+"P0277","M19.90","Osteoarthritis, unspecified site",2018-03-05
+"P0277","M19.90","Osteoarthritis, unspecified site",2021-03-09
+"P0277","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-07-19
+"P0277","E78.5","Hyperlipidemia, unspecified",2024-11-30
+"P0277","E11.9","Type 2 diabetes mellitus without complications",2025-03-13
+"P0278","I10","Essential hypertension",2026-02-15
+"P0279","E78.5","Hyperlipidemia, unspecified",2018-03-21
+"P0279","G47.33","Obstructive sleep apnea",2021-10-28
+"P0280","M19.90","Osteoarthritis, unspecified site",2018-11-29
+"P0280","I10","Essential hypertension",2020-07-24
+"P0280","M19.90","Osteoarthritis, unspecified site",2024-08-24
+"P0280","G47.9","Sleep disorder, unspecified",2024-12-09
+"P0281","G47.33","Obstructive sleep apnea",2023-01-29
+"P0282","G47.33","Obstructive sleep apnea",2018-05-16
+"P0282","I10","Essential hypertension",2020-07-11
+"P0282","E11.9","Type 2 diabetes mellitus without complications",2023-04-13
+"P0283","G30.9","Alzheimer's disease, unspecified",2020-08-28
+"P0283","E11.9","Type 2 diabetes mellitus without complications",2021-07-05
+"P0284","E11.9","Type 2 diabetes mellitus without complications",2020-11-04
+"P0284","G47.00","Insomnia disorder",2022-04-03
+"P0285","I10","Essential hypertension",2018-08-13
+"P0286","E11.9","Type 2 diabetes mellitus without complications",2018-10-20
+"P0287","M19.90","Osteoarthritis, unspecified site",2018-09-22
+"P0287","E78.5","Hyperlipidemia, unspecified",2023-05-12
+"P0288","G47.00","Insomnia disorder",2023-09-01
+"P0289","E78.5","Hyperlipidemia, unspecified",2016-06-28
+"P0289","I10","Essential hypertension",2022-11-25
+"P0289","E11.9","Type 2 diabetes mellitus without complications",2025-06-02
+"P0292","E78.5","Hyperlipidemia, unspecified",2016-01-02
+"P0292","E78.5","Hyperlipidemia, unspecified",2023-03-22
+"P0292","E78.5","Hyperlipidemia, unspecified",2024-04-04
+"P0292","G47.00","Insomnia disorder",2025-10-19
+"P0293","E78.5","Hyperlipidemia, unspecified",2017-02-25
+"P0293","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-12-11
+"P0293","I10","Essential hypertension",2021-01-30
+"P0294","I10","Essential hypertension",2018-10-03
+"P0294","G47.33","Obstructive sleep apnea",2020-10-09
+"P0294","I10","Essential hypertension",2024-08-31
+"P0295","E11.9","Type 2 diabetes mellitus without complications",2022-10-27
+"P0295","E11.9","Type 2 diabetes mellitus without complications",2024-08-22
+"P0296","G47.00","Insomnia disorder",2025-11-15
+"P0297","G30.9","Alzheimer's disease, unspecified",2021-07-02
+"P0297","I10","Essential hypertension",2021-08-31
+"P0297","I10","Essential hypertension",2026-03-06
+"P0298","I10","Essential hypertension",2019-11-17
+"P0298","I10","Essential hypertension",2021-10-14
+"P0298","G47.9","Sleep disorder, unspecified",2023-10-24
+"P0299","E78.5","Hyperlipidemia, unspecified",2017-08-14
+"P0299","G47.00","Insomnia disorder",2021-02-14
+"P0300","E78.5","Hyperlipidemia, unspecified",2021-10-10
+"P0301","E11.9","Type 2 diabetes mellitus without complications",2020-01-23
+"P0301","I10","Essential hypertension",2020-08-11
+"P0301","E11.9","Type 2 diabetes mellitus without complications",2022-03-25
+"P0301","I10","Essential hypertension",2022-07-18
+"P0301","G30.1","Alzheimer's disease with late onset",2023-04-19
+"P0301","G47.33","Obstructive sleep apnea",2025-01-13
+"P0302","E78.5","Hyperlipidemia, unspecified",2017-01-07
+"P0303","E11.9","Type 2 diabetes mellitus without complications",2021-07-25
+"P0303","M19.90","Osteoarthritis, unspecified site",2023-08-03
+"P0303","M19.90","Osteoarthritis, unspecified site",2023-09-24
+"P0304","M19.90","Osteoarthritis, unspecified site",2017-05-01
+"P0304","E78.5","Hyperlipidemia, unspecified",2018-02-02
+"P0305","M19.90","Osteoarthritis, unspecified site",2016-05-30
+"P0305","G47.33","Obstructive sleep apnea",2021-02-16
+"P0306","M19.90","Osteoarthritis, unspecified site",2019-02-11
+"P0306","I10","Essential hypertension",2019-03-24
+"P0307","M19.90","Osteoarthritis, unspecified site",2017-07-02
+"P0307","G47.00","Insomnia disorder",2019-09-10
+"P0307","I10","Essential hypertension",2020-12-27
+"P0307","E11.9","Type 2 diabetes mellitus without complications",2023-01-06
+"P0308","E78.5","Hyperlipidemia, unspecified",2017-10-08
+"P0309","M19.90","Osteoarthritis, unspecified site",2019-04-28
+"P0309","I10","Essential hypertension",2019-06-16
+"P0309","G30.1","Alzheimer's disease with late onset",2026-01-06
+"P0310","G47.00","Insomnia disorder",2021-10-29
+"P0311","E78.5","Hyperlipidemia, unspecified",2016-05-21
+"P0311","M19.90","Osteoarthritis, unspecified site",2016-09-23
+"P0311","M19.90","Osteoarthritis, unspecified site",2018-05-07
+"P0312","G47.33","Obstructive sleep apnea",2020-05-30
+"P0312","G30.1","Alzheimer's disease with late onset",2024-10-01
+"P0313","G30.1","Alzheimer's disease with late onset",2017-01-28
+"P0313","M19.90","Osteoarthritis, unspecified site",2017-12-07
+"P0313","E78.5","Hyperlipidemia, unspecified",2020-09-23
+"P0313","G47.9","Sleep disorder, unspecified",2023-02-22
+"P0313","I10","Essential hypertension",2023-02-28
+"P0314","I10","Essential hypertension",2016-02-01
+"P0314","G47.33","Obstructive sleep apnea",2017-06-13
+"P0314","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-11-15
+"P0314","E11.9","Type 2 diabetes mellitus without complications",2019-06-09
+"P0314","E78.5","Hyperlipidemia, unspecified",2020-10-22
+"P0314","E78.5","Hyperlipidemia, unspecified",2024-02-21
+"P0315","G30.9","Alzheimer's disease, unspecified",2017-07-10
+"P0315","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-07-21
+"P0316","M19.90","Osteoarthritis, unspecified site",2018-03-16
+"P0316","E78.5","Hyperlipidemia, unspecified",2024-01-20
+"P0316","I10","Essential hypertension",2024-11-23
+"P0317","M19.90","Osteoarthritis, unspecified site",2021-01-03
+"P0317","E78.5","Hyperlipidemia, unspecified",2021-03-07
+"P0317","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-09-21
+"P0317","G47.00","Insomnia disorder",2023-10-01
+"P0319","M19.90","Osteoarthritis, unspecified site",2018-09-03
+"P0319","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-05-08
+"P0319","M19.90","Osteoarthritis, unspecified site",2025-01-21
+"P0320","I10","Essential hypertension",2023-05-11
+"P0320","I10","Essential hypertension",2023-09-18
+"P0320","M19.90","Osteoarthritis, unspecified site",2023-12-01
+"P0320","E11.9","Type 2 diabetes mellitus without complications",2025-09-23
+"P0321","M19.90","Osteoarthritis, unspecified site",2016-09-23
+"P0321","M19.90","Osteoarthritis, unspecified site",2018-01-11
+"P0323","G47.9","Sleep disorder, unspecified",2021-11-26
+"P0323","E11.9","Type 2 diabetes mellitus without complications",2023-09-23
+"P0323","I10","Essential hypertension",2025-03-31
+"P0324","I10","Essential hypertension",2020-05-12
+"P0325","E11.9","Type 2 diabetes mellitus without complications",2016-07-19
+"P0327","E78.5","Hyperlipidemia, unspecified",2025-02-01
+"P0328","M19.90","Osteoarthritis, unspecified site",2020-08-20
+"P0328","G47.00","Insomnia disorder",2022-11-15
+"P0329","G47.00","Insomnia disorder",2019-10-15
+"P0329","E11.9","Type 2 diabetes mellitus without complications",2026-01-23
+"P0330","I10","Essential hypertension",2016-07-13
+"P0330","E78.5","Hyperlipidemia, unspecified",2017-09-07
+"P0330","G47.33","Obstructive sleep apnea",2021-06-26
+"P0330","M19.90","Osteoarthritis, unspecified site",2023-10-20
+"P0331","M19.90","Osteoarthritis, unspecified site",2017-01-30
+"P0331","E78.5","Hyperlipidemia, unspecified",2019-07-08
+"P0331","E11.9","Type 2 diabetes mellitus without complications",2020-01-15
+"P0331","I10","Essential hypertension",2022-06-10
+"P0331","G47.00","Insomnia disorder",2024-05-27
+"P0331","E78.5","Hyperlipidemia, unspecified",2025-08-03
+"P0332","G47.9","Sleep disorder, unspecified",2023-03-27
+"P0333","G47.9","Sleep disorder, unspecified",2016-11-29
+"P0333","E78.5","Hyperlipidemia, unspecified",2020-11-15
+"P0333","I10","Essential hypertension",2023-02-03
+"P0333","I10","Essential hypertension",2025-05-11
+"P0334","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-04-02
+"P0334","E78.5","Hyperlipidemia, unspecified",2025-04-18
+"P0334","E78.5","Hyperlipidemia, unspecified",2025-04-23
+"P0335","E11.9","Type 2 diabetes mellitus without complications",2024-05-30
+"P0335","E11.9","Type 2 diabetes mellitus without complications",2025-08-16
+"P0336","E78.5","Hyperlipidemia, unspecified",2018-11-01
+"P0336","I10","Essential hypertension",2021-04-11
+"P0337","E11.9","Type 2 diabetes mellitus without complications",2019-06-09
+"P0337","I10","Essential hypertension",2020-03-19
+"P0338","I10","Essential hypertension",2021-07-13
+"P0339","G47.00","Insomnia disorder",2022-05-11
+"P0340","I10","Essential hypertension",2017-06-29
+"P0340","M19.90","Osteoarthritis, unspecified site",2019-03-12
+"P0340","G47.00","Insomnia disorder",2019-06-01
+"P0341","M19.90","Osteoarthritis, unspecified site",2018-01-01
+"P0341","G47.00","Insomnia disorder",2020-07-07
+"P0341","E78.5","Hyperlipidemia, unspecified",2022-05-30
+"P0341","E78.5","Hyperlipidemia, unspecified",2023-09-27
+"P0342","G30.1","Alzheimer's disease with late onset",2025-04-16
+"P0342","E78.5","Hyperlipidemia, unspecified",2025-11-23
+"P0342","G47.00","Insomnia disorder",2026-01-13
+"P0343","G47.33","Obstructive sleep apnea",2023-04-07
+"P0344","G47.00","Insomnia disorder",2016-03-15
+"P0344","G30.0","Alzheimer's disease with early onset",2024-05-31
+"P0345","I10","Essential hypertension",2016-03-07
+"P0345","G47.00","Insomnia disorder",2017-06-19
+"P0346","G47.00","Insomnia disorder",2016-01-26
+"P0346","G30.1","Alzheimer's disease with late onset",2017-02-28
+"P0346","I10","Essential hypertension",2019-08-06
+"P0346","I10","Essential hypertension",2024-10-11
+"P0347","M19.90","Osteoarthritis, unspecified site",2017-04-14
+"P0347","G47.00","Insomnia disorder",2017-12-10
+"P0348","I10","Essential hypertension",2017-02-16
+"P0349","G47.33","Obstructive sleep apnea",2018-01-01
+"P0350","E78.5","Hyperlipidemia, unspecified",2020-12-08
+"P0350","I10","Essential hypertension",2023-07-07
+"P0350","I10","Essential hypertension",2025-04-13
+"P0351","G30.1","Alzheimer's disease with late onset",2020-11-11
+"P0351","M19.90","Osteoarthritis, unspecified site",2023-02-13
+"P0351","G47.00","Insomnia disorder",2026-01-03
+"P0352","E11.9","Type 2 diabetes mellitus without complications",2016-09-25
+"P0352","M19.90","Osteoarthritis, unspecified site",2018-09-16
+"P0352","G47.00","Insomnia disorder",2020-11-18
+"P0352","I10","Essential hypertension",2023-01-05
+"P0352","E11.9","Type 2 diabetes mellitus without complications",2025-12-24
+"P0353","E78.5","Hyperlipidemia, unspecified",2017-08-19
+"P0353","G47.33","Obstructive sleep apnea",2019-04-01
+"P0353","E11.9","Type 2 diabetes mellitus without complications",2021-02-24
+"P0353","I10","Essential hypertension",2024-06-03
+"P0353","G30.9","Alzheimer's disease, unspecified",2025-03-01
+"P0353","E78.5","Hyperlipidemia, unspecified",2025-08-30
+"P0354","G47.00","Insomnia disorder",2016-10-18
+"P0354","E78.5","Hyperlipidemia, unspecified",2023-08-10
+"P0355","I10","Essential hypertension",2016-02-05
+"P0355","G47.00","Insomnia disorder",2016-07-24
+"P0356","M19.90","Osteoarthritis, unspecified site",2019-10-16
+"P0356","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-01-09
+"P0357","E78.5","Hyperlipidemia, unspecified",2018-11-05
+"P0357","G47.00","Insomnia disorder",2025-02-04
+"P0358","G47.9","Sleep disorder, unspecified",2019-08-06
+"P0358","M19.90","Osteoarthritis, unspecified site",2019-09-15
+"P0358","I10","Essential hypertension",2020-04-14
+"P0358","E78.5","Hyperlipidemia, unspecified",2026-03-23
+"P0360","E78.5","Hyperlipidemia, unspecified",2019-06-03
+"P0360","E78.5","Hyperlipidemia, unspecified",2021-02-19
+"P0360","I10","Essential hypertension",2021-08-22
+"P0360","E78.5","Hyperlipidemia, unspecified",2026-05-31
+"P0361","E11.9","Type 2 diabetes mellitus without complications",2016-02-04
+"P0361","E78.5","Hyperlipidemia, unspecified",2016-03-07
+"P0361","G47.00","Insomnia disorder",2017-03-13
+"P0362","E11.9","Type 2 diabetes mellitus without complications",2021-08-03
+"P0362","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-08-25
+"P0362","I10","Essential hypertension",2022-04-26
+"P0362","G30.1","Alzheimer's disease with late onset",2023-10-25
+"P0362","I10","Essential hypertension",2025-01-31
+"P0363","I10","Essential hypertension",2017-05-21
+"P0363","G47.33","Obstructive sleep apnea",2019-01-21
+"P0363","E11.9","Type 2 diabetes mellitus without complications",2022-06-01
+"P0363","E78.5","Hyperlipidemia, unspecified",2025-01-31
+"P0364","E78.5","Hyperlipidemia, unspecified",2017-10-25
+"P0364","G47.33","Obstructive sleep apnea",2022-06-11
+"P0364","E78.5","Hyperlipidemia, unspecified",2026-06-11
+"P0365","E78.5","Hyperlipidemia, unspecified",2016-09-04
+"P0365","G47.00","Insomnia disorder",2020-05-20
+"P0365","I10","Essential hypertension",2021-05-24
+"P0366","M19.90","Osteoarthritis, unspecified site",2018-11-18
+"P0366","E78.5","Hyperlipidemia, unspecified",2024-01-10
+"P0367","G47.9","Sleep disorder, unspecified",2020-08-22
+"P0367","E11.9","Type 2 diabetes mellitus without complications",2022-12-03
+"P0367","E78.5","Hyperlipidemia, unspecified",2025-01-08
+"P0368","E78.5","Hyperlipidemia, unspecified",2016-10-20
+"P0368","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-01-10
+"P0368","G47.00","Insomnia disorder",2022-03-18
+"P0368","E11.9","Type 2 diabetes mellitus without complications",2023-12-27
+"P0369","E78.5","Hyperlipidemia, unspecified",2016-12-21
+"P0369","G47.33","Obstructive sleep apnea",2017-02-21
+"P0369","I10","Essential hypertension",2017-05-30
+"P0370","E78.5","Hyperlipidemia, unspecified",2019-06-27
+"P0370","I10","Essential hypertension",2019-11-13
+"P0370","E78.5","Hyperlipidemia, unspecified",2025-07-11
+"P0370","G30.1","Alzheimer's disease with late onset",2025-09-13
+"P0370","I10","Essential hypertension",2026-04-03
+"P0371","E78.5","Hyperlipidemia, unspecified",2019-05-28
+"P0371","E78.5","Hyperlipidemia, unspecified",2023-09-03
+"P0371","G47.33","Obstructive sleep apnea",2024-04-25
+"P0372","E78.5","Hyperlipidemia, unspecified",2017-02-25
+"P0372","I10","Essential hypertension",2021-01-31
+"P0373","G30.9","Alzheimer's disease, unspecified",2019-03-12
+"P0373","G47.00","Insomnia disorder",2023-03-25
+"P0374","M19.90","Osteoarthritis, unspecified site",2016-05-08
+"P0376","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-07-06
+"P0376","G47.00","Insomnia disorder",2020-02-11
+"P0376","I10","Essential hypertension",2020-05-07
+"P0376","M19.90","Osteoarthritis, unspecified site",2023-06-24
+"P0377","G47.00","Insomnia disorder",2018-10-13
+"P0377","I10","Essential hypertension",2019-04-06
+"P0377","G30.1","Alzheimer's disease with late onset",2020-03-19
+"P0377","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-02-20
+"P0378","E11.9","Type 2 diabetes mellitus without complications",2016-11-18
+"P0378","I10","Essential hypertension",2018-06-07
+"P0378","G47.00","Insomnia disorder",2018-10-27
+"P0378","E11.9","Type 2 diabetes mellitus without complications",2022-07-06
+"P0378","G30.9","Alzheimer's disease, unspecified",2025-11-28
+"P0379","M19.90","Osteoarthritis, unspecified site",2018-03-24
+"P0379","I10","Essential hypertension",2019-10-07
+"P0379","G47.33","Obstructive sleep apnea",2020-08-01
+"P0379","E78.5","Hyperlipidemia, unspecified",2024-04-16
+"P0379","E11.9","Type 2 diabetes mellitus without complications",2024-10-04
+"P0379","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-05-22
+"P0380","G30.1","Alzheimer's disease with late onset",2017-03-24
+"P0380","G47.33","Obstructive sleep apnea",2024-06-09
+"P0381","G47.9","Sleep disorder, unspecified",2017-01-02
+"P0381","G30.9","Alzheimer's disease, unspecified",2018-08-13
+"P0381","M19.90","Osteoarthritis, unspecified site",2020-12-01
+"P0381","M19.90","Osteoarthritis, unspecified site",2023-03-12
+"P0381","I10","Essential hypertension",2025-05-18
+"P0382","M19.90","Osteoarthritis, unspecified site",2016-06-26
+"P0382","I10","Essential hypertension",2019-02-10
+"P0382","I10","Essential hypertension",2021-06-12
+"P0382","E78.5","Hyperlipidemia, unspecified",2022-02-15
+"P0382","E11.9","Type 2 diabetes mellitus without complications",2022-07-17
+"P0382","M19.90","Osteoarthritis, unspecified site",2025-12-08
+"P0383","I10","Essential hypertension",2017-05-24
+"P0384","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-03-14
+"P0386","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-03-04
+"P0386","G47.33","Obstructive sleep apnea",2019-02-26
+"P0386","E78.5","Hyperlipidemia, unspecified",2020-10-22
+"P0386","I10","Essential hypertension",2021-08-16
+"P0386","E78.5","Hyperlipidemia, unspecified",2022-01-13
+"P0387","G47.00","Insomnia disorder",2016-06-06
+"P0388","E11.9","Type 2 diabetes mellitus without complications",2016-03-03
+"P0388","G47.9","Sleep disorder, unspecified",2023-01-25
+"P0389","I10","Essential hypertension",2018-10-23
+"P0389","G47.9","Sleep disorder, unspecified",2021-03-28
+"P0390","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-04-10
+"P0390","E78.5","Hyperlipidemia, unspecified",2018-05-17
+"P0390","M19.90","Osteoarthritis, unspecified site",2021-09-22
+"P0390","G47.00","Insomnia disorder",2023-01-07
+"P0391","M19.90","Osteoarthritis, unspecified site",2019-05-03
+"P0391","E78.5","Hyperlipidemia, unspecified",2020-10-18
+"P0391","E11.9","Type 2 diabetes mellitus without complications",2023-08-10
+"P0391","G30.1","Alzheimer's disease with late onset",2025-11-05
+"P0392","I10","Essential hypertension",2016-09-17
+"P0392","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-12-17
+"P0392","I10","Essential hypertension",2022-11-18
+"P0392","G47.33","Obstructive sleep apnea",2023-08-16
+"P0393","I10","Essential hypertension",2025-01-12
+"P0393","I10","Essential hypertension",2025-06-20
+"P0394","I10","Essential hypertension",2018-05-26
+"P0394","M19.90","Osteoarthritis, unspecified site",2018-10-08
+"P0394","I10","Essential hypertension",2021-03-26
+"P0394","I10","Essential hypertension",2021-10-17
+"P0394","M19.90","Osteoarthritis, unspecified site",2022-03-29
+"P0395","M19.90","Osteoarthritis, unspecified site",2020-04-13
+"P0395","I10","Essential hypertension",2024-08-05
+"P0396","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-04-25
+"P0396","G30.1","Alzheimer's disease with late onset",2023-11-14
+"P0396","G47.9","Sleep disorder, unspecified",2026-02-12
+"P0397","I10","Essential hypertension",2021-05-19
+"P0398","I10","Essential hypertension",2016-01-24
+"P0398","I10","Essential hypertension",2018-03-20
+"P0398","I10","Essential hypertension",2024-01-07
+"P0399","I10","Essential hypertension",2025-12-08
+"P0400","G47.00","Insomnia disorder",2016-04-22
+"P0400","E78.5","Hyperlipidemia, unspecified",2017-12-04
+"P0400","E11.9","Type 2 diabetes mellitus without complications",2023-02-08
+"P0400","I10","Essential hypertension",2024-06-21
+"P0401","E78.5","Hyperlipidemia, unspecified",2020-02-06
+"P0401","M19.90","Osteoarthritis, unspecified site",2021-07-13
+"P0402","M19.90","Osteoarthritis, unspecified site",2018-06-12
+"P0402","I10","Essential hypertension",2023-11-09
+"P0403","I10","Essential hypertension",2023-06-12
+"P0403","I10","Essential hypertension",2025-11-28
+"P0403","G30.1","Alzheimer's disease with late onset",2026-05-13
+"P0404","E78.5","Hyperlipidemia, unspecified",2016-11-09
+"P0404","G47.00","Insomnia disorder",2018-02-04
+"P0404","M19.90","Osteoarthritis, unspecified site",2020-08-22
+"P0404","I10","Essential hypertension",2024-01-22
+"P0404","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-02-29
+"P0404","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-07-04
+"P0405","G47.00","Insomnia disorder",2017-08-30
+"P0405","E78.5","Hyperlipidemia, unspecified",2018-09-27
+"P0405","I10","Essential hypertension",2022-07-17
+"P0406","G47.33","Obstructive sleep apnea",2021-07-31
+"P0406","E11.9","Type 2 diabetes mellitus without complications",2024-04-15
+"P0407","E78.5","Hyperlipidemia, unspecified",2021-12-22
+"P0408","G30.9","Alzheimer's disease, unspecified",2023-12-08
+"P0408","M19.90","Osteoarthritis, unspecified site",2025-07-19
+"P0409","G47.33","Obstructive sleep apnea",2024-10-24
+"P0409","E78.5","Hyperlipidemia, unspecified",2026-03-22
+"P0410","E11.9","Type 2 diabetes mellitus without complications",2022-03-23
+"P0410","E78.5","Hyperlipidemia, unspecified",2024-05-19
+"P0410","I10","Essential hypertension",2026-06-18
+"P0411","E11.9","Type 2 diabetes mellitus without complications",2016-04-30
+"P0411","M19.90","Osteoarthritis, unspecified site",2016-07-13
+"P0411","I10","Essential hypertension",2020-02-11
+"P0412","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-11-01
+"P0412","M19.90","Osteoarthritis, unspecified site",2018-11-02
+"P0412","G47.00","Insomnia disorder",2019-06-11
+"P0412","M19.90","Osteoarthritis, unspecified site",2025-02-16
+"P0413","G47.00","Insomnia disorder",2018-11-07
+"P0413","E78.5","Hyperlipidemia, unspecified",2019-01-15
+"P0413","I10","Essential hypertension",2024-08-06
+"P0414","G47.9","Sleep disorder, unspecified",2020-01-30
+"P0415","G47.00","Insomnia disorder",2021-06-19
+"P0416","I10","Essential hypertension",2022-03-28
+"P0416","E78.5","Hyperlipidemia, unspecified",2022-12-21
+"P0416","G47.33","Obstructive sleep apnea",2024-04-12
+"P0417","E11.9","Type 2 diabetes mellitus without complications",2018-01-11
+"P0417","I10","Essential hypertension",2021-02-10
+"P0417","G47.33","Obstructive sleep apnea",2023-12-19
+"P0417","E11.9","Type 2 diabetes mellitus without complications",2026-03-05
+"P0418","E78.5","Hyperlipidemia, unspecified",2018-02-08
+"P0418","G30.1","Alzheimer's disease with late onset",2020-10-19
+"P0418","E78.5","Hyperlipidemia, unspecified",2022-07-06
+"P0419","G47.9","Sleep disorder, unspecified",2021-12-23
+"P0420","G47.00","Insomnia disorder",2020-11-03
+"P0420","I10","Essential hypertension",2023-11-09
+"P0422","E78.5","Hyperlipidemia, unspecified",2023-10-23
+"P0423","G30.9","Alzheimer's disease, unspecified",2019-10-10
+"P0423","G47.33","Obstructive sleep apnea",2022-10-25
+"P0424","M19.90","Osteoarthritis, unspecified site",2019-01-16
+"P0424","M19.90","Osteoarthritis, unspecified site",2021-09-24
+"P0424","I10","Essential hypertension",2025-12-12
+"P0425","M19.90","Osteoarthritis, unspecified site",2021-06-04
+"P0425","G47.00","Insomnia disorder",2022-01-14
+"P0425","E11.9","Type 2 diabetes mellitus without complications",2022-10-24
+"P0425","M19.90","Osteoarthritis, unspecified site",2023-05-14
+"P0425","M19.90","Osteoarthritis, unspecified site",2023-06-30
+"P0425","I10","Essential hypertension",2025-09-10
+"P0426","E78.5","Hyperlipidemia, unspecified",2016-11-18
+"P0426","G47.00","Insomnia disorder",2017-12-31
+"P0426","E78.5","Hyperlipidemia, unspecified",2019-05-16
+"P0426","E78.5","Hyperlipidemia, unspecified",2022-09-16
+"P0426","E11.9","Type 2 diabetes mellitus without complications",2024-02-10
+"P0427","I10","Essential hypertension",2018-01-16
+"P0428","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-01-01
+"P0429","I10","Essential hypertension",2017-04-04
+"P0429","I10","Essential hypertension",2018-06-10
+"P0429","E78.5","Hyperlipidemia, unspecified",2019-05-19
+"P0429","E78.5","Hyperlipidemia, unspecified",2019-06-13
+"P0430","M19.90","Osteoarthritis, unspecified site",2019-07-04
+"P0431","G47.33","Obstructive sleep apnea",2016-09-17
+"P0431","E78.5","Hyperlipidemia, unspecified",2023-01-17
+"P0431","E78.5","Hyperlipidemia, unspecified",2023-06-22
+"P0432","I10","Essential hypertension",2017-11-17
+"P0432","E78.5","Hyperlipidemia, unspecified",2019-04-03
+"P0432","G47.00","Insomnia disorder",2025-10-04
+"P0433","M19.90","Osteoarthritis, unspecified site",2018-09-13
+"P0433","G30.0","Alzheimer's disease with early onset",2019-03-19
+"P0433","E11.9","Type 2 diabetes mellitus without complications",2019-11-30
+"P0433","E11.9","Type 2 diabetes mellitus without complications",2024-08-17
+"P0434","E78.5","Hyperlipidemia, unspecified",2016-02-27
+"P0434","G47.00","Insomnia disorder",2020-03-22
+"P0435","M19.90","Osteoarthritis, unspecified site",2016-02-18
+"P0435","E78.5","Hyperlipidemia, unspecified",2017-10-01
+"P0435","I10","Essential hypertension",2021-10-14
+"P0436","E11.9","Type 2 diabetes mellitus without complications",2017-04-10
+"P0436","E11.9","Type 2 diabetes mellitus without complications",2021-09-03
+"P0436","E11.9","Type 2 diabetes mellitus without complications",2025-02-24
+"P0437","G47.00","Insomnia disorder",2024-11-11
+"P0438","G47.00","Insomnia disorder",2020-02-01
+"P0438","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-08-30
+"P0438","I10","Essential hypertension",2024-12-14
+"P0438","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-09-19
+"P0439","G47.00","Insomnia disorder",2018-01-05
+"P0440","G47.33","Obstructive sleep apnea",2025-08-26
+"P0441","I10","Essential hypertension",2020-04-23
+"P0441","M19.90","Osteoarthritis, unspecified site",2020-09-08
+"P0441","G30.9","Alzheimer's disease, unspecified",2021-07-17
+"P0441","G47.00","Insomnia disorder",2024-04-24
+"P0441","E78.5","Hyperlipidemia, unspecified",2026-05-16
+"P0442","M19.90","Osteoarthritis, unspecified site",2023-09-17
+"P0442","E78.5","Hyperlipidemia, unspecified",2024-09-28
+"P0442","G47.9","Sleep disorder, unspecified",2026-01-18
+"P0443","I10","Essential hypertension",2022-08-27
+"P0443","G47.33","Obstructive sleep apnea",2025-06-23
+"P0444","I10","Essential hypertension",2016-06-25
+"P0444","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-11-21
+"P0445","G47.33","Obstructive sleep apnea",2020-07-25
+"P0446","I10","Essential hypertension",2018-01-06
+"P0446","M19.90","Osteoarthritis, unspecified site",2019-02-26
+"P0446","I10","Essential hypertension",2022-01-20
+"P0446","G47.00","Insomnia disorder",2023-01-22
+"P0446","I10","Essential hypertension",2024-07-03
+"P0446","E11.9","Type 2 diabetes mellitus without complications",2025-05-09
+"P0447","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-12-06
+"P0447","E78.5","Hyperlipidemia, unspecified",2019-03-16
+"P0447","M19.90","Osteoarthritis, unspecified site",2022-03-14
+"P0447","G47.00","Insomnia disorder",2024-08-19
+"P0448","G47.00","Insomnia disorder",2016-12-11
+"P0448","I10","Essential hypertension",2023-12-31
+"P0449","E78.5","Hyperlipidemia, unspecified",2021-07-04
+"P0450","E78.5","Hyperlipidemia, unspecified",2018-05-24
+"P0450","G47.33","Obstructive sleep apnea",2022-09-26
+"P0450","I10","Essential hypertension",2022-11-14
+"P0450","E78.5","Hyperlipidemia, unspecified",2025-05-29
+"P0451","I10","Essential hypertension",2016-01-05
+"P0451","E78.5","Hyperlipidemia, unspecified",2017-08-16
+"P0451","E78.5","Hyperlipidemia, unspecified",2019-09-07
+"P0451","E78.5","Hyperlipidemia, unspecified",2022-11-21
+"P0451","E78.5","Hyperlipidemia, unspecified",2025-10-15
+"P0452","I10","Essential hypertension",2016-06-15
+"P0452","I10","Essential hypertension",2019-06-13
+"P0452","M19.90","Osteoarthritis, unspecified site",2021-08-13
+"P0452","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-04-15
+"P0453","G47.00","Insomnia disorder",2017-05-06
+"P0453","M19.90","Osteoarthritis, unspecified site",2018-04-19
+"P0453","E11.9","Type 2 diabetes mellitus without complications",2019-11-18
+"P0453","E78.5","Hyperlipidemia, unspecified",2020-08-24
+"P0453","E78.5","Hyperlipidemia, unspecified",2024-08-03
+"P0453","I10","Essential hypertension",2025-07-21
+"P0454","G47.00","Insomnia disorder",2020-06-21
+"P0455","G47.00","Insomnia disorder",2020-07-08
+"P0455","I10","Essential hypertension",2023-08-13
+"P0455","E78.5","Hyperlipidemia, unspecified",2025-03-16
+"P0456","G47.33","Obstructive sleep apnea",2016-02-11
+"P0457","I10","Essential hypertension",2017-02-06
+"P0458","E11.9","Type 2 diabetes mellitus without complications",2019-06-12
+"P0458","G47.9","Sleep disorder, unspecified",2024-09-13
+"P0458","I10","Essential hypertension",2025-03-18
+"P0458","G30.1","Alzheimer's disease with late onset",2025-05-01
+"P0459","G30.9","Alzheimer's disease, unspecified",2020-01-25
+"P0459","E78.5","Hyperlipidemia, unspecified",2022-05-21
+"P0459","M19.90","Osteoarthritis, unspecified site",2023-02-11
+"P0459","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-08-02
+"P0460","M19.90","Osteoarthritis, unspecified site",2016-10-11
+"P0460","I10","Essential hypertension",2019-03-01
+"P0460","G30.1","Alzheimer's disease with late onset",2024-05-06
+"P0461","E11.9","Type 2 diabetes mellitus without complications",2025-08-11
+"P0461","I10","Essential hypertension",2025-12-24
+"P0462","G47.9","Sleep disorder, unspecified",2017-09-07
+"P0462","M19.90","Osteoarthritis, unspecified site",2018-08-28
+"P0462","E11.9","Type 2 diabetes mellitus without complications",2025-03-22
+"P0463","G47.33","Obstructive sleep apnea",2017-06-17
+"P0463","E78.5","Hyperlipidemia, unspecified",2021-04-17
+"P0463","I10","Essential hypertension",2022-08-05
+"P0464","I10","Essential hypertension",2020-05-04
+"P0464","E11.9","Type 2 diabetes mellitus without complications",2023-12-04
+"P0464","I10","Essential hypertension",2025-08-28
+"P0464","G47.33","Obstructive sleep apnea",2026-03-15
+"P0465","E11.9","Type 2 diabetes mellitus without complications",2016-02-28
+"P0465","G30.1","Alzheimer's disease with late onset",2017-09-12
+"P0465","E11.9","Type 2 diabetes mellitus without complications",2017-10-15
+"P0465","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-01-17
+"P0465","M19.90","Osteoarthritis, unspecified site",2025-07-26
+"P0466","E11.9","Type 2 diabetes mellitus without complications",2021-05-08
+"P0467","I10","Essential hypertension",2021-05-31
+"P0467","G47.9","Sleep disorder, unspecified",2024-07-15
+"P0468","M19.90","Osteoarthritis, unspecified site",2020-05-10
+"P0468","I10","Essential hypertension",2022-09-30
+"P0468","G47.33","Obstructive sleep apnea",2024-01-30
+"P0469","M19.90","Osteoarthritis, unspecified site",2017-05-26
+"P0469","I10","Essential hypertension",2023-09-17
+"P0470","E78.5","Hyperlipidemia, unspecified",2016-11-13
+"P0470","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-05-05
+"P0471","G47.33","Obstructive sleep apnea",2023-11-18
+"P0472","G47.9","Sleep disorder, unspecified",2023-01-26
+"P0472","I10","Essential hypertension",2023-07-09
+"P0472","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-02-29
+"P0473","G47.9","Sleep disorder, unspecified",2016-03-04
+"P0473","E11.9","Type 2 diabetes mellitus without complications",2017-07-19
+"P0474","I10","Essential hypertension",2019-01-25
+"P0474","G30.1","Alzheimer's disease with late onset",2019-07-18
+"P0474","I10","Essential hypertension",2020-12-31
+"P0474","E11.9","Type 2 diabetes mellitus without complications",2022-06-25
+"P0474","M19.90","Osteoarthritis, unspecified site",2023-11-09
+"P0474","G47.00","Insomnia disorder",2025-04-09
+"P0475","I10","Essential hypertension",2019-10-23
+"P0475","G47.00","Insomnia disorder",2022-09-22
+"P0475","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-12-30
+"P0475","G30.1","Alzheimer's disease with late onset",2024-12-03
+"P0476","I10","Essential hypertension",2019-01-04
+"P0476","M19.90","Osteoarthritis, unspecified site",2019-03-27
+"P0476","G30.0","Alzheimer's disease with early onset",2020-09-20
+"P0476","M19.90","Osteoarthritis, unspecified site",2023-02-07
+"P0477","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-05-29
+"P0477","I10","Essential hypertension",2018-10-14
+"P0477","E11.9","Type 2 diabetes mellitus without complications",2020-03-18
+"P0477","G47.33","Obstructive sleep apnea",2025-03-22
+"P0478","I10","Essential hypertension",2017-03-06
+"P0478","E11.9","Type 2 diabetes mellitus without complications",2017-08-04
+"P0478","I10","Essential hypertension",2018-11-29
+"P0478","M19.90","Osteoarthritis, unspecified site",2021-08-21
+"P0478","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-04-11
+"P0478","I10","Essential hypertension",2026-01-17
+"P0479","I10","Essential hypertension",2018-11-27
+"P0479","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-07-13
+"P0481","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-06-03
+"P0481","G47.33","Obstructive sleep apnea",2026-03-13
+"P0482","G47.33","Obstructive sleep apnea",2023-01-30
+"P0482","I10","Essential hypertension",2024-09-19
+"P0483","I10","Essential hypertension",2019-07-09
+"P0483","G47.33","Obstructive sleep apnea",2025-07-18
+"P0484","E78.5","Hyperlipidemia, unspecified",2016-11-06
+"P0485","I10","Essential hypertension",2016-08-07
+"P0485","I10","Essential hypertension",2018-04-09
+"P0485","G47.33","Obstructive sleep apnea",2025-08-12
+"P0486","E78.5","Hyperlipidemia, unspecified",2022-02-04
+"P0486","I10","Essential hypertension",2024-06-07
+"P0486","I10","Essential hypertension",2025-10-11
+"P0487","M19.90","Osteoarthritis, unspecified site",2016-10-19
+"P0487","E78.5","Hyperlipidemia, unspecified",2024-12-07
+"P0488","M19.90","Osteoarthritis, unspecified site",2016-01-27
+"P0488","G47.33","Obstructive sleep apnea",2020-09-25
+"P0489","E78.5","Hyperlipidemia, unspecified",2022-10-11
+"P0489","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-10-11
+"P0490","E78.5","Hyperlipidemia, unspecified",2020-07-13
+"P0490","M19.90","Osteoarthritis, unspecified site",2025-09-12
+"P0491","M19.90","Osteoarthritis, unspecified site",2016-09-19
+"P0492","G47.33","Obstructive sleep apnea",2016-04-13
+"P0492","E78.5","Hyperlipidemia, unspecified",2017-04-28
+"P0492","M19.90","Osteoarthritis, unspecified site",2021-08-07
+"P0492","I10","Essential hypertension",2024-12-30
+"P0493","E11.9","Type 2 diabetes mellitus without complications",2017-05-12
+"P0493","G47.00","Insomnia disorder",2021-11-15
+"P0494","G47.33","Obstructive sleep apnea",2017-04-29
+"P0494","E11.9","Type 2 diabetes mellitus without complications",2017-12-19
+"P0494","E78.5","Hyperlipidemia, unspecified",2020-03-02
+"P0495","I10","Essential hypertension",2017-09-02
+"P0495","G47.00","Insomnia disorder",2019-09-13
+"P0495","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-09-20
+"P0495","I10","Essential hypertension",2020-12-06
+"P0495","I10","Essential hypertension",2026-02-26
+"P0495","I10","Essential hypertension",2026-05-26
+"P0496","I10","Essential hypertension",2017-05-17
+"P0496","G47.00","Insomnia disorder",2019-06-15
+"P0496","E11.9","Type 2 diabetes mellitus without complications",2022-05-26
+"P0497","G47.00","Insomnia disorder",2023-01-15
+"P0497","E78.5","Hyperlipidemia, unspecified",2025-03-09
+"P0498","G47.33","Obstructive sleep apnea",2018-05-18
+"P0498","I10","Essential hypertension",2022-01-06
+"P0498","I10","Essential hypertension",2024-05-30
+"P0499","E78.5","Hyperlipidemia, unspecified",2017-09-19
+"P0500","I10","Essential hypertension",2018-09-16
+"P0500","E11.9","Type 2 diabetes mellitus without complications",2020-10-19
+"P0500","E78.5","Hyperlipidemia, unspecified",2024-05-02
+"P0500","I10","Essential hypertension",2025-07-02
+"P0501","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-11-27
+"P0501","I10","Essential hypertension",2019-12-26
+"P0501","G30.0","Alzheimer's disease with early onset",2021-03-21
+"P0501","I10","Essential hypertension",2021-12-20
+"P0501","I10","Essential hypertension",2023-06-08
+"P0502","G47.33","Obstructive sleep apnea",2018-03-01
+"P0502","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-07-16
+"P0502","I10","Essential hypertension",2020-06-11
+"P0502","E78.5","Hyperlipidemia, unspecified",2023-10-18
+"P0503","G47.00","Insomnia disorder",2023-10-04
+"P0503","E78.5","Hyperlipidemia, unspecified",2024-04-23
+"P0504","I10","Essential hypertension",2023-08-17
+"P0504","G47.9","Sleep disorder, unspecified",2023-12-09
+"P0504","G30.9","Alzheimer's disease, unspecified",2024-03-15
+"P0504","E78.5","Hyperlipidemia, unspecified",2025-02-24
+"P0504","M19.90","Osteoarthritis, unspecified site",2025-11-22
+"P0505","G47.9","Sleep disorder, unspecified",2020-05-19
+"P0505","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-03-05
+"P0505","E78.5","Hyperlipidemia, unspecified",2026-02-25
+"P0506","E11.9","Type 2 diabetes mellitus without complications",2018-12-06
+"P0506","E11.9","Type 2 diabetes mellitus without complications",2023-08-14
+"P0506","G47.9","Sleep disorder, unspecified",2024-04-03
+"P0506","E78.5","Hyperlipidemia, unspecified",2024-12-14
+"P0506","E11.9","Type 2 diabetes mellitus without complications",2026-05-10
+"P0507","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-09-16
+"P0507","G47.33","Obstructive sleep apnea",2017-11-30
+"P0507","E78.5","Hyperlipidemia, unspecified",2020-06-20
+"P0507","E78.5","Hyperlipidemia, unspecified",2022-07-02
+"P0507","M19.90","Osteoarthritis, unspecified site",2022-12-21
+"P0508","I10","Essential hypertension",2020-02-04
+"P0508","G47.00","Insomnia disorder",2023-03-19
+"P0509","E78.5","Hyperlipidemia, unspecified",2018-04-03
+"P0509","G47.00","Insomnia disorder",2025-03-27
+"P0510","E78.5","Hyperlipidemia, unspecified",2017-03-04
+"P0510","I10","Essential hypertension",2025-10-09
+"P0511","M19.90","Osteoarthritis, unspecified site",2020-08-08
+"P0511","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-07-21
+"P0511","M19.90","Osteoarthritis, unspecified site",2025-04-01
+"P0513","E11.9","Type 2 diabetes mellitus without complications",2021-11-23
+"P0513","I10","Essential hypertension",2023-10-29
+"P0514","M19.90","Osteoarthritis, unspecified site",2017-10-19
+"P0514","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-11-18
+"P0514","I10","Essential hypertension",2020-10-31
+"P0514","I10","Essential hypertension",2023-02-17
+"P0514","I10","Essential hypertension",2024-04-27
+"P0515","E78.5","Hyperlipidemia, unspecified",2022-06-02
+"P0516","E78.5","Hyperlipidemia, unspecified",2018-11-28
+"P0516","G47.00","Insomnia disorder",2019-07-17
+"P0516","I10","Essential hypertension",2020-10-17
+"P0516","I10","Essential hypertension",2025-10-21
+"P0517","I10","Essential hypertension",2024-11-16
+"P0518","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-02-09
+"P0519","G47.00","Insomnia disorder",2018-09-08
+"P0519","G30.1","Alzheimer's disease with late onset",2022-05-03
+"P0519","E78.5","Hyperlipidemia, unspecified",2024-11-19
+"P0520","G47.00","Insomnia disorder",2021-06-12
+"P0520","E11.9","Type 2 diabetes mellitus without complications",2021-10-13
+"P0521","I10","Essential hypertension",2019-01-27
+"P0521","I10","Essential hypertension",2021-02-05
+"P0521","G47.33","Obstructive sleep apnea",2021-08-06
+"P0521","E78.5","Hyperlipidemia, unspecified",2021-12-03
+"P0521","E78.5","Hyperlipidemia, unspecified",2023-08-22
+"P0522","G47.33","Obstructive sleep apnea",2016-05-07
+"P0522","I10","Essential hypertension",2019-01-23
+"P0524","G47.33","Obstructive sleep apnea",2017-05-13
+"P0524","I10","Essential hypertension",2019-12-04
+"P0524","G30.1","Alzheimer's disease with late onset",2021-11-15
+"P0525","I10","Essential hypertension",2018-12-15
+"P0525","I10","Essential hypertension",2021-06-28
+"P0525","I10","Essential hypertension",2023-07-21
+"P0525","G47.33","Obstructive sleep apnea",2026-05-28
+"P0526","G47.00","Insomnia disorder",2019-05-16
+"P0526","I10","Essential hypertension",2019-11-25
+"P0526","M19.90","Osteoarthritis, unspecified site",2023-08-06
+"P0526","E78.5","Hyperlipidemia, unspecified",2025-10-30
+"P0527","G47.33","Obstructive sleep apnea",2017-04-02
+"P0527","E78.5","Hyperlipidemia, unspecified",2019-04-05
+"P0527","M19.90","Osteoarthritis, unspecified site",2019-06-12
+"P0528","I10","Essential hypertension",2020-08-20
+"P0528","E78.5","Hyperlipidemia, unspecified",2023-04-18
+"P0528","G30.9","Alzheimer's disease, unspecified",2023-09-20
+"P0529","E11.9","Type 2 diabetes mellitus without complications",2022-04-18
+"P0529","G47.33","Obstructive sleep apnea",2025-05-04
+"P0530","I10","Essential hypertension",2016-06-06
+"P0530","I10","Essential hypertension",2021-03-08
+"P0530","M19.90","Osteoarthritis, unspecified site",2023-02-22
+"P0530","I10","Essential hypertension",2024-10-13
+"P0530","I10","Essential hypertension",2025-02-04
+"P0531","E78.5","Hyperlipidemia, unspecified",2023-06-25
+"P0531","E78.5","Hyperlipidemia, unspecified",2025-12-19
+"P0532","G47.33","Obstructive sleep apnea",2018-07-23
+"P0532","E11.9","Type 2 diabetes mellitus without complications",2022-04-06
+"P0532","G30.9","Alzheimer's disease, unspecified",2023-03-20
+"P0533","G47.33","Obstructive sleep apnea",2019-05-27
+"P0533","I10","Essential hypertension",2020-11-04
+"P0533","E78.5","Hyperlipidemia, unspecified",2024-09-26
+"P0534","E78.5","Hyperlipidemia, unspecified",2016-05-16
+"P0534","G47.33","Obstructive sleep apnea",2017-02-03
+"P0534","I10","Essential hypertension",2017-02-20
+"P0534","G30.9","Alzheimer's disease, unspecified",2018-05-13
+"P0534","M19.90","Osteoarthritis, unspecified site",2018-12-20
+"P0534","I10","Essential hypertension",2024-03-11
+"P0535","I10","Essential hypertension",2022-10-29
+"P0535","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-11-05
+"P0536","E78.5","Hyperlipidemia, unspecified",2016-06-25
+"P0536","M19.90","Osteoarthritis, unspecified site",2017-05-02
+"P0537","E78.5","Hyperlipidemia, unspecified",2018-05-16
+"P0537","I10","Essential hypertension",2019-09-27
+"P0537","E78.5","Hyperlipidemia, unspecified",2025-08-01
+"P0538","E11.9","Type 2 diabetes mellitus without complications",2021-12-22
+"P0538","G47.00","Insomnia disorder",2023-07-16
+"P0539","E11.9","Type 2 diabetes mellitus without complications",2020-05-20
+"P0539","G47.9","Sleep disorder, unspecified",2020-10-20
+"P0539","E78.5","Hyperlipidemia, unspecified",2022-07-30
+"P0539","E11.9","Type 2 diabetes mellitus without complications",2026-01-02
+"P0539","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-02-03
+"P0540","E78.5","Hyperlipidemia, unspecified",2018-04-10
+"P0540","G47.33","Obstructive sleep apnea",2025-09-19
+"P0541","M19.90","Osteoarthritis, unspecified site",2018-03-28
+"P0541","G30.0","Alzheimer's disease with early onset",2022-02-05
+"P0541","M19.90","Osteoarthritis, unspecified site",2024-07-05
+"P0541","G47.00","Insomnia disorder",2025-07-31
+"P0542","G47.33","Obstructive sleep apnea",2020-04-16
+"P0543","G30.1","Alzheimer's disease with late onset",2019-07-18
+"P0543","E78.5","Hyperlipidemia, unspecified",2019-09-07
+"P0543","I10","Essential hypertension",2023-02-16
+"P0543","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-09-17
+"P0543","M19.90","Osteoarthritis, unspecified site",2026-03-04
+"P0544","G47.9","Sleep disorder, unspecified",2021-05-31
+"P0544","I10","Essential hypertension",2023-07-31
+"P0545","M19.90","Osteoarthritis, unspecified site",2017-02-26
+"P0545","E11.9","Type 2 diabetes mellitus without complications",2018-05-04
+"P0545","G47.00","Insomnia disorder",2019-10-26
+"P0545","I10","Essential hypertension",2022-04-04
+"P0545","E78.5","Hyperlipidemia, unspecified",2023-08-06
+"P0545","E78.5","Hyperlipidemia, unspecified",2024-09-29
+"P0546","G30.1","Alzheimer's disease with late onset",2016-02-27
+"P0546","I10","Essential hypertension",2016-11-07
+"P0546","E78.5","Hyperlipidemia, unspecified",2017-05-09
+"P0546","G47.33","Obstructive sleep apnea",2020-01-19
+"P0546","I10","Essential hypertension",2025-11-11
+"P0547","I10","Essential hypertension",2022-04-04
+"P0547","I10","Essential hypertension",2022-11-05
+"P0547","E11.9","Type 2 diabetes mellitus without complications",2023-02-23
+"P0548","M19.90","Osteoarthritis, unspecified site",2016-08-27
+"P0548","M19.90","Osteoarthritis, unspecified site",2023-01-22
+"P0548","E78.5","Hyperlipidemia, unspecified",2023-10-24
+"P0548","I10","Essential hypertension",2025-05-30
+"P0551","E78.5","Hyperlipidemia, unspecified",2019-05-25
+"P0551","G47.33","Obstructive sleep apnea",2021-06-30
+"P0551","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-04-27
+"P0551","E78.5","Hyperlipidemia, unspecified",2024-06-28
+"P0552","G47.9","Sleep disorder, unspecified",2018-09-13
+"P0552","G30.9","Alzheimer's disease, unspecified",2024-05-08
+"P0553","G30.0","Alzheimer's disease with early onset",2018-07-26
+"P0554","E78.5","Hyperlipidemia, unspecified",2016-01-18
+"P0554","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-05-05
+"P0555","G30.0","Alzheimer's disease with early onset",2016-01-04
+"P0556","E11.9","Type 2 diabetes mellitus without complications",2018-04-19
+"P0556","I10","Essential hypertension",2020-12-06
+"P0556","E11.9","Type 2 diabetes mellitus without complications",2023-08-30
+"P0556","E78.5","Hyperlipidemia, unspecified",2023-12-31
+"P0557","G30.1","Alzheimer's disease with late onset",2021-09-07
+"P0558","E11.9","Type 2 diabetes mellitus without complications",2023-03-14
+"P0558","G47.00","Insomnia disorder",2023-08-06
+"P0558","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-01-29
+"P0558","M19.90","Osteoarthritis, unspecified site",2026-05-12
+"P0559","E11.9","Type 2 diabetes mellitus without complications",2020-05-20
+"P0559","G30.1","Alzheimer's disease with late onset",2022-06-01
+"P0559","G47.9","Sleep disorder, unspecified",2022-09-20
+"P0560","G30.9","Alzheimer's disease, unspecified",2023-09-10
+"P0560","G47.00","Insomnia disorder",2025-04-13
+"P0561","E78.5","Hyperlipidemia, unspecified",2017-01-22
+"P0562","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-02-26
+"P0562","E78.5","Hyperlipidemia, unspecified",2020-08-30
+"P0562","I10","Essential hypertension",2023-03-22
+"P0562","I10","Essential hypertension",2024-02-06
+"P0562","I10","Essential hypertension",2025-12-06
+"P0563","I10","Essential hypertension",2016-05-16
+"P0563","E78.5","Hyperlipidemia, unspecified",2016-09-26
+"P0563","M19.90","Osteoarthritis, unspecified site",2017-05-08
+"P0563","I10","Essential hypertension",2017-05-19
+"P0563","I10","Essential hypertension",2022-07-11
+"P0563","G47.33","Obstructive sleep apnea",2024-10-21
+"P0563","I10","Essential hypertension",2025-07-17
+"P0564","G47.00","Insomnia disorder",2018-06-21
+"P0564","I10","Essential hypertension",2019-06-20
+"P0564","E11.9","Type 2 diabetes mellitus without complications",2023-12-07
+"P0565","G47.33","Obstructive sleep apnea",2017-06-23
+"P0565","G30.1","Alzheimer's disease with late onset",2019-01-06
+"P0565","I10","Essential hypertension",2021-09-18
+"P0566","G47.00","Insomnia disorder",2024-04-21
+"P0566","E78.5","Hyperlipidemia, unspecified",2024-07-24
+"P0567","G47.00","Insomnia disorder",2024-04-23
+"P0568","I10","Essential hypertension",2016-05-16
+"P0568","G47.00","Insomnia disorder",2017-07-17
+"P0568","M19.90","Osteoarthritis, unspecified site",2018-08-29
+"P0568","G30.1","Alzheimer's disease with late onset",2021-03-30
+"P0568","E11.9","Type 2 diabetes mellitus without complications",2022-04-06
+"P0569","G47.00","Insomnia disorder",2016-10-24
+"P0569","I10","Essential hypertension",2018-04-18
+"P0570","E11.9","Type 2 diabetes mellitus without complications",2017-01-03
+"P0571","E11.9","Type 2 diabetes mellitus without complications",2022-04-19
+"P0571","G47.33","Obstructive sleep apnea",2025-04-12
+"P0572","G47.00","Insomnia disorder",2016-02-04
+"P0572","E78.5","Hyperlipidemia, unspecified",2019-09-13
+"P0573","M19.90","Osteoarthritis, unspecified site",2019-08-15
+"P0573","G47.00","Insomnia disorder",2021-10-02
+"P0573","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-02-28
+"P0573","I10","Essential hypertension",2025-01-18
+"P0573","M19.90","Osteoarthritis, unspecified site",2025-08-16
+"P0573","G30.1","Alzheimer's disease with late onset",2025-11-15
+"P0574","E78.5","Hyperlipidemia, unspecified",2017-03-25
+"P0574","E78.5","Hyperlipidemia, unspecified",2017-04-30
+"P0574","M19.90","Osteoarthritis, unspecified site",2017-12-24
+"P0574","G47.00","Insomnia disorder",2023-02-03
+"P0575","E78.5","Hyperlipidemia, unspecified",2023-05-29
+"P0575","G47.33","Obstructive sleep apnea",2024-05-25
+"P0576","E78.5","Hyperlipidemia, unspecified",2020-08-05
+"P0576","G47.33","Obstructive sleep apnea",2021-04-16
+"P0576","I10","Essential hypertension",2023-07-27
+"P0576","E78.5","Hyperlipidemia, unspecified",2024-03-24
+"P0577","I10","Essential hypertension",2021-09-07
+"P0577","G30.9","Alzheimer's disease, unspecified",2024-05-22
+"P0578","E11.9","Type 2 diabetes mellitus without complications",2025-05-10
+"P0579","E78.5","Hyperlipidemia, unspecified",2025-08-25
+"P0580","E78.5","Hyperlipidemia, unspecified",2022-10-07
+"P0580","E78.5","Hyperlipidemia, unspecified",2024-04-14
+"P0581","G30.0","Alzheimer's disease with early onset",2017-06-13
+"P0581","M19.90","Osteoarthritis, unspecified site",2017-11-11
+"P0581","M19.90","Osteoarthritis, unspecified site",2018-06-17
+"P0581","I10","Essential hypertension",2019-10-08
+"P0581","I10","Essential hypertension",2026-05-01
+"P0582","E78.5","Hyperlipidemia, unspecified",2017-02-28
+"P0582","I10","Essential hypertension",2020-12-02
+"P0582","M19.90","Osteoarthritis, unspecified site",2023-09-20
+"P0583","I10","Essential hypertension",2017-06-14
+"P0583","G47.00","Insomnia disorder",2022-06-24
+"P0583","G30.1","Alzheimer's disease with late onset",2024-11-07
+"P0583","E11.9","Type 2 diabetes mellitus without complications",2026-02-13
+"P0584","G47.9","Sleep disorder, unspecified",2017-08-04
+"P0584","E11.9","Type 2 diabetes mellitus without complications",2023-02-10
+"P0585","E78.5","Hyperlipidemia, unspecified",2018-04-30
+"P0585","E11.9","Type 2 diabetes mellitus without complications",2019-04-27
+"P0585","G47.00","Insomnia disorder",2022-12-25
+"P0586","G47.9","Sleep disorder, unspecified",2016-04-17
+"P0586","I10","Essential hypertension",2017-09-19
+"P0586","G30.0","Alzheimer's disease with early onset",2026-02-06
+"P0587","E78.5","Hyperlipidemia, unspecified",2018-06-22
+"P0589","I10","Essential hypertension",2017-12-18
+"P0589","E78.5","Hyperlipidemia, unspecified",2019-04-07
+"P0589","G47.00","Insomnia disorder",2024-04-06
+"P0590","G47.00","Insomnia disorder",2016-06-25
+"P0590","E78.5","Hyperlipidemia, unspecified",2021-10-30
+"P0591","E78.5","Hyperlipidemia, unspecified",2016-11-09
+"P0591","E78.5","Hyperlipidemia, unspecified",2018-01-08
+"P0591","G47.00","Insomnia disorder",2022-01-18
+"P0591","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-11-30
+"P0591","M19.90","Osteoarthritis, unspecified site",2024-08-31
+"P0592","G47.9","Sleep disorder, unspecified",2016-12-20
+"P0592","E78.5","Hyperlipidemia, unspecified",2017-07-23
+"P0592","M19.90","Osteoarthritis, unspecified site",2021-11-08
+"P0592","E11.9","Type 2 diabetes mellitus without complications",2022-08-11
+"P0592","I10","Essential hypertension",2022-11-30
+"P0592","E78.5","Hyperlipidemia, unspecified",2026-05-08
+"P0593","E78.5","Hyperlipidemia, unspecified",2022-11-26
+"P0594","M19.90","Osteoarthritis, unspecified site",2016-01-24
+"P0594","E11.9","Type 2 diabetes mellitus without complications",2025-04-01
+"P0595","E78.5","Hyperlipidemia, unspecified",2022-05-28
+"P0595","G47.9","Sleep disorder, unspecified",2024-01-13
+"P0596","G47.9","Sleep disorder, unspecified",2017-07-26
+"P0596","M19.90","Osteoarthritis, unspecified site",2019-06-30
+"P0596","I10","Essential hypertension",2021-11-01
+"P0596","E78.5","Hyperlipidemia, unspecified",2022-10-29
+"P0596","G30.1","Alzheimer's disease with late onset",2023-06-01
+"P0597","I10","Essential hypertension",2016-03-31
+"P0597","G47.9","Sleep disorder, unspecified",2020-05-25
+"P0598","G47.33","Obstructive sleep apnea",2018-08-03
+"P0598","M19.90","Osteoarthritis, unspecified site",2022-08-23
+"P0599","I10","Essential hypertension",2016-12-10
+"P0599","I10","Essential hypertension",2017-11-19
+"P0600","I10","Essential hypertension",2017-08-11
+"P0600","M19.90","Osteoarthritis, unspecified site",2024-06-17
+"P0601","G47.00","Insomnia disorder",2017-09-17
+"P0601","E78.5","Hyperlipidemia, unspecified",2023-04-04
+"P0601","E78.5","Hyperlipidemia, unspecified",2026-05-16
+"P0602","G30.9","Alzheimer's disease, unspecified",2017-03-02
+"P0602","G47.9","Sleep disorder, unspecified",2026-05-11
+"P0603","I10","Essential hypertension",2017-03-15
+"P0603","I10","Essential hypertension",2017-06-28
+"P0604","I10","Essential hypertension",2018-10-17
+"P0604","E78.5","Hyperlipidemia, unspecified",2020-06-11
+"P0604","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-08-26
+"P0604","G47.00","Insomnia disorder",2021-02-17
+"P0604","I10","Essential hypertension",2021-08-08
+"P0604","E78.5","Hyperlipidemia, unspecified",2024-03-18
+"P0605","M19.90","Osteoarthritis, unspecified site",2016-04-02
+"P0605","E11.9","Type 2 diabetes mellitus without complications",2024-07-17
+"P0605","G47.00","Insomnia disorder",2025-05-14
+"P0605","M19.90","Osteoarthritis, unspecified site",2026-05-31
+"P0606","E78.5","Hyperlipidemia, unspecified",2017-06-29
+"P0606","E11.9","Type 2 diabetes mellitus without complications",2017-10-31
+"P0606","M19.90","Osteoarthritis, unspecified site",2019-12-01
+"P0607","G30.1","Alzheimer's disease with late onset",2016-12-16
+"P0608","I10","Essential hypertension",2017-08-12
+"P0608","E78.5","Hyperlipidemia, unspecified",2019-09-29
+"P0608","E78.5","Hyperlipidemia, unspecified",2023-12-03
+"P0609","I10","Essential hypertension",2020-05-07
+"P0609","G47.33","Obstructive sleep apnea",2021-12-18
+"P0610","E78.5","Hyperlipidemia, unspecified",2020-04-17
+"P0610","G47.9","Sleep disorder, unspecified",2022-09-21
+"P0610","G30.0","Alzheimer's disease with early onset",2024-11-12
+"P0611","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-01-29
+"P0611","E11.9","Type 2 diabetes mellitus without complications",2016-03-20
+"P0611","G30.9","Alzheimer's disease, unspecified",2019-02-01
+"P0611","M19.90","Osteoarthritis, unspecified site",2019-08-07
+"P0611","I10","Essential hypertension",2020-05-22
+"P0611","G47.00","Insomnia disorder",2024-06-09
+"P0612","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-03-30
+"P0612","M19.90","Osteoarthritis, unspecified site",2020-05-15
+"P0612","E11.9","Type 2 diabetes mellitus without complications",2021-06-11
+"P0612","E78.5","Hyperlipidemia, unspecified",2024-03-13
+"P0613","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-06-21
+"P0613","G30.9","Alzheimer's disease, unspecified",2016-11-15
+"P0613","G47.33","Obstructive sleep apnea",2017-05-23
+"P0613","M19.90","Osteoarthritis, unspecified site",2019-10-10
+"P0614","I10","Essential hypertension",2023-04-07
+"P0614","I10","Essential hypertension",2023-10-06
+"P0615","G47.00","Insomnia disorder",2020-02-11
+"P0615","E78.5","Hyperlipidemia, unspecified",2020-03-03
+"P0615","E78.5","Hyperlipidemia, unspecified",2022-10-03
+"P0615","I10","Essential hypertension",2026-06-21
+"P0616","E78.5","Hyperlipidemia, unspecified",2018-04-25
+"P0616","E78.5","Hyperlipidemia, unspecified",2019-05-26
+"P0616","G30.1","Alzheimer's disease with late onset",2021-11-05
+"P0616","G47.33","Obstructive sleep apnea",2022-12-01
+"P0616","E78.5","Hyperlipidemia, unspecified",2024-05-10
+"P0616","I10","Essential hypertension",2025-03-06
+"P0616","E78.5","Hyperlipidemia, unspecified",2025-07-22
+"P0617","E78.5","Hyperlipidemia, unspecified",2019-01-13
+"P0617","M19.90","Osteoarthritis, unspecified site",2022-03-01
+"P0617","M19.90","Osteoarthritis, unspecified site",2023-01-11
+"P0617","E78.5","Hyperlipidemia, unspecified",2023-12-31
+"P0617","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-11-09
+"P0617","I10","Essential hypertension",2026-05-14
+"P0618","G47.33","Obstructive sleep apnea",2019-07-10
+"P0619","I10","Essential hypertension",2018-10-30
+"P0619","M19.90","Osteoarthritis, unspecified site",2020-10-22
+"P0619","I10","Essential hypertension",2023-06-09
+"P0619","M19.90","Osteoarthritis, unspecified site",2023-07-30
+"P0619","I10","Essential hypertension",2024-05-15
+"P0619","G47.00","Insomnia disorder",2026-02-10
+"P0620","M19.90","Osteoarthritis, unspecified site",2022-04-04
+"P0620","G47.33","Obstructive sleep apnea",2023-11-27
+"P0621","E11.9","Type 2 diabetes mellitus without complications",2018-04-30
+"P0621","E78.5","Hyperlipidemia, unspecified",2020-01-07
+"P0621","E78.5","Hyperlipidemia, unspecified",2021-07-15
+"P0622","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-01-10
+"P0622","E78.5","Hyperlipidemia, unspecified",2022-03-26
+"P0622","E11.9","Type 2 diabetes mellitus without complications",2022-07-01
+"P0622","I10","Essential hypertension",2024-06-22
+"P0623","E78.5","Hyperlipidemia, unspecified",2016-08-31
+"P0623","I10","Essential hypertension",2018-03-01
+"P0623","E78.5","Hyperlipidemia, unspecified",2025-12-02
+"P0624","E78.5","Hyperlipidemia, unspecified",2016-08-23
+"P0624","E78.5","Hyperlipidemia, unspecified",2016-11-13
+"P0624","I10","Essential hypertension",2018-05-07
+"P0624","E78.5","Hyperlipidemia, unspecified",2021-05-31
+"P0624","E11.9","Type 2 diabetes mellitus without complications",2023-07-17
+"P0624","I10","Essential hypertension",2024-08-03
+"P0624","E78.5","Hyperlipidemia, unspecified",2024-10-26
+"P0625","G30.0","Alzheimer's disease with early onset",2019-08-25
+"P0625","E11.9","Type 2 diabetes mellitus without complications",2026-03-19
+"P0627","M19.90","Osteoarthritis, unspecified site",2018-09-12
+"P0628","E11.9","Type 2 diabetes mellitus without complications",2017-12-20
+"P0628","G47.00","Insomnia disorder",2019-05-10
+"P0628","I10","Essential hypertension",2020-07-05
+"P0629","M19.90","Osteoarthritis, unspecified site",2019-09-23
+"P0630","M19.90","Osteoarthritis, unspecified site",2026-06-19
+"P0631","E11.9","Type 2 diabetes mellitus without complications",2021-06-24
+"P0632","G47.33","Obstructive sleep apnea",2016-02-22
+"P0632","I10","Essential hypertension",2016-12-22
+"P0632","M19.90","Osteoarthritis, unspecified site",2018-06-08
+"P0632","E78.5","Hyperlipidemia, unspecified",2024-05-31
+"P0633","I10","Essential hypertension",2016-10-07
+"P0633","G47.00","Insomnia disorder",2017-05-13
+"P0634","G30.1","Alzheimer's disease with late onset",2016-03-06
+"P0634","I10","Essential hypertension",2020-03-12
+"P0634","E11.9","Type 2 diabetes mellitus without complications",2020-12-15
+"P0634","G47.33","Obstructive sleep apnea",2021-01-20
+"P0635","E11.9","Type 2 diabetes mellitus without complications",2017-09-27
+"P0635","G30.1","Alzheimer's disease with late onset",2025-04-30
+"P0635","G47.33","Obstructive sleep apnea",2026-02-10
+"P0636","G47.33","Obstructive sleep apnea",2017-07-06
+"P0636","G30.1","Alzheimer's disease with late onset",2023-11-18
+"P0637","I10","Essential hypertension",2018-02-09
+"P0637","I10","Essential hypertension",2021-06-04
+"P0637","E78.5","Hyperlipidemia, unspecified",2024-11-17
+"P0638","I10","Essential hypertension",2016-02-22
+"P0638","I10","Essential hypertension",2016-03-31
+"P0638","G47.00","Insomnia disorder",2019-11-18
+"P0639","E11.9","Type 2 diabetes mellitus without complications",2018-09-03
+"P0639","G47.00","Insomnia disorder",2024-02-12
+"P0639","I10","Essential hypertension",2025-12-01
+"P0640","G47.33","Obstructive sleep apnea",2017-02-08
+"P0640","E78.5","Hyperlipidemia, unspecified",2017-07-03
+"P0640","E11.9","Type 2 diabetes mellitus without complications",2019-07-23
+"P0641","E78.5","Hyperlipidemia, unspecified",2016-01-25
+"P0641","E11.9","Type 2 diabetes mellitus without complications",2017-02-22
+"P0641","E78.5","Hyperlipidemia, unspecified",2023-01-06
+"P0641","G47.00","Insomnia disorder",2024-03-19
+"P0641","E78.5","Hyperlipidemia, unspecified",2025-10-06
+"P0641","I10","Essential hypertension",2026-04-05
+"P0642","E78.5","Hyperlipidemia, unspecified",2020-09-22
+"P0642","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-10-31
+"P0643","I10","Essential hypertension",2019-01-12
+"P0644","M19.90","Osteoarthritis, unspecified site",2017-05-26
+"P0644","G47.33","Obstructive sleep apnea",2022-11-24
+"P0644","M19.90","Osteoarthritis, unspecified site",2024-04-12
+"P0644","I10","Essential hypertension",2024-08-07
+"P0645","E78.5","Hyperlipidemia, unspecified",2016-01-13
+"P0645","E78.5","Hyperlipidemia, unspecified",2017-09-10
+"P0645","G47.9","Sleep disorder, unspecified",2017-11-20
+"P0646","E78.5","Hyperlipidemia, unspecified",2017-04-09
+"P0646","I10","Essential hypertension",2019-03-29
+"P0646","E78.5","Hyperlipidemia, unspecified",2021-06-16
+"P0646","G47.33","Obstructive sleep apnea",2024-04-27
+"P0646","E78.5","Hyperlipidemia, unspecified",2025-01-27
+"P0647","E78.5","Hyperlipidemia, unspecified",2017-12-14
+"P0647","E78.5","Hyperlipidemia, unspecified",2024-04-02
+"P0647","G47.00","Insomnia disorder",2025-04-18
+"P0648","M19.90","Osteoarthritis, unspecified site",2023-06-20
+"P0648","I10","Essential hypertension",2023-08-21
+"P0648","I10","Essential hypertension",2024-01-11
+"P0649","E11.9","Type 2 diabetes mellitus without complications",2017-01-29
+"P0649","I10","Essential hypertension",2019-12-17
+"P0649","I10","Essential hypertension",2020-10-21
+"P0649","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-02-24
+"P0649","G47.33","Obstructive sleep apnea",2021-08-09
+"P0649","I10","Essential hypertension",2022-01-20
+"P0649","I10","Essential hypertension",2022-08-04
+"P0650","G47.33","Obstructive sleep apnea",2023-03-24
+"P0651","I10","Essential hypertension",2021-12-06
+"P0651","E11.9","Type 2 diabetes mellitus without complications",2023-02-22
+"P0651","M19.90","Osteoarthritis, unspecified site",2025-09-28
+"P0652","E78.5","Hyperlipidemia, unspecified",2017-05-10
+"P0652","G47.33","Obstructive sleep apnea",2018-06-27
+"P0652","G30.9","Alzheimer's disease, unspecified",2020-08-11
+"P0652","I10","Essential hypertension",2021-05-01
+"P0652","I10","Essential hypertension",2021-07-19
+"P0653","E78.5","Hyperlipidemia, unspecified",2019-01-25
+"P0653","E78.5","Hyperlipidemia, unspecified",2020-06-20
+"P0653","I10","Essential hypertension",2025-01-31
+"P0654","G47.00","Insomnia disorder",2017-03-27
+"P0654","I10","Essential hypertension",2022-08-04
+"P0654","E78.5","Hyperlipidemia, unspecified",2023-09-18
+"P0655","I10","Essential hypertension",2020-02-04
+"P0655","I10","Essential hypertension",2020-03-21
+"P0655","I10","Essential hypertension",2021-01-03
+"P0655","G47.9","Sleep disorder, unspecified",2021-06-15
+"P0655","M19.90","Osteoarthritis, unspecified site",2023-09-09
+"P0656","E78.5","Hyperlipidemia, unspecified",2017-08-30
+"P0657","G47.33","Obstructive sleep apnea",2016-04-21
+"P0657","M19.90","Osteoarthritis, unspecified site",2021-02-23
+"P0657","M19.90","Osteoarthritis, unspecified site",2021-04-16
+"P0657","I10","Essential hypertension",2023-06-11
+"P0657","M19.90","Osteoarthritis, unspecified site",2024-01-13
+"P0657","I10","Essential hypertension",2026-02-18
+"P0658","G47.00","Insomnia disorder",2017-07-19
+"P0658","E78.5","Hyperlipidemia, unspecified",2018-10-25
+"P0658","I10","Essential hypertension",2026-03-31
+"P0659","I10","Essential hypertension",2016-10-06
+"P0659","I10","Essential hypertension",2021-08-07
+"P0659","G47.33","Obstructive sleep apnea",2025-12-19
+"P0660","I10","Essential hypertension",2017-11-02
+"P0661","I10","Essential hypertension",2018-02-15
+"P0661","G47.33","Obstructive sleep apnea",2020-12-08
+"P0661","M19.90","Osteoarthritis, unspecified site",2022-05-31
+"P0661","E78.5","Hyperlipidemia, unspecified",2022-10-07
+"P0661","I10","Essential hypertension",2023-04-12
+"P0661","I10","Essential hypertension",2024-12-03
+"P0662","E11.9","Type 2 diabetes mellitus without complications",2016-04-11
+"P0662","G30.1","Alzheimer's disease with late onset",2021-06-21
+"P0662","M19.90","Osteoarthritis, unspecified site",2022-02-19
+"P0662","G47.00","Insomnia disorder",2023-02-06
+"P0662","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-08-26
+"P0663","E78.5","Hyperlipidemia, unspecified",2017-06-27
+"P0663","I10","Essential hypertension",2017-07-01
+"P0663","E78.5","Hyperlipidemia, unspecified",2021-10-08
+"P0663","I10","Essential hypertension",2023-01-10
+"P0664","M19.90","Osteoarthritis, unspecified site",2016-07-29
+"P0664","I10","Essential hypertension",2020-11-06
+"P0664","I10","Essential hypertension",2021-08-21
+"P0664","I10","Essential hypertension",2022-08-11
+"P0665","M19.90","Osteoarthritis, unspecified site",2017-06-29
+"P0665","I10","Essential hypertension",2021-02-13
+"P0666","E11.9","Type 2 diabetes mellitus without complications",2016-07-26
+"P0666","I10","Essential hypertension",2016-11-25
+"P0666","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-09-17
+"P0667","I10","Essential hypertension",2016-05-18
+"P0667","G47.00","Insomnia disorder",2017-06-26
+"P0667","I10","Essential hypertension",2026-04-10
+"P0668","I10","Essential hypertension",2017-12-07
+"P0668","G30.1","Alzheimer's disease with late onset",2021-05-15
+"P0668","M19.90","Osteoarthritis, unspecified site",2022-07-03
+"P0668","M19.90","Osteoarthritis, unspecified site",2024-06-20
+"P0668","M19.90","Osteoarthritis, unspecified site",2025-06-08
+"P0668","G47.9","Sleep disorder, unspecified",2025-07-07
+"P0668","E78.5","Hyperlipidemia, unspecified",2026-02-16
+"P0669","M19.90","Osteoarthritis, unspecified site",2017-06-22
+"P0669","G47.33","Obstructive sleep apnea",2018-02-18
+"P0669","M19.90","Osteoarthritis, unspecified site",2019-05-13
+"P0669","M19.90","Osteoarthritis, unspecified site",2024-04-28
+"P0669","E11.9","Type 2 diabetes mellitus without complications",2024-05-22
+"P0670","G30.1","Alzheimer's disease with late onset",2019-06-12
+"P0670","G47.00","Insomnia disorder",2021-01-15
+"P0671","G47.00","Insomnia disorder",2018-08-21
+"P0671","M19.90","Osteoarthritis, unspecified site",2024-06-17
+"P0671","I10","Essential hypertension",2025-12-13
+"P0672","E78.5","Hyperlipidemia, unspecified",2022-02-02
+"P0673","E78.5","Hyperlipidemia, unspecified",2016-05-06
+"P0673","I10","Essential hypertension",2016-10-18
+"P0673","I10","Essential hypertension",2023-01-03
+"P0673","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-09-28
+"P0674","G30.1","Alzheimer's disease with late onset",2025-12-14
+"P0675","M19.90","Osteoarthritis, unspecified site",2023-08-24
+"P0675","G47.00","Insomnia disorder",2025-12-18
+"P0675","I10","Essential hypertension",2026-06-27
+"P0676","I10","Essential hypertension",2022-11-28
+"P0676","E78.5","Hyperlipidemia, unspecified",2023-01-22
+"P0676","I10","Essential hypertension",2023-07-13
+"P0676","G47.33","Obstructive sleep apnea",2025-03-15
+"P0677","G47.33","Obstructive sleep apnea",2023-02-09
+"P0677","M19.90","Osteoarthritis, unspecified site",2023-08-26
+"P0677","I10","Essential hypertension",2024-09-29
+"P0678","G47.00","Insomnia disorder",2016-12-04
+"P0678","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-03-16
+"P0679","G47.33","Obstructive sleep apnea",2017-10-28
+"P0679","I10","Essential hypertension",2021-08-25
+"P0679","I10","Essential hypertension",2023-09-13
+"P0680","E78.5","Hyperlipidemia, unspecified",2016-05-25
+"P0680","G47.00","Insomnia disorder",2018-10-08
+"P0680","I10","Essential hypertension",2020-10-10
+"P0680","E78.5","Hyperlipidemia, unspecified",2020-12-20
+"P0680","E11.9","Type 2 diabetes mellitus without complications",2021-02-17
+"P0680","I10","Essential hypertension",2022-08-13
+"P0681","G47.33","Obstructive sleep apnea",2023-11-21
+"P0682","I10","Essential hypertension",2016-09-24
+"P0682","I10","Essential hypertension",2018-04-22
+"P0682","I10","Essential hypertension",2023-07-30
+"P0683","M19.90","Osteoarthritis, unspecified site",2022-12-06
+"P0683","E11.9","Type 2 diabetes mellitus without complications",2025-05-16
+"P0684","G47.33","Obstructive sleep apnea",2016-03-20
+"P0684","M19.90","Osteoarthritis, unspecified site",2018-08-02
+"P0684","M19.90","Osteoarthritis, unspecified site",2022-06-11
+"P0685","I10","Essential hypertension",2020-05-29
+"P0685","G47.33","Obstructive sleep apnea",2020-08-29
+"P0686","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-03-01
+"P0686","I10","Essential hypertension",2023-07-26
+"P0686","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-11-30
+"P0686","I10","Essential hypertension",2025-02-16
+"P0686","G30.0","Alzheimer's disease with early onset",2025-06-17
+"P0686","E78.5","Hyperlipidemia, unspecified",2026-03-23
+"P0687","G47.00","Insomnia disorder",2019-05-07
+"P0688","I10","Essential hypertension",2019-01-04
+"P0688","G47.00","Insomnia disorder",2022-10-23
+"P0688","M19.90","Osteoarthritis, unspecified site",2024-08-23
+"P0689","G47.33","Obstructive sleep apnea",2016-04-17
+"P0690","I10","Essential hypertension",2016-04-04
+"P0690","E78.5","Hyperlipidemia, unspecified",2023-09-18
+"P0692","E78.5","Hyperlipidemia, unspecified",2023-12-23
+"P0692","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-04-25
+"P0693","G47.9","Sleep disorder, unspecified",2020-03-26
+"P0694","M19.90","Osteoarthritis, unspecified site",2016-01-17
+"P0694","G47.33","Obstructive sleep apnea",2025-06-28
+"P0695","I10","Essential hypertension",2018-03-03
+"P0695","G30.9","Alzheimer's disease, unspecified",2019-12-05
+"P0695","E78.5","Hyperlipidemia, unspecified",2020-03-18
+"P0695","G47.00","Insomnia disorder",2025-12-14
+"P0696","G47.33","Obstructive sleep apnea",2020-01-15
+"P0696","E11.9","Type 2 diabetes mellitus without complications",2021-03-01
+"P0697","E11.9","Type 2 diabetes mellitus without complications",2022-10-24
+"P0697","M19.90","Osteoarthritis, unspecified site",2024-11-30
+"P0698","I10","Essential hypertension",2020-07-22
+"P0699","G47.33","Obstructive sleep apnea",2021-08-05
+"P0700","G47.33","Obstructive sleep apnea",2018-02-23
+"P0700","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-07-25
+"P0700","I10","Essential hypertension",2024-09-01
+"P0701","G47.33","Obstructive sleep apnea",2016-01-30
+"P0701","E78.5","Hyperlipidemia, unspecified",2023-03-11
+"P0702","M19.90","Osteoarthritis, unspecified site",2019-01-09
+"P0702","E78.5","Hyperlipidemia, unspecified",2020-09-10
+"P0703","E78.5","Hyperlipidemia, unspecified",2016-05-10
+"P0703","G47.9","Sleep disorder, unspecified",2022-07-22
+"P0703","E11.9","Type 2 diabetes mellitus without complications",2024-04-28
+"P0704","M19.90","Osteoarthritis, unspecified site",2021-12-07
+"P0704","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-12-09
+"P0705","E78.5","Hyperlipidemia, unspecified",2021-12-09
+"P0706","E78.5","Hyperlipidemia, unspecified",2016-04-26
+"P0706","I10","Essential hypertension",2018-06-07
+"P0706","I10","Essential hypertension",2019-09-07
+"P0706","E11.9","Type 2 diabetes mellitus without complications",2021-03-25
+"P0706","I10","Essential hypertension",2022-07-15
+"P0706","G47.00","Insomnia disorder",2022-07-16
+"P0707","I10","Essential hypertension",2021-11-25
+"P0707","E11.9","Type 2 diabetes mellitus without complications",2024-11-22
+"P0708","I10","Essential hypertension",2020-09-16
+"P0708","G47.00","Insomnia disorder",2025-12-04
+"P0709","E78.5","Hyperlipidemia, unspecified",2019-02-12
+"P0709","I10","Essential hypertension",2021-09-08
+"P0709","I10","Essential hypertension",2024-02-20
+"P0710","I10","Essential hypertension",2019-06-30
+"P0710","E78.5","Hyperlipidemia, unspecified",2021-11-27
+"P0711","E11.9","Type 2 diabetes mellitus without complications",2017-02-15
+"P0711","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-08-29
+"P0711","E11.9","Type 2 diabetes mellitus without complications",2020-07-05
+"P0711","E11.9","Type 2 diabetes mellitus without complications",2024-10-21
+"P0712","M19.90","Osteoarthritis, unspecified site",2020-01-19
+"P0712","I10","Essential hypertension",2022-01-21
+"P0712","M19.90","Osteoarthritis, unspecified site",2022-02-23
+"P0713","E11.9","Type 2 diabetes mellitus without complications",2021-11-08
+"P0713","G47.00","Insomnia disorder",2023-08-16
+"P0714","I10","Essential hypertension",2020-02-02
+"P0714","G30.1","Alzheimer's disease with late onset",2020-02-27
+"P0714","M19.90","Osteoarthritis, unspecified site",2020-05-11
+"P0714","E11.9","Type 2 diabetes mellitus without complications",2025-11-09
+"P0715","M19.90","Osteoarthritis, unspecified site",2017-12-08
+"P0715","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-02-26
+"P0715","G47.9","Sleep disorder, unspecified",2020-05-03
+"P0715","E78.5","Hyperlipidemia, unspecified",2022-12-24
+"P0715","E78.5","Hyperlipidemia, unspecified",2023-09-03
+"P0715","E11.9","Type 2 diabetes mellitus without complications",2024-08-05
+"P0716","G47.00","Insomnia disorder",2022-03-02
+"P0717","I10","Essential hypertension",2016-03-08
+"P0717","I10","Essential hypertension",2019-01-27
+"P0717","E78.5","Hyperlipidemia, unspecified",2021-02-01
+"P0717","E78.5","Hyperlipidemia, unspecified",2021-05-14
+"P0717","M19.90","Osteoarthritis, unspecified site",2024-02-19
+"P0718","I10","Essential hypertension",2020-09-09
+"P0718","G47.00","Insomnia disorder",2022-02-25
+"P0719","E78.5","Hyperlipidemia, unspecified",2018-10-13
+"P0719","E11.9","Type 2 diabetes mellitus without complications",2023-07-02
+"P0720","M19.90","Osteoarthritis, unspecified site",2020-10-29
+"P0720","I10","Essential hypertension",2020-12-12
+"P0720","G47.33","Obstructive sleep apnea",2022-07-21
+"P0721","G47.9","Sleep disorder, unspecified",2016-02-16
+"P0722","E78.5","Hyperlipidemia, unspecified",2019-07-16
+"P0722","G47.33","Obstructive sleep apnea",2023-10-10
+"P0722","G30.1","Alzheimer's disease with late onset",2026-06-04
+"P0723","I10","Essential hypertension",2016-09-22
+"P0723","I10","Essential hypertension",2018-03-07
+"P0723","G47.33","Obstructive sleep apnea",2020-04-03
+"P0724","G47.00","Insomnia disorder",2021-12-07
+"P0724","E11.9","Type 2 diabetes mellitus without complications",2022-08-30
+"P0724","M19.90","Osteoarthritis, unspecified site",2024-07-20
+"P0725","E11.9","Type 2 diabetes mellitus without complications",2019-12-19
+"P0726","G47.9","Sleep disorder, unspecified",2022-09-26
+"P0726","I10","Essential hypertension",2023-05-02
+"P0726","G30.9","Alzheimer's disease, unspecified",2026-01-01
+"P0727","M19.90","Osteoarthritis, unspecified site",2022-11-13
+"P0727","E78.5","Hyperlipidemia, unspecified",2026-04-19
+"P0728","E11.9","Type 2 diabetes mellitus without complications",2021-12-18
+"P0728","M19.90","Osteoarthritis, unspecified site",2022-09-04
+"P0728","E78.5","Hyperlipidemia, unspecified",2026-04-30
+"P0729","I10","Essential hypertension",2023-01-16
+"P0729","G47.00","Insomnia disorder",2024-01-21
+"P0730","M19.90","Osteoarthritis, unspecified site",2016-02-02
+"P0730","M19.90","Osteoarthritis, unspecified site",2019-10-02
+"P0730","E11.9","Type 2 diabetes mellitus without complications",2021-08-23
+"P0730","I10","Essential hypertension",2021-09-27
+"P0730","E78.5","Hyperlipidemia, unspecified",2024-01-14
+"P0730","I10","Essential hypertension",2024-03-29
+"P0730","G47.00","Insomnia disorder",2025-09-15
+"P0731","E78.5","Hyperlipidemia, unspecified",2020-05-07
+"P0732","I10","Essential hypertension",2016-10-07
+"P0732","E11.9","Type 2 diabetes mellitus without complications",2022-08-16
+"P0732","I10","Essential hypertension",2022-09-25
+"P0732","I10","Essential hypertension",2025-04-09
+"P0732","G47.9","Sleep disorder, unspecified",2026-03-20
+"P0733","E11.9","Type 2 diabetes mellitus without complications",2019-06-01
+"P0733","G30.1","Alzheimer's disease with late onset",2026-04-14
+"P0734","E78.5","Hyperlipidemia, unspecified",2024-09-28
+"P0734","M19.90","Osteoarthritis, unspecified site",2025-12-24
+"P0735","I10","Essential hypertension",2024-10-22
+"P0736","I10","Essential hypertension",2017-05-01
+"P0736","G47.00","Insomnia disorder",2022-08-20
+"P0736","I10","Essential hypertension",2025-11-18
+"P0737","E78.5","Hyperlipidemia, unspecified",2020-05-21
+"P0738","I10","Essential hypertension",2017-11-19
+"P0738","M19.90","Osteoarthritis, unspecified site",2023-07-02
+"P0739","E78.5","Hyperlipidemia, unspecified",2016-07-26
+"P0739","E11.9","Type 2 diabetes mellitus without complications",2025-08-05
+"P0740","E78.5","Hyperlipidemia, unspecified",2018-09-13
+"P0740","E78.5","Hyperlipidemia, unspecified",2019-02-22
+"P0740","E78.5","Hyperlipidemia, unspecified",2020-02-25
+"P0740","I10","Essential hypertension",2023-05-08
+"P0741","E78.5","Hyperlipidemia, unspecified",2017-11-05
+"P0741","I10","Essential hypertension",2019-07-26
+"P0741","I10","Essential hypertension",2020-12-16
+"P0741","E11.9","Type 2 diabetes mellitus without complications",2021-08-17
+"P0741","M19.90","Osteoarthritis, unspecified site",2025-12-19
+"P0742","G30.1","Alzheimer's disease with late onset",2016-07-28
+"P0742","I10","Essential hypertension",2017-02-04
+"P0742","G47.00","Insomnia disorder",2026-02-18
+"P0743","E11.9","Type 2 diabetes mellitus without complications",2021-08-19
+"P0743","E11.9","Type 2 diabetes mellitus without complications",2022-04-24
+"P0743","G47.00","Insomnia disorder",2022-06-18
+"P0743","M19.90","Osteoarthritis, unspecified site",2025-10-01
+"P0744","G47.9","Sleep disorder, unspecified",2016-02-26
+"P0744","M19.90","Osteoarthritis, unspecified site",2024-10-10
+"P0746","M19.90","Osteoarthritis, unspecified site",2019-08-06
+"P0746","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-01-26
+"P0746","G47.00","Insomnia disorder",2024-03-03
+"P0746","E78.5","Hyperlipidemia, unspecified",2025-07-30
+"P0747","I10","Essential hypertension",2024-05-13
+"P0747","I10","Essential hypertension",2024-05-15
+"P0747","G47.33","Obstructive sleep apnea",2026-06-29
+"P0748","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-08-20
+"P0748","E78.5","Hyperlipidemia, unspecified",2022-10-31
+"P0748","I10","Essential hypertension",2024-10-08
+"P0749","I10","Essential hypertension",2018-01-26
+"P0749","I10","Essential hypertension",2018-03-22
+"P0749","G30.9","Alzheimer's disease, unspecified",2019-10-28
+"P0749","E78.5","Hyperlipidemia, unspecified",2025-12-15
+"P0750","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-07-17
+"P0750","G47.33","Obstructive sleep apnea",2018-11-16
+"P0750","E78.5","Hyperlipidemia, unspecified",2019-05-01
+"P0751","E78.5","Hyperlipidemia, unspecified",2017-04-19
+"P0751","M19.90","Osteoarthritis, unspecified site",2018-05-12
+"P0751","M19.90","Osteoarthritis, unspecified site",2022-03-22
+"P0752","G30.1","Alzheimer's disease with late onset",2019-12-07
+"P0752","I10","Essential hypertension",2020-06-09
+"P0752","E78.5","Hyperlipidemia, unspecified",2025-03-06
+"P0753","E78.5","Hyperlipidemia, unspecified",2019-09-29
+"P0755","G30.1","Alzheimer's disease with late onset",2022-05-17
+"P0755","M19.90","Osteoarthritis, unspecified site",2024-06-21
+"P0756","I10","Essential hypertension",2022-04-24
+"P0756","I10","Essential hypertension",2025-11-27
+"P0757","M19.90","Osteoarthritis, unspecified site",2019-06-28
+"P0757","E78.5","Hyperlipidemia, unspecified",2021-12-02
+"P0758","I10","Essential hypertension",2021-07-11
+"P0758","E78.5","Hyperlipidemia, unspecified",2022-02-03
+"P0758","M19.90","Osteoarthritis, unspecified site",2025-02-20
+"P0759","M19.90","Osteoarthritis, unspecified site",2018-05-22
+"P0759","G47.33","Obstructive sleep apnea",2023-03-12
+"P0760","G30.9","Alzheimer's disease, unspecified",2021-11-22
+"P0760","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-12-31
+"P0760","I10","Essential hypertension",2023-07-12
+"P0761","E11.9","Type 2 diabetes mellitus without complications",2017-11-25
+"P0761","I10","Essential hypertension",2020-07-09
+"P0761","I10","Essential hypertension",2021-11-01
+"P0761","E78.5","Hyperlipidemia, unspecified",2022-02-25
+"P0762","G30.1","Alzheimer's disease with late onset",2018-04-24
+"P0762","E78.5","Hyperlipidemia, unspecified",2018-07-04
+"P0762","G47.00","Insomnia disorder",2025-10-23
+"P0763","I10","Essential hypertension",2020-08-01
+"P0763","G47.33","Obstructive sleep apnea",2025-07-16
+"P0764","G47.00","Insomnia disorder",2019-02-22
+"P0765","G47.33","Obstructive sleep apnea",2017-11-28
+"P0765","I10","Essential hypertension",2024-07-18
+"P0766","M19.90","Osteoarthritis, unspecified site",2023-08-02
+"P0766","G47.33","Obstructive sleep apnea",2025-07-06
+"P0767","G47.00","Insomnia disorder",2019-11-23
+"P0767","E11.9","Type 2 diabetes mellitus without complications",2022-06-08
+"P0767","I10","Essential hypertension",2026-05-06
+"P0768","G47.00","Insomnia disorder",2020-11-03
+"P0769","G47.00","Insomnia disorder",2019-06-21
+"P0769","E11.9","Type 2 diabetes mellitus without complications",2023-07-05
+"P0770","E11.9","Type 2 diabetes mellitus without complications",2016-12-23
+"P0770","G30.9","Alzheimer's disease, unspecified",2019-02-17
+"P0770","I10","Essential hypertension",2021-04-01
+"P0771","G30.1","Alzheimer's disease with late onset",2017-03-29
+"P0771","I10","Essential hypertension",2022-03-13
+"P0771","M19.90","Osteoarthritis, unspecified site",2023-01-30
+"P0771","M19.90","Osteoarthritis, unspecified site",2026-02-26
+"P0771","I10","Essential hypertension",2026-05-21
+"P0772","I10","Essential hypertension",2021-04-05
+"P0772","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-06-16
+"P0772","G47.9","Sleep disorder, unspecified",2023-01-13
+"P0773","E78.5","Hyperlipidemia, unspecified",2020-04-10
+"P0773","G47.33","Obstructive sleep apnea",2021-01-13
+"P0774","I10","Essential hypertension",2016-10-15
+"P0774","G47.00","Insomnia disorder",2017-01-19
+"P0774","E78.5","Hyperlipidemia, unspecified",2018-11-21
+"P0774","G30.1","Alzheimer's disease with late onset",2021-10-02
+"P0774","E11.9","Type 2 diabetes mellitus without complications",2023-09-17
+"P0775","E78.5","Hyperlipidemia, unspecified",2023-09-13
+"P0775","G47.00","Insomnia disorder",2025-08-20
+"P0776","M19.90","Osteoarthritis, unspecified site",2018-10-01
+"P0776","I10","Essential hypertension",2019-11-24
+"P0777","E78.5","Hyperlipidemia, unspecified",2016-05-15
+"P0777","E11.9","Type 2 diabetes mellitus without complications",2020-02-29
+"P0777","G47.9","Sleep disorder, unspecified",2022-08-11
+"P0778","G47.33","Obstructive sleep apnea",2020-11-30
+"P0779","M19.90","Osteoarthritis, unspecified site",2016-01-28
+"P0779","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-07-06
+"P0780","I10","Essential hypertension",2016-04-06
+"P0781","G47.00","Insomnia disorder",2019-12-02
+"P0782","G47.00","Insomnia disorder",2019-11-25
+"P0782","I10","Essential hypertension",2022-12-12
+"P0782","I10","Essential hypertension",2025-03-29
+"P0782","I10","Essential hypertension",2025-09-09
+"P0783","G47.33","Obstructive sleep apnea",2022-07-31
+"P0784","G47.33","Obstructive sleep apnea",2016-11-01
+"P0784","G30.0","Alzheimer's disease with early onset",2018-03-03
+"P0784","E78.5","Hyperlipidemia, unspecified",2025-07-21
+"P0785","I10","Essential hypertension",2017-04-16
+"P0786","I10","Essential hypertension",2019-04-14
+"P0786","E11.9","Type 2 diabetes mellitus without complications",2024-06-17
+"P0787","M19.90","Osteoarthritis, unspecified site",2024-03-12
+"P0788","G47.00","Insomnia disorder",2017-07-14
+"P0788","E78.5","Hyperlipidemia, unspecified",2018-12-10
+"P0789","I10","Essential hypertension",2016-06-17
+"P0789","E78.5","Hyperlipidemia, unspecified",2020-03-06
+"P0789","G47.00","Insomnia disorder",2020-10-09
+"P0789","G30.9","Alzheimer's disease, unspecified",2023-07-19
+"P0790","I10","Essential hypertension",2019-12-11
+"P0790","M19.90","Osteoarthritis, unspecified site",2024-04-22
+"P0791","I10","Essential hypertension",2017-12-02
+"P0791","M19.90","Osteoarthritis, unspecified site",2022-06-23
+"P0791","G47.00","Insomnia disorder",2023-01-05
+"P0791","M19.90","Osteoarthritis, unspecified site",2025-09-05
+"P0792","M19.90","Osteoarthritis, unspecified site",2018-06-22
+"P0792","G47.9","Sleep disorder, unspecified",2023-01-27
+"P0793","M19.90","Osteoarthritis, unspecified site",2024-11-22
+"P0793","E78.5","Hyperlipidemia, unspecified",2026-02-09
+"P0794","G47.33","Obstructive sleep apnea",2016-11-16
+"P0794","I10","Essential hypertension",2020-02-20
+"P0794","I10","Essential hypertension",2022-11-24
+"P0794","I10","Essential hypertension",2023-07-17
+"P0794","I10","Essential hypertension",2024-06-24
+"P0795","G47.00","Insomnia disorder",2017-01-26
+"P0795","I10","Essential hypertension",2017-02-24
+"P0795","I10","Essential hypertension",2023-09-17
+"P0795","M19.90","Osteoarthritis, unspecified site",2024-08-15
+"P0796","E78.5","Hyperlipidemia, unspecified",2019-10-03
+"P0796","E78.5","Hyperlipidemia, unspecified",2025-08-08
+"P0797","M19.90","Osteoarthritis, unspecified site",2016-06-30
+"P0797","I10","Essential hypertension",2026-03-26
+"P0798","M19.90","Osteoarthritis, unspecified site",2020-03-21
+"P0799","I10","Essential hypertension",2021-03-26
+"P0799","G47.33","Obstructive sleep apnea",2022-01-05
+"P0800","E78.5","Hyperlipidemia, unspecified",2019-01-31
+"P0800","I10","Essential hypertension",2023-05-03
+"P0800","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-07-16
+"P0800","G47.9","Sleep disorder, unspecified",2024-07-09
+"P0801","I10","Essential hypertension",2018-03-07
+"P0801","G47.33","Obstructive sleep apnea",2019-03-09
+"P0802","E78.5","Hyperlipidemia, unspecified",2019-11-15
+"P0802","M19.90","Osteoarthritis, unspecified site",2020-05-15
+"P0802","G47.00","Insomnia disorder",2022-07-23
+"P0802","I10","Essential hypertension",2022-09-21
+"P0802","I10","Essential hypertension",2025-11-20
+"P0804","G47.00","Insomnia disorder",2016-10-04
+"P0804","I10","Essential hypertension",2020-12-20
+"P0804","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-12-12
+"P0804","G30.9","Alzheimer's disease, unspecified",2025-05-01
+"P0805","E78.5","Hyperlipidemia, unspecified",2022-07-09
+"P0805","G47.33","Obstructive sleep apnea",2023-04-29
+"P0805","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-09-25
+"P0805","I10","Essential hypertension",2024-08-24
+"P0806","E78.5","Hyperlipidemia, unspecified",2018-02-25
+"P0806","M19.90","Osteoarthritis, unspecified site",2019-10-02
+"P0806","E78.5","Hyperlipidemia, unspecified",2022-05-29
+"P0806","G30.9","Alzheimer's disease, unspecified",2024-07-14
+"P0806","E78.5","Hyperlipidemia, unspecified",2024-07-19
+"P0807","G47.00","Insomnia disorder",2016-06-29
+"P0807","I10","Essential hypertension",2017-01-31
+"P0807","I10","Essential hypertension",2019-04-09
+"P0807","I10","Essential hypertension",2024-08-27
+"P0808","G47.33","Obstructive sleep apnea",2025-09-07
+"P0809","G47.00","Insomnia disorder",2019-11-15
+"P0809","I10","Essential hypertension",2022-05-22
+"P0809","I10","Essential hypertension",2023-07-09
+"P0809","I10","Essential hypertension",2023-12-05
+"P0809","M19.90","Osteoarthritis, unspecified site",2025-05-27
+"P0810","E78.5","Hyperlipidemia, unspecified",2020-11-28
+"P0810","G47.9","Sleep disorder, unspecified",2024-08-12
+"P0811","G47.33","Obstructive sleep apnea",2016-08-19
+"P0811","G30.1","Alzheimer's disease with late onset",2020-07-23
+"P0812","E78.5","Hyperlipidemia, unspecified",2021-09-09
+"P0812","G47.33","Obstructive sleep apnea",2021-11-26
+"P0812","E11.9","Type 2 diabetes mellitus without complications",2025-05-24
+"P0813","G47.00","Insomnia disorder",2017-11-12
+"P0813","E78.5","Hyperlipidemia, unspecified",2018-12-28
+"P0813","E11.9","Type 2 diabetes mellitus without complications",2019-02-13
+"P0813","I10","Essential hypertension",2022-03-24
+"P0813","I10","Essential hypertension",2023-11-18
+"P0813","G30.1","Alzheimer's disease with late onset",2025-03-20
+"P0814","G47.9","Sleep disorder, unspecified",2017-11-03
+"P0814","E78.5","Hyperlipidemia, unspecified",2020-04-24
+"P0814","M19.90","Osteoarthritis, unspecified site",2020-08-03
+"P0814","E11.9","Type 2 diabetes mellitus without complications",2023-07-03
+"P0814","E11.9","Type 2 diabetes mellitus without complications",2025-04-27
+"P0815","M19.90","Osteoarthritis, unspecified site",2017-11-01
+"P0815","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-12-01
+"P0815","G47.33","Obstructive sleep apnea",2018-08-24
+"P0816","E11.9","Type 2 diabetes mellitus without complications",2020-10-02
+"P0816","E78.5","Hyperlipidemia, unspecified",2024-04-21
+"P0816","M19.90","Osteoarthritis, unspecified site",2024-09-23
+"P0817","M19.90","Osteoarthritis, unspecified site",2019-03-22
+"P0817","E11.9","Type 2 diabetes mellitus without complications",2023-08-24
+"P0817","G47.00","Insomnia disorder",2024-04-08
+"P0817","E78.5","Hyperlipidemia, unspecified",2024-09-20
+"P0817","M19.90","Osteoarthritis, unspecified site",2026-03-08
+"P0818","M19.90","Osteoarthritis, unspecified site",2018-04-16
+"P0818","I10","Essential hypertension",2021-05-25
+"P0819","M19.90","Osteoarthritis, unspecified site",2018-12-18
+"P0819","M19.90","Osteoarthritis, unspecified site",2019-05-31
+"P0819","G47.33","Obstructive sleep apnea",2025-03-26
+"P0821","G47.00","Insomnia disorder",2016-10-02
+"P0822","I10","Essential hypertension",2016-02-22
+"P0822","I10","Essential hypertension",2017-07-16
+"P0822","I10","Essential hypertension",2022-04-28
+"P0822","G47.00","Insomnia disorder",2022-06-28
+"P0822","I10","Essential hypertension",2022-07-05
+"P0822","I10","Essential hypertension",2023-06-28
+"P0822","E78.5","Hyperlipidemia, unspecified",2023-10-10
+"P0823","E78.5","Hyperlipidemia, unspecified",2021-03-31
+"P0824","E78.5","Hyperlipidemia, unspecified",2017-05-20
+"P0824","E11.9","Type 2 diabetes mellitus without complications",2018-03-21
+"P0824","G47.33","Obstructive sleep apnea",2023-12-01
+"P0824","E78.5","Hyperlipidemia, unspecified",2026-01-22
+"P0826","E78.5","Hyperlipidemia, unspecified",2016-09-06
+"P0826","I10","Essential hypertension",2018-01-11
+"P0827","G47.9","Sleep disorder, unspecified",2019-12-28
+"P0827","M19.90","Osteoarthritis, unspecified site",2021-10-25
+"P0827","E78.5","Hyperlipidemia, unspecified",2022-07-08
+"P0828","G47.33","Obstructive sleep apnea",2016-01-25
+"P0828","G30.9","Alzheimer's disease, unspecified",2017-07-26
+"P0828","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-04-25
+"P0830","G30.0","Alzheimer's disease with early onset",2016-01-11
+"P0830","I10","Essential hypertension",2023-01-20
+"P0831","M19.90","Osteoarthritis, unspecified site",2024-06-04
+"P0832","E78.5","Hyperlipidemia, unspecified",2017-09-07
+"P0832","G47.33","Obstructive sleep apnea",2024-06-11
+"P0833","E78.5","Hyperlipidemia, unspecified",2018-05-01
+"P0833","G47.00","Insomnia disorder",2022-12-02
+"P0834","M19.90","Osteoarthritis, unspecified site",2017-03-25
+"P0834","M19.90","Osteoarthritis, unspecified site",2020-01-05
+"P0834","E11.9","Type 2 diabetes mellitus without complications",2020-02-11
+"P0834","E11.9","Type 2 diabetes mellitus without complications",2021-09-04
+"P0834","G47.9","Sleep disorder, unspecified",2022-08-23
+"P0835","E78.5","Hyperlipidemia, unspecified",2017-06-23
+"P0836","M19.90","Osteoarthritis, unspecified site",2018-10-05
+"P0836","G47.9","Sleep disorder, unspecified",2019-10-02
+"P0836","E78.5","Hyperlipidemia, unspecified",2020-05-01
+"P0836","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-03-09
+"P0836","E78.5","Hyperlipidemia, unspecified",2025-08-28
+"P0837","E11.9","Type 2 diabetes mellitus without complications",2022-04-20
+"P0837","I10","Essential hypertension",2024-07-24
+"P0838","I10","Essential hypertension",2025-07-10
+"P0839","E11.9","Type 2 diabetes mellitus without complications",2017-10-20
+"P0839","E78.5","Hyperlipidemia, unspecified",2018-05-21
+"P0839","G47.00","Insomnia disorder",2019-04-10
+"P0839","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-06-05
+"P0839","M19.90","Osteoarthritis, unspecified site",2024-01-18
+"P0839","I10","Essential hypertension",2024-06-26
+"P0839","G30.0","Alzheimer's disease with early onset",2024-07-30
+"P0839","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-01-28
+"P0840","E11.9","Type 2 diabetes mellitus without complications",2020-02-12
+"P0840","E78.5","Hyperlipidemia, unspecified",2024-01-20
+"P0840","G47.33","Obstructive sleep apnea",2025-03-24
+"P0841","E78.5","Hyperlipidemia, unspecified",2021-09-13
+"P0841","E78.5","Hyperlipidemia, unspecified",2022-06-23
+"P0841","I10","Essential hypertension",2025-03-19
+"P0842","E78.5","Hyperlipidemia, unspecified",2023-05-05
+"P0842","G30.1","Alzheimer's disease with late onset",2024-02-02
+"P0844","M19.90","Osteoarthritis, unspecified site",2019-09-29
+"P0844","G47.00","Insomnia disorder",2025-08-08
+"P0845","M19.90","Osteoarthritis, unspecified site",2017-03-21
+"P0845","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-04-15
+"P0845","E11.9","Type 2 diabetes mellitus without complications",2022-02-06
+"P0845","I10","Essential hypertension",2024-06-05
+"P0845","I10","Essential hypertension",2025-05-29
+"P0846","I10","Essential hypertension",2020-01-03
+"P0847","G47.33","Obstructive sleep apnea",2022-09-04
+"P0848","G30.1","Alzheimer's disease with late onset",2016-03-31
+"P0848","I10","Essential hypertension",2020-08-03
+"P0848","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-06-11
+"P0849","G47.33","Obstructive sleep apnea",2020-07-07
+"P0850","E78.5","Hyperlipidemia, unspecified",2017-09-13
+"P0850","E11.9","Type 2 diabetes mellitus without complications",2017-10-30
+"P0850","M19.90","Osteoarthritis, unspecified site",2020-02-03
+"P0850","M19.90","Osteoarthritis, unspecified site",2023-01-13
+"P0851","G47.00","Insomnia disorder",2020-09-26
+"P0851","I10","Essential hypertension",2021-05-21
+"P0851","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-12-28
+"P0851","E11.9","Type 2 diabetes mellitus without complications",2024-12-27
+"P0852","E11.9","Type 2 diabetes mellitus without complications",2020-09-12
+"P0852","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-12-31
+"P0852","G30.1","Alzheimer's disease with late onset",2022-04-19
+"P0852","G47.9","Sleep disorder, unspecified",2022-12-17
+"P0852","E78.5","Hyperlipidemia, unspecified",2025-12-01
+"P0853","M19.90","Osteoarthritis, unspecified site",2016-07-16
+"P0853","E78.5","Hyperlipidemia, unspecified",2017-07-15
+"P0853","I10","Essential hypertension",2022-01-07
+"P0853","E78.5","Hyperlipidemia, unspecified",2026-03-28
+"P0854","I10","Essential hypertension",2025-03-28
+"P0854","G47.00","Insomnia disorder",2025-05-06
+"P0855","G47.00","Insomnia disorder",2016-03-22
+"P0855","I10","Essential hypertension",2018-05-27
+"P0855","I10","Essential hypertension",2024-07-24
+"P0856","G47.33","Obstructive sleep apnea",2016-03-06
+"P0856","E11.9","Type 2 diabetes mellitus without complications",2017-06-22
+"P0856","E11.9","Type 2 diabetes mellitus without complications",2022-07-19
+"P0857","I10","Essential hypertension",2023-02-17
+"P0857","M19.90","Osteoarthritis, unspecified site",2026-05-03
+"P0858","I10","Essential hypertension",2018-08-12
+"P0858","I10","Essential hypertension",2019-05-28
+"P0858","I10","Essential hypertension",2021-08-30
+"P0858","E11.9","Type 2 diabetes mellitus without complications",2024-06-28
+"P0858","G47.00","Insomnia disorder",2026-06-06
+"P0859","M19.90","Osteoarthritis, unspecified site",2016-08-19
+"P0859","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-05-04
+"P0859","G47.33","Obstructive sleep apnea",2022-09-18
+"P0859","I10","Essential hypertension",2025-08-16
+"P0859","E78.5","Hyperlipidemia, unspecified",2025-11-12
+"P0860","G30.1","Alzheimer's disease with late onset",2023-02-28
+"P0860","I10","Essential hypertension",2025-01-08
+"P0860","E11.9","Type 2 diabetes mellitus without complications",2025-10-25
+"P0861","I10","Essential hypertension",2022-09-27
+"P0861","M19.90","Osteoarthritis, unspecified site",2023-05-03
+"P0861","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-08-22
+"P0862","M19.90","Osteoarthritis, unspecified site",2016-02-06
+"P0862","G47.00","Insomnia disorder",2017-11-25
+"P0862","E78.5","Hyperlipidemia, unspecified",2018-05-14
+"P0862","I10","Essential hypertension",2020-01-06
+"P0862","E11.9","Type 2 diabetes mellitus without complications",2020-04-26
+"P0863","E11.9","Type 2 diabetes mellitus without complications",2022-11-15
+"P0863","I10","Essential hypertension",2023-04-13
+"P0863","G47.00","Insomnia disorder",2024-12-08
+"P0863","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2026-01-16
+"P0864","G47.33","Obstructive sleep apnea",2019-08-24
+"P0864","G30.0","Alzheimer's disease with early onset",2023-04-30
+"P0864","E78.5","Hyperlipidemia, unspecified",2023-08-18
+"P0865","E11.9","Type 2 diabetes mellitus without complications",2016-03-08
+"P0865","E78.5","Hyperlipidemia, unspecified",2017-06-06
+"P0865","I10","Essential hypertension",2020-05-12
+"P0865","E11.9","Type 2 diabetes mellitus without complications",2021-03-06
+"P0865","G47.33","Obstructive sleep apnea",2022-02-06
+"P0866","I10","Essential hypertension",2016-12-06
+"P0866","G47.00","Insomnia disorder",2021-01-24
+"P0867","I10","Essential hypertension",2018-07-28
+"P0867","E11.9","Type 2 diabetes mellitus without complications",2024-02-20
+"P0867","G47.33","Obstructive sleep apnea",2024-05-21
+"P0868","G47.9","Sleep disorder, unspecified",2021-04-20
+"P0868","E78.5","Hyperlipidemia, unspecified",2022-03-13
+"P0869","M19.90","Osteoarthritis, unspecified site",2016-10-21
+"P0869","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-04-13
+"P0869","E11.9","Type 2 diabetes mellitus without complications",2023-02-16
+"P0870","E78.5","Hyperlipidemia, unspecified",2016-01-15
+"P0870","M19.90","Osteoarthritis, unspecified site",2016-03-16
+"P0870","G47.33","Obstructive sleep apnea",2023-10-24
+"P0871","I10","Essential hypertension",2019-12-02
+"P0871","I10","Essential hypertension",2023-01-29
+"P0871","G30.0","Alzheimer's disease with early onset",2023-10-14
+"P0871","E78.5","Hyperlipidemia, unspecified",2025-06-11
+"P0872","E78.5","Hyperlipidemia, unspecified",2018-03-15
+"P0874","E11.9","Type 2 diabetes mellitus without complications",2016-11-10
+"P0874","E78.5","Hyperlipidemia, unspecified",2017-04-17
+"P0874","I10","Essential hypertension",2018-08-02
+"P0874","G30.9","Alzheimer's disease, unspecified",2019-01-18
+"P0875","M19.90","Osteoarthritis, unspecified site",2022-02-17
+"P0875","I10","Essential hypertension",2022-12-06
+"P0875","I10","Essential hypertension",2022-12-20
+"P0876","E11.9","Type 2 diabetes mellitus without complications",2020-10-02
+"P0876","I10","Essential hypertension",2022-04-01
+"P0876","E11.9","Type 2 diabetes mellitus without complications",2023-04-12
+"P0876","G47.33","Obstructive sleep apnea",2026-04-15
+"P0877","I10","Essential hypertension",2017-01-16
+"P0877","I10","Essential hypertension",2023-10-17
+"P0878","G47.00","Insomnia disorder",2018-12-05
+"P0878","E78.5","Hyperlipidemia, unspecified",2021-09-20
+"P0879","E78.5","Hyperlipidemia, unspecified",2018-07-14
+"P0879","G30.0","Alzheimer's disease with early onset",2020-04-02
+"P0880","G47.9","Sleep disorder, unspecified",2016-03-14
+"P0880","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-09-30
+"P0881","E78.5","Hyperlipidemia, unspecified",2017-06-21
+"P0881","E11.9","Type 2 diabetes mellitus without complications",2020-06-06
+"P0881","I10","Essential hypertension",2024-07-30
+"P0882","I10","Essential hypertension",2020-08-29
+"P0882","G47.33","Obstructive sleep apnea",2022-01-07
+"P0883","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-07-24
+"P0883","G47.00","Insomnia disorder",2026-03-25
+"P0884","G47.9","Sleep disorder, unspecified",2019-07-20
+"P0884","E78.5","Hyperlipidemia, unspecified",2025-04-13
+"P0884","E11.9","Type 2 diabetes mellitus without complications",2025-07-29
+"P0885","M19.90","Osteoarthritis, unspecified site",2016-03-18
+"P0885","I10","Essential hypertension",2018-04-01
+"P0885","G47.00","Insomnia disorder",2026-03-09
+"P0886","E11.9","Type 2 diabetes mellitus without complications",2019-03-03
+"P0886","E78.5","Hyperlipidemia, unspecified",2026-02-19
+"P0887","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-09-19
+"P0887","E11.9","Type 2 diabetes mellitus without complications",2025-06-16
+"P0887","G30.9","Alzheimer's disease, unspecified",2026-03-21
+"P0888","I10","Essential hypertension",2017-06-23
+"P0888","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-02-26
+"P0888","M19.90","Osteoarthritis, unspecified site",2020-11-21
+"P0888","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2021-08-30
+"P0888","E11.9","Type 2 diabetes mellitus without complications",2021-09-24
+"P0888","I10","Essential hypertension",2022-10-15
+"P0889","G30.1","Alzheimer's disease with late onset",2016-03-14
+"P0889","G47.00","Insomnia disorder",2016-05-05
+"P0889","E78.5","Hyperlipidemia, unspecified",2019-11-04
+"P0889","E11.9","Type 2 diabetes mellitus without complications",2021-11-03
+"P0889","E11.9","Type 2 diabetes mellitus without complications",2024-08-20
+"P0890","E11.9","Type 2 diabetes mellitus without complications",2020-09-12
+"P0890","G47.9","Sleep disorder, unspecified",2023-08-18
+"P0891","G47.33","Obstructive sleep apnea",2016-09-05
+"P0892","G47.33","Obstructive sleep apnea",2016-05-22
+"P0893","M19.90","Osteoarthritis, unspecified site",2016-05-03
+"P0893","I10","Essential hypertension",2017-03-21
+"P0893","E11.9","Type 2 diabetes mellitus without complications",2017-08-21
+"P0893","E11.9","Type 2 diabetes mellitus without complications",2018-08-24
+"P0894","E78.5","Hyperlipidemia, unspecified",2017-04-22
+"P0894","G47.00","Insomnia disorder",2017-10-16
+"P0894","E78.5","Hyperlipidemia, unspecified",2018-06-08
+"P0894","I10","Essential hypertension",2020-10-30
+"P0894","E78.5","Hyperlipidemia, unspecified",2021-08-25
+"P0895","G47.33","Obstructive sleep apnea",2018-11-14
+"P0895","E11.9","Type 2 diabetes mellitus without complications",2024-06-25
+"P0895","I10","Essential hypertension",2024-08-09
+"P0895","I10","Essential hypertension",2025-03-16
+"P0897","M19.90","Osteoarthritis, unspecified site",2018-12-02
+"P0897","G47.9","Sleep disorder, unspecified",2021-04-05
+"P0897","E78.5","Hyperlipidemia, unspecified",2023-02-02
+"P0897","I10","Essential hypertension",2023-11-15
+"P0898","E78.5","Hyperlipidemia, unspecified",2016-01-13
+"P0898","M19.90","Osteoarthritis, unspecified site",2016-04-22
+"P0898","G47.33","Obstructive sleep apnea",2021-04-28
+"P0899","E78.5","Hyperlipidemia, unspecified",2017-04-29
+"P0899","M19.90","Osteoarthritis, unspecified site",2017-07-20
+"P0899","G47.9","Sleep disorder, unspecified",2024-12-31
+"P0900","I10","Essential hypertension",2020-05-26
+"P0900","E11.9","Type 2 diabetes mellitus without complications",2022-04-02
+"P0900","G30.1","Alzheimer's disease with late onset",2023-06-15
+"P0900","G47.00","Insomnia disorder",2024-12-08
+"P0901","I10","Essential hypertension",2020-05-19
+"P0901","E78.5","Hyperlipidemia, unspecified",2024-01-22
+"P0901","G47.33","Obstructive sleep apnea",2024-06-05
+"P0901","I10","Essential hypertension",2025-04-30
+"P0902","G47.33","Obstructive sleep apnea",2019-09-18
+"P0903","G47.33","Obstructive sleep apnea",2019-04-30
+"P0903","I10","Essential hypertension",2019-10-23
+"P0903","I10","Essential hypertension",2024-08-04
+"P0904","M19.90","Osteoarthritis, unspecified site",2016-05-29
+"P0904","E78.5","Hyperlipidemia, unspecified",2022-10-11
+"P0905","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2018-04-21
+"P0905","G47.33","Obstructive sleep apnea",2020-01-28
+"P0905","I10","Essential hypertension",2024-11-08
+"P0906","G47.9","Sleep disorder, unspecified",2019-08-22
+"P0907","M19.90","Osteoarthritis, unspecified site",2017-11-14
+"P0907","I10","Essential hypertension",2020-07-13
+"P0907","M19.90","Osteoarthritis, unspecified site",2021-11-28
+"P0907","G47.9","Sleep disorder, unspecified",2024-08-25
+"P0908","G47.33","Obstructive sleep apnea",2018-08-21
+"P0908","E78.5","Hyperlipidemia, unspecified",2021-12-22
+"P0908","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-10-05
+"P0909","G30.0","Alzheimer's disease with early onset",2019-08-17
+"P0909","G47.33","Obstructive sleep apnea",2026-03-02
+"P0910","E78.5","Hyperlipidemia, unspecified",2018-06-14
+"P0910","M19.90","Osteoarthritis, unspecified site",2019-11-16
+"P0910","I10","Essential hypertension",2023-04-05
+"P0910","G30.1","Alzheimer's disease with late onset",2025-05-18
+"P0911","I10","Essential hypertension",2016-01-30
+"P0911","E78.5","Hyperlipidemia, unspecified",2016-12-08
+"P0911","E78.5","Hyperlipidemia, unspecified",2022-03-24
+"P0911","G47.00","Insomnia disorder",2022-06-02
+"P0911","E78.5","Hyperlipidemia, unspecified",2025-05-31
+"P0912","G47.33","Obstructive sleep apnea",2019-11-24
+"P0912","E78.5","Hyperlipidemia, unspecified",2022-12-14
+"P0914","E78.5","Hyperlipidemia, unspecified",2016-03-09
+"P0914","E78.5","Hyperlipidemia, unspecified",2022-08-15
+"P0915","G30.9","Alzheimer's disease, unspecified",2024-06-26
+"P0916","E78.5","Hyperlipidemia, unspecified",2020-06-16
+"P0916","E78.5","Hyperlipidemia, unspecified",2021-06-01
+"P0916","M19.90","Osteoarthritis, unspecified site",2021-07-12
+"P0916","I10","Essential hypertension",2023-05-07
+"P0917","M19.90","Osteoarthritis, unspecified site",2017-06-11
+"P0917","G47.33","Obstructive sleep apnea",2017-08-25
+"P0917","E11.9","Type 2 diabetes mellitus without complications",2019-03-13
+"P0917","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-09-27
+"P0918","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-11-22
+"P0918","M19.90","Osteoarthritis, unspecified site",2020-04-07
+"P0918","G47.00","Insomnia disorder",2020-09-17
+"P0919","I10","Essential hypertension",2018-08-30
+"P0919","G47.33","Obstructive sleep apnea",2021-07-31
+"P0920","G47.33","Obstructive sleep apnea",2017-02-06
+"P0920","E11.9","Type 2 diabetes mellitus without complications",2017-03-30
+"P0920","I10","Essential hypertension",2017-08-28
+"P0920","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-05-31
+"P0920","E78.5","Hyperlipidemia, unspecified",2025-12-25
+"P0921","E11.9","Type 2 diabetes mellitus without complications",2017-01-08
+"P0921","I10","Essential hypertension",2017-06-12
+"P0921","G47.9","Sleep disorder, unspecified",2018-11-17
+"P0921","I10","Essential hypertension",2023-10-05
+"P0922","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-02-05
+"P0922","I10","Essential hypertension",2025-08-12
+"P0923","E78.5","Hyperlipidemia, unspecified",2017-05-26
+"P0923","G30.1","Alzheimer's disease with late onset",2025-09-06
+"P0923","G47.33","Obstructive sleep apnea",2025-12-30
+"P0924","G47.00","Insomnia disorder",2022-08-03
+"P0925","G47.33","Obstructive sleep apnea",2022-02-14
+"P0925","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-04-21
+"P0926","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-01-18
+"P0926","I10","Essential hypertension",2017-07-09
+"P0927","G30.1","Alzheimer's disease with late onset",2016-05-05
+"P0927","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-12-18
+"P0927","G47.33","Obstructive sleep apnea",2025-03-22
+"P0928","M19.90","Osteoarthritis, unspecified site",2019-08-18
+"P0928","G30.1","Alzheimer's disease with late onset",2024-07-06
+"P0928","E78.5","Hyperlipidemia, unspecified",2026-02-06
+"P0929","M19.90","Osteoarthritis, unspecified site",2016-07-25
+"P0929","E78.5","Hyperlipidemia, unspecified",2024-03-30
+"P0929","G30.1","Alzheimer's disease with late onset",2026-02-22
+"P0930","E78.5","Hyperlipidemia, unspecified",2020-07-23
+"P0930","E78.5","Hyperlipidemia, unspecified",2021-10-03
+"P0931","G47.33","Obstructive sleep apnea",2018-11-11
+"P0931","E78.5","Hyperlipidemia, unspecified",2019-09-08
+"P0931","E11.9","Type 2 diabetes mellitus without complications",2020-09-10
+"P0931","M19.90","Osteoarthritis, unspecified site",2021-05-18
+"P0932","E11.9","Type 2 diabetes mellitus without complications",2017-09-06
+"P0932","I10","Essential hypertension",2019-08-16
+"P0933","E78.5","Hyperlipidemia, unspecified",2016-01-25
+"P0933","I10","Essential hypertension",2017-09-04
+"P0933","M19.90","Osteoarthritis, unspecified site",2018-03-09
+"P0933","E78.5","Hyperlipidemia, unspecified",2019-01-27
+"P0933","I10","Essential hypertension",2019-05-06
+"P0933","I10","Essential hypertension",2020-11-15
+"P0933","E78.5","Hyperlipidemia, unspecified",2023-03-30
+"P0933","M19.90","Osteoarthritis, unspecified site",2024-04-13
+"P0933","G47.33","Obstructive sleep apnea",2025-03-01
+"P0934","I10","Essential hypertension",2017-12-23
+"P0934","E11.9","Type 2 diabetes mellitus without complications",2022-01-29
+"P0935","G47.00","Insomnia disorder",2019-04-08
+"P0935","E78.5","Hyperlipidemia, unspecified",2020-05-17
+"P0935","E78.5","Hyperlipidemia, unspecified",2020-11-01
+"P0935","E78.5","Hyperlipidemia, unspecified",2021-05-31
+"P0936","G30.9","Alzheimer's disease, unspecified",2023-02-18
+"P0937","E78.5","Hyperlipidemia, unspecified",2019-02-03
+"P0937","I10","Essential hypertension",2019-06-17
+"P0937","E78.5","Hyperlipidemia, unspecified",2020-11-15
+"P0937","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2023-10-15
+"P0938","G47.33","Obstructive sleep apnea",2019-09-18
+"P0938","I10","Essential hypertension",2024-01-03
+"P0938","I10","Essential hypertension",2025-08-21
+"P0938","E11.9","Type 2 diabetes mellitus without complications",2025-10-11
+"P0939","G47.33","Obstructive sleep apnea",2018-08-15
+"P0939","E11.9","Type 2 diabetes mellitus without complications",2019-08-04
+"P0939","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-04-17
+"P0939","E11.9","Type 2 diabetes mellitus without complications",2021-09-06
+"P0939","E78.5","Hyperlipidemia, unspecified",2022-11-09
+"P0939","E78.5","Hyperlipidemia, unspecified",2023-05-21
+"P0939","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-06-23
+"P0940","I10","Essential hypertension",2016-10-23
+"P0940","G47.00","Insomnia disorder",2018-07-18
+"P0940","E11.9","Type 2 diabetes mellitus without complications",2022-06-26
+"P0940","G30.0","Alzheimer's disease with early onset",2022-10-09
+"P0941","I10","Essential hypertension",2018-08-24
+"P0941","I10","Essential hypertension",2018-10-11
+"P0941","I10","Essential hypertension",2021-07-17
+"P0941","I10","Essential hypertension",2022-06-25
+"P0941","G47.33","Obstructive sleep apnea",2026-03-02
+"P0942","M19.90","Osteoarthritis, unspecified site",2019-12-10
+"P0942","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-03-31
+"P0943","I10","Essential hypertension",2016-05-24
+"P0943","I10","Essential hypertension",2018-12-08
+"P0943","I10","Essential hypertension",2022-07-28
+"P0944","G30.9","Alzheimer's disease, unspecified",2016-11-26
+"P0944","E78.5","Hyperlipidemia, unspecified",2019-09-18
+"P0944","M19.90","Osteoarthritis, unspecified site",2020-01-04
+"P0944","E11.9","Type 2 diabetes mellitus without complications",2024-05-15
+"P0944","E78.5","Hyperlipidemia, unspecified",2024-07-26
+"P0944","E11.9","Type 2 diabetes mellitus without complications",2026-06-26
+"P0945","I10","Essential hypertension",2016-06-05
+"P0945","G30.9","Alzheimer's disease, unspecified",2018-03-19
+"P0945","M19.90","Osteoarthritis, unspecified site",2022-09-21
+"P0945","E78.5","Hyperlipidemia, unspecified",2023-12-03
+"P0945","G47.9","Sleep disorder, unspecified",2024-11-18
+"P0947","G47.9","Sleep disorder, unspecified",2021-04-28
+"P0947","M19.90","Osteoarthritis, unspecified site",2023-06-30
+"P0948","E78.5","Hyperlipidemia, unspecified",2016-11-04
+"P0948","I10","Essential hypertension",2016-12-01
+"P0948","E11.9","Type 2 diabetes mellitus without complications",2018-01-06
+"P0948","G47.33","Obstructive sleep apnea",2026-01-11
+"P0949","E11.9","Type 2 diabetes mellitus without complications",2017-01-28
+"P0949","I10","Essential hypertension",2024-02-09
+"P0949","I10","Essential hypertension",2024-04-04
+"P0949","E78.5","Hyperlipidemia, unspecified",2024-10-21
+"P0949","E11.9","Type 2 diabetes mellitus without complications",2026-06-21
+"P0950","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2017-01-15
+"P0950","M19.90","Osteoarthritis, unspecified site",2019-03-26
+"P0950","E78.5","Hyperlipidemia, unspecified",2026-06-05
+"P0951","M19.90","Osteoarthritis, unspecified site",2019-02-12
+"P0951","I10","Essential hypertension",2020-08-04
+"P0951","M19.90","Osteoarthritis, unspecified site",2021-06-11
+"P0951","I10","Essential hypertension",2026-05-08
+"P0952","E78.5","Hyperlipidemia, unspecified",2016-04-05
+"P0952","E11.9","Type 2 diabetes mellitus without complications",2017-12-03
+"P0952","I10","Essential hypertension",2025-12-07
+"P0953","G30.1","Alzheimer's disease with late onset",2016-04-01
+"P0953","G47.33","Obstructive sleep apnea",2018-05-21
+"P0954","G47.00","Insomnia disorder",2016-10-20
+"P0954","E11.9","Type 2 diabetes mellitus without complications",2017-09-18
+"P0954","E78.5","Hyperlipidemia, unspecified",2018-03-02
+"P0954","M19.90","Osteoarthritis, unspecified site",2021-10-08
+"P0955","M19.90","Osteoarthritis, unspecified site",2024-12-11
+"P0956","I10","Essential hypertension",2017-10-27
+"P0956","I10","Essential hypertension",2022-05-15
+"P0956","I10","Essential hypertension",2023-09-11
+"P0957","E78.5","Hyperlipidemia, unspecified",2017-02-01
+"P0957","I10","Essential hypertension",2023-04-15
+"P0958","G30.0","Alzheimer's disease with early onset",2018-11-05
+"P0958","G47.9","Sleep disorder, unspecified",2024-06-23
+"P0960","E11.9","Type 2 diabetes mellitus without complications",2020-04-20
+"P0960","E11.9","Type 2 diabetes mellitus without complications",2021-04-11
+"P0960","G47.9","Sleep disorder, unspecified",2022-11-24
+"P0960","I10","Essential hypertension",2025-06-06
+"P0961","G47.00","Insomnia disorder",2021-02-10
+"P0961","M19.90","Osteoarthritis, unspecified site",2024-02-27
+"P0962","G30.1","Alzheimer's disease with late onset",2022-11-02
+"P0963","I10","Essential hypertension",2016-07-07
+"P0963","I10","Essential hypertension",2024-06-24
+"P0963","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-09-24
+"P0963","G47.9","Sleep disorder, unspecified",2026-06-21
+"P0964","I10","Essential hypertension",2016-10-05
+"P0964","E11.9","Type 2 diabetes mellitus without complications",2017-07-11
+"P0964","G47.33","Obstructive sleep apnea",2025-07-18
+"P0965","M19.90","Osteoarthritis, unspecified site",2016-09-15
+"P0965","E78.5","Hyperlipidemia, unspecified",2018-10-12
+"P0965","G47.33","Obstructive sleep apnea",2020-04-15
+"P0966","I10","Essential hypertension",2016-11-21
+"P0966","I10","Essential hypertension",2017-04-19
+"P0966","G47.9","Sleep disorder, unspecified",2017-11-08
+"P0966","G30.9","Alzheimer's disease, unspecified",2022-09-07
+"P0967","I10","Essential hypertension",2016-01-03
+"P0967","E78.5","Hyperlipidemia, unspecified",2019-01-17
+"P0967","M19.90","Osteoarthritis, unspecified site",2019-07-26
+"P0967","G30.1","Alzheimer's disease with late onset",2022-03-30
+"P0967","E11.9","Type 2 diabetes mellitus without complications",2024-01-25
+"P0968","E78.5","Hyperlipidemia, unspecified",2016-07-27
+"P0968","E78.5","Hyperlipidemia, unspecified",2019-08-09
+"P0968","I10","Essential hypertension",2021-04-18
+"P0968","G47.33","Obstructive sleep apnea",2022-11-10
+"P0969","I10","Essential hypertension",2020-07-06
+"P0969","G30.1","Alzheimer's disease with late onset",2022-07-04
+"P0969","G47.00","Insomnia disorder",2023-03-13
+"P0969","I10","Essential hypertension",2024-01-14
+"P0970","G47.00","Insomnia disorder",2020-05-22
+"P0970","I10","Essential hypertension",2022-07-07
+"P0971","I10","Essential hypertension",2017-07-23
+"P0971","M19.90","Osteoarthritis, unspecified site",2021-08-30
+"P0971","E11.9","Type 2 diabetes mellitus without complications",2022-09-30
+"P0971","E78.5","Hyperlipidemia, unspecified",2024-05-22
+"P0972","I10","Essential hypertension",2017-08-15
+"P0972","E11.9","Type 2 diabetes mellitus without complications",2020-11-08
+"P0973","G30.1","Alzheimer's disease with late onset",2016-04-14
+"P0974","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2020-05-02
+"P0974","E78.5","Hyperlipidemia, unspecified",2020-12-14
+"P0974","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2022-04-08
+"P0974","G47.33","Obstructive sleep apnea",2024-05-22
+"P0975","G47.00","Insomnia disorder",2021-10-24
+"P0975","M19.90","Osteoarthritis, unspecified site",2022-04-21
+"P0975","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-01-30
+"P0976","E11.9","Type 2 diabetes mellitus without complications",2017-06-18
+"P0976","I10","Essential hypertension",2021-07-04
+"P0976","I10","Essential hypertension",2021-07-27
+"P0976","I10","Essential hypertension",2022-07-05
+"P0976","M19.90","Osteoarthritis, unspecified site",2025-08-23
+"P0977","E78.5","Hyperlipidemia, unspecified",2017-11-27
+"P0977","G47.00","Insomnia disorder",2022-10-14
+"P0977","I10","Essential hypertension",2022-12-22
+"P0978","M19.90","Osteoarthritis, unspecified site",2017-04-05
+"P0978","E78.5","Hyperlipidemia, unspecified",2018-10-14
+"P0978","M19.90","Osteoarthritis, unspecified site",2023-12-20
+"P0978","G47.00","Insomnia disorder",2024-03-15
+"P0979","I10","Essential hypertension",2017-01-16
+"P0979","G47.33","Obstructive sleep apnea",2018-12-04
+"P0979","M19.90","Osteoarthritis, unspecified site",2019-07-29
+"P0979","E78.5","Hyperlipidemia, unspecified",2019-09-02
+"P0980","G47.00","Insomnia disorder",2021-03-05
+"P0980","E78.5","Hyperlipidemia, unspecified",2024-04-26
+"P0981","G30.1","Alzheimer's disease with late onset",2016-01-14
+"P0981","E11.9","Type 2 diabetes mellitus without complications",2019-03-23
+"P0981","I10","Essential hypertension",2019-05-10
+"P0981","G47.33","Obstructive sleep apnea",2024-03-26
+"P0982","E11.9","Type 2 diabetes mellitus without complications",2018-08-09
+"P0982","I10","Essential hypertension",2019-06-25
+"P0982","E11.9","Type 2 diabetes mellitus without complications",2021-08-31
+"P0982","G30.1","Alzheimer's disease with late onset",2024-04-07
+"P0983","G47.9","Sleep disorder, unspecified",2016-05-03
+"P0983","E11.9","Type 2 diabetes mellitus without complications",2022-01-24
+"P0983","I10","Essential hypertension",2023-11-09
+"P0983","I10","Essential hypertension",2026-04-06
+"P0984","E11.9","Type 2 diabetes mellitus without complications",2018-05-06
+"P0984","E78.5","Hyperlipidemia, unspecified",2022-08-14
+"P0984","G47.00","Insomnia disorder",2023-11-13
+"P0984","E78.5","Hyperlipidemia, unspecified",2025-12-21
+"P0985","M19.90","Osteoarthritis, unspecified site",2017-06-09
+"P0987","I10","Essential hypertension",2022-08-09
+"P0987","M19.90","Osteoarthritis, unspecified site",2024-07-18
+"P0987","E11.9","Type 2 diabetes mellitus without complications",2024-09-12
+"P0987","G47.00","Insomnia disorder",2025-02-25
+"P0988","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2019-03-25
+"P0988","G47.33","Obstructive sleep apnea",2024-02-14
+"P0988","E78.5","Hyperlipidemia, unspecified",2024-04-15
+"P0989","G30.1","Alzheimer's disease with late onset",2022-11-03
+"P0989","E11.9","Type 2 diabetes mellitus without complications",2023-01-23
+"P0990","E11.9","Type 2 diabetes mellitus without complications",2019-11-01
+"P0990","E78.5","Hyperlipidemia, unspecified",2020-10-08
+"P0990","I10","Essential hypertension",2023-10-14
+"P0990","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2025-06-02
+"P0990","G47.33","Obstructive sleep apnea",2025-07-21
+"P0991","I10","Essential hypertension",2016-03-10
+"P0991","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2016-05-04
+"P0991","E11.9","Type 2 diabetes mellitus without complications",2018-01-06
+"P0991","I10","Essential hypertension",2018-04-26
+"P0991","M19.90","Osteoarthritis, unspecified site",2022-02-01
+"P0991","G47.9","Sleep disorder, unspecified",2023-04-17
+"P0992","G47.9","Sleep disorder, unspecified",2022-06-19
+"P0992","M19.90","Osteoarthritis, unspecified site",2024-12-15
+"P0993","I10","Essential hypertension",2025-03-09
+"P0993","I10","Essential hypertension",2026-03-10
+"P0994","E11.9","Type 2 diabetes mellitus without complications",2023-04-22
+"P0994","E11.9","Type 2 diabetes mellitus without complications",2024-01-19
+"P0995","E11.9","Type 2 diabetes mellitus without complications",2018-08-23
+"P0995","M19.90","Osteoarthritis, unspecified site",2024-11-02
+"P0995","G47.9","Sleep disorder, unspecified",2025-12-22
+"P0996","E11.9","Type 2 diabetes mellitus without complications",2018-11-02
+"P0996","G47.33","Obstructive sleep apnea",2018-11-13
+"P0997","M19.90","Osteoarthritis, unspecified site",2016-08-16
+"P0997","G47.9","Sleep disorder, unspecified",2018-05-18
+"P0997","I10","Essential hypertension",2023-07-22
+"P0998","E78.5","Hyperlipidemia, unspecified",2016-12-21
+"P0998","G47.9","Sleep disorder, unspecified",2021-05-14
+"P0999","I10","Essential hypertension",2020-08-08
+"P0999","I25.10","Atherosclerotic heart disease of native coronary artery without angina pectoris",2024-06-10
+"P0999","G47.33","Obstructive sleep apnea",2025-12-09
+"P1000","G30.1","Alzheimer's disease with late onset",2017-01-26

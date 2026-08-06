@@ -1,12 +1,20 @@
 ---
-title: "Cohort Feasibility Assessment Using Synthetic EHR Data"
+title: "Cohort Feasibility Assessment"
+description: "A reproducible SQL walkthrough for defining an index date, applying eligilbity criteria, tracking cohort attrition, and summarizing a synthetic sleep disorders-Alzheimer's disease cohort"
 author: "Jun Ha Chang"
-date: "2026-06-29"
-categories: [SQL, R, Clinical Data Science, Real-World Data]
+date: "2026-08-15"
+categories: [SQL, EHR, R, RWE]
+
 format:
   html:
-    code-fold: true
+    toc: true
+    toc-location: left
+    toc-title: "In this post"
+    toc-depth: 2
+    code-fold: false
     code-tools: true
+    code-summary: "Show code"
+    code-overflow: wrap
 execute:
   warning: false
   message: false
@@ -17,46 +25,85 @@ execute:
 #| warning: false
 #| message: false
 
-library(tidyverse)
-```
-
-# Research question
-
-Even before you start analyzing your data and think about model or even start grant application, we need to first check whether we have enough data to do that.
-
-In this post, suppose that we want to test feasibility of our thought (association between sleep disorders and incident Alzheimer's disease risk). The goal of this post is to test feasibility: **how many patients meet basic cohort criteria, and what are their simple demographics?**
-
-For this example, I used three synthetic EHR tables: patients, diagnoses, and encounters. The data are fully synthetic and are intended to mimic common relational EHR structures. You can create your own using R code that I shared and found in : ... (add path or repositories)
-
-The final output will be:
-
-1.  A cohort attrition table
-2.  A simple demographic summary of the final feasible cohort.
-
-## Cohort definition
-
-First of all, we need to define our cohort. For this example, we will define our cohort as follows:
-
--   Has at least one sleep disorder diagnosis.
--   Index date is the first sleep disorder diagnosis date.
--   Age is at least 20 years old at index date.
--   Has no Alzheimer's disease diagnosis before or on the index date.
--   Has at least 365 days of observed follow-up after index date.
-
-This is the minimum criteria for our cohort. In practice, you may have more complex criteria, but the logic will be similar.
-
-## Load data into SQLite
-
-```{r}
 # Libraries for this project, you can ignore as it is mostly for data manipulation and database connection in R environments. -----
 library(DBI) # connect to databases and send data or queries to them.
 library(RSQLite) # SQLite database driver for R
 library(dplyr) # data manipulation and analysis
 library(readr) # read CSV files into R
+library(tidyverse)
+library(table1)
+```
+
+::: {.callout-note appearance="simple"}
+**EHR Data Workflow · Post 2**
+
+-   [Post 1: Duplicate Records in EHR Data](../before-modeling-ehr-data/index.qmd)
+
+-   [R script to generate the synthetic data](https://github.com/junhachang/rwe-ehr-notes/blob/main/scripts/generate_synthetic_ehr.Rmd)
+
+-   [Example synthetic data used](https://github.com/junhachang/rwe-ehr-notes/tree/main/posts/sql-participant-table/data)
+:::
+
+# Why run a feasibility assessment?
+
+One of the most expensive mistakes in research is asking a question that the available data cannot answer.
+
+Before fitting a model (or even writing a proposal or statistical analysis plan), I first perform a cohort feasibility assessment.
+
+> *Do the data contain enough eligible participants to answer the research question?*
+
+Suppose we want to study whether sleep disorders are associated with a subsequent diagnosis of Alzheimer's disease (AD).
+
+Before estimating any association, we first need to know:
+
+-   How many patients have a recorded sleep disorder?
+-   How many of those develop AD?
+-   What does the potential study cohort look like?
+
+This is a very simple first step, but one that is surprisingly easy to overlook.
+
+It's exciting to wake up with a great research idea, spend weeks writing an analytic plan, and imagine the paper published in *Science* or *NEJM*. Then comes the unpleasant surprise: the data contain only a handful of eligible individuals or none at all. Another beautifully written analytic plan joins the collection in my cabinet that will never see daylight.
+
+*\~ Based on (more than one) true story.*
+
+# Translate the question into measurable definitions
+
+Clinical questions are rarely stored directly in an EHR. Before writing any SQL, we need to translate the study question into explicit cohort definitions that the database can evaluate.
+
+For this tutorial, our question is:
+
+> Among patients with sleep disorders, how many develop Alzheimer's disease?
+
+To answer that question, we first need to define what each component means in the data.
+
+For this example:
+
+-   **Sleep disorder**: any ICD-10 code beginning with `G47.`
+
+-   **Alzheimer's disease (AD)**: any ICD-10 code beginning with `G30.`
+
+-   **Sleep disorder index date**: the earliest recorded `G47.` diagnosis.
+
+-   **AD diagnosis date**: The earliest recorded `G30.` diagnosis.
+
+Because this is only a feasibility assessment, I intentionally start with simple definitions. Our goal is not to build a publication-ready cohort yet. We simply want to determine whether the available data contain enough potentially eligible patients to justify further work.
+
+::: {.callout-warning appearance="simple"}
+For simplicity, this tutorial uses the ICD-10 prefixed `G47.` and `G30.`. In a real study, disease definitions should be based on prespecified, clinically reviewed phenotype that specifies included codes, diagnosis settings, coding system, and validation rules.
+:::
+
+This example uses fully synthetic EHR data consisting of three relational tables (`patients`, `diagnoses`, and `encounters`). The synthetic datasets and the R script used to generate them are available through the links at the top of this page and in the accompanying GitHub repository, so you can reproduce the entire workflow or create your own practice data.
+
+
+
+# Prepare the working database
+
+```{r}
+#| message: false
+#| label: load-synthetic-data
 
 con <- dbConnect(SQLite(), ":memory:") # create an in-memory SQLite database for demonstration purposes. In practice, you would connect to your actual database.
 
-# I save the synthetic data to CSV files for demonstration purposes. In practice, you would load your actual EHR data from your database or other sources.
 patients <- read_csv("data/synthetic_patients.csv") %>%
   mutate(BIRTH_DATE = as.character(BIRTH_DATE),
          DEATH_DATE = as.character(DEATH_DATE))
@@ -70,19 +117,17 @@ dbWriteTable(con, "diagnoses", diagnoses, overwrite = TRUE)
 dbWriteTable(con, "encounters", encounters, overwrite = TRUE)
 ```
 
-This creates a temporary SQLite database in memory and loads the 3 synthetic EHR tables into it.
+For this tutorial, we load the synthetic CSV files into an in-memory SQLite database so anyone can reproduce the examples.
 
-## Data structure
+In a real project, this step usually disappears because `con` would connect directly to the clinical data warehouse instead.
 
-This project uses three synthetic EHR-style tables. The important point is that the tables do not have the same unit of analysis.
+The `encounters` table is not used in this post. We will return to it in the next tutorial when defining baseline lookback periods and observable follow-up.
 
-| Table | Unit of analysis | Key columns | Role in feasibility test |
-|------------------|------------------|------------------|------------------|
-| `patients` | One row per patient | `PATID`, `BIRTH_DATE`, `DEATH_DATE`, `SEX`, `RACE` | Defines baseline demographics and death date |
-| `diagnoses` | Multiple rows per patient | `PATID`, `ICD10`, `ICD10_TXT`, `DX_DATE` | Defines sleep disorder index date and Alzheimer’s disease diagnosis |
-| `encounters` | Multiple rows per patient | `PATID`, `ENCOUNTER_ID`, `ENCOUNTER_DATE`, `ENCOUNTER_TYPE` | Defines EHR activity, baseline lookback, and follow-up |
+## Understand the source tables
 
-The three tables are linked by `PATID`.
+This example uses three synthetic EHR-style tables. The most important thing to notice is that they do **not** share the same unit of analysis.
+
+Understanding what one row represents in each table is essential before writing any SQL.
 
 ```{mermaid}
 erDiagram
@@ -112,11 +157,21 @@ erDiagram
     }
 ```
 
-This structure matters because joining diagnosis or encounter records directly to the patient table can create duplicate patient rows. For feasibility assessment, the final output must return to one row per patient.
+| Table | Unit of analysis | Key columns | Role in feasibility test |
+|------------------|------------------|------------------|------------------|
+| `patients` | One row per patient | `PATID`, `BIRTH_DATE`, `DEATH_DATE`, `SEX`, `RACE` | Defines baseline demographics and death date |
+| `diagnoses` | Multiple rows per patient | `PATID`, `ICD10`, `ICD10_TXT`, `DX_DATE` | Defines sleep disorder index date and Alzheimer’s disease diagnosis |
+| `encounters` | Multiple rows per patient | `PATID`, `ENCOUNTER_ID`, `ENCOUNTER_DATE`, `ENCOUNTER_TYPE` | Defines EHR activity, baseline lookback, and follow-up |
 
-Let's quickly check first three rows of each data structure. I highly recommend to look at what it looks like to better understand the type/class of the values so that you can grasp some idea what it looks like.
+The three tables are linked by `PATID`.
 
-If it is not formatted version, in many cases, you will see the different format even within a column. For example, Patient A may have YYYY-MM-DD, Patient B may have MM/DD/YYYY, and Patient C may have MM/DD/YY, etc. However, in this example, I already cleared and all uniformly formatted. But just be aware of it.
+Joining `diagnoses` table directly to the `patients` table can multiply patient records. Throughout this tutorial, our goal is to reduce the data to **one row per patient**, since the unit of analysis for the feasibility assessment is the patient, not the diagnosis or encounter.
+
+Before writing any complicated SQL, I like to actually see each source table. This simple step helps verify the structure of the data, the data types, and whether the values match my expectations. Even with well-documented datasets, a quick preview often reveals formatting inconsistencies, unexpected missing values, or coding quirks before they become debugging problems.
+
+A good habit is to undersatnd the data before trying to analyze it. Let's preview the first three rows of each table.
+
+## Preview the source tables
 
 ```{sql connection=con}
 SELECT *
@@ -124,7 +179,7 @@ FROM patients
 LIMIT 3;
 ```
 
-It is not uncommon that individuals have more than one diagnosis codes.
+The `patients` table contains one row per patient.
 
 ```{sql connection=con}
 SELECT *
@@ -132,44 +187,244 @@ FROM diagnoses
 LIMIT 3;
 ```
 
+The `diagnoses` table may contain multiple records per patient beceause one patient can receive several diagnoses or the same diagnosis more than once over time.
+
 ```{sql connection=con}
 SELECT *
 FROM encounters
 LIMIT 3;
 ```
 
-## Step 1. Check the source tables
+The `encounters` table also contains multiple records per patient, with each row representing a separate healthcare encounter.
 
-Before defining the cohort, first thing to do is check the basic size of each table (number of unique patients)
+> **📌 Tip**
+>
+> You *can* build the entire cohort in one SQL query. I usually don't.  
+> Instead, I create one intermediate cohort at a time and check that everything looks reasonable before moving on. It takes a few extra lines of SQL, but it makes debugging much easier and real-world data almost always give you something unexpected to debug. 
+>
+>![](images/textbook_realworld.jpg){fig-alt="Textbook anatomy compared with a first real patient" width="70%"}
+>
+> Perfect example for real-world data. The tidy capstone dataset and the first production EHR extract are rarely the same creature.
+
+# Step 1. Create the sleep disorder cohort
+
+**Goal: Create one row per patient containing the earliest recorded sleep disorder diagnosis.**
+
+Before we ask whether patient later develop Alzheimer's disease, we first need to identify the study cohort. Since patients may receive multiple sleep disorder diagnoses over time, we need a **single index date** for each patient
+
+For this tutorial, we define the index date as **the earliest recorded diagnosis with an ICD-10 code beginning with `G47.`**.
 
 ```{sql connection=con}
-SELECT COUNT(*) AS n_pat_in_dx
-FROM patients;
-
-
-SELECT COUNT(*) AS n_pat_in_dx
-       COUNT(DISTINCT PATID) AS n_pat_in_dx
-FROM diagnoses;
-
-SELECT COUNT(*) AS n_pat_in_encounter
-       COUNT(DISTINCT PATID) AS n_pat_in_encounter
-FROM encounters
-
+CREATE TABLE sleep_index AS
+SELECT 
+    PATID, 
+    MIN(DX_DATE) AS SLEEP_DISORDER_INDEX_DATE
+FROM diagnoses
+WHERE ICD10 LIKE 'G47.%'
+GROUP BY PATID;
 ```
 
 ```{sql connection=con}
-SELECT COUNT(*) AS n_patients
-FROM patients;
+SELECT *
+FROM sleep_index
+LIMIT 5
 ```
 
-```{sql connection=con}
-SELECT COUNT(*) AS n_diagnosis_records,
-       COUNT(DISTINCT PATID) AS n_patients_with_diagnoses
-FROM diagnoses;
-```
+`GROUP BY PATID` collapse multiple diagnoses (rows) into one per patient, while `MIN(DX_DAT)` identifies the earliest observed sleep disorder diagnosis.
+
+Because we will use this cohort in subsequent steps, save it as a new table.
+
+### Verify the cohort
+
+One habit worth having is to verify each intermediate table before moving on. At a minimum, I check that the table contains exactly one row per patient.
 
 ```{sql connection=con}
-SELECT COUNT(*) AS n_encounter_records,
-       COUNT(DISTINCT PATID) AS n_patients_with_encounters
-FROM encounters;
+SELECT 
+    COUNT(*) AS n_rows,
+    COUNT(DISTINCT PATID) AS n_unique_patients
+FROM sleep_index;
 ```
+
+If `n_rows` and `n_unique_patients` are different, something probably went wrong. The table may still contain duplicate patients or the query may not have reduced the data to the intended unit of analysis.
+
+In this synthetic dataset, both values are **550**, confirming that `sleep_index` contains one row per patient.
+
+# Step 2. Identify Alzheimer's disease diagnoses
+
+**Goal: Determine whether patients in the sleep disorder cohort have a recorded Alzheimer's disease diagnosis.**
+
+Now, we apply the same patient-level logic to Alzheimer's disease (AD). Since a patient may receive multiple AD diagnoses over time, we again keep only the **earliest recorded diagnosis date** for each patient.
+
+```{sql connection=con}
+CREATE TABLE ad_index AS
+SELECT 
+    PATID, 
+    MIN(DX_DATE) AS AD_INDEX_DATE
+FROM diagnoses
+WHERE ICD10 LIKE 'G30.%'
+GROUP BY PATID;
+```
+
+Review the resulting patient-level table.
+
+```{sql connection=con}
+SELECT *
+FROM ad_index
+LIMIT 5;
+```
+
+Just as we did for `sleep_index`, the `ad_index` table contains one row per patient. Patients without AD diagnosis are intentionally absent from this table.
+
+### Combine two patient-level tables
+
+Next, merge the AD information with the sleep disorder cohort.
+
+Because we want to keep every patient with a sleep disorder, including those who never develop AD, we use a `LEFT JOIN`.
+
+```{sql connection=con}
+CREATE TABLE sleep_ad_cohort AS
+SELECT 
+    s.PATID,
+    s.SLEEP_DISORDER_INDEX_DATE, 
+    a.AD_INDEX_DATE,
+    CASE
+        WHEN a.AD_INDEX_DATE IS NOT NULL THEN 1
+        ELSE 0
+    END AS AD_STATUS
+FROM sleep_index s
+LEFT JOIN ad_index a 
+    ON s.PATID = a.PATID;
+```
+
+The `AD_STATUS` variable simply indicates whether an AD diagnosis exists anywhere in the available EHR data.
+
+-   `AD_STATUS = 1`: at least one AD diagnosis was observed.
+-   `AD_STATUS = 0`: no AD diagnosis was observed.
+
+At this stage, AD status **should not be interpreted as incident Alzheimer's disease**. Some patients may have received an AD diagnosis **before** their sleep disorder diagnosis. We will address the temporal relationship between exposure and outcome in the next tutorial.
+
+### Verify the cohort
+
+Preview the merged cohort.
+
+```{sql connection=con}
+SELECT *
+FROM sleep_ad_cohort
+LIMIT 5;
+```
+
+Finally, confirm that the join did not create duplicate patients and summarize the cohort by AD status.
+
+```{sql connection=con}
+SELECT
+    AD_STATUS,
+    COUNT(*) AS n_rows,
+    COUNT(DISTINCT PATID) AS n_unique_patients
+FROM sleep_ad_cohort
+GROUP BY AD_STATUS
+ORDER BY AD_STATUS;
+```
+
+# Step 3. Add patient characteristics
+
+**Goal: Build the final patient-level cohort and summarize its demographic  characteristics.**
+
+At this point, the cohort contains the study variables needed to define sleep disorder and AD status. The final step is to attach patient-level demographic information so we can describe the potential study population.
+
+Join the cohort with the `patients` table.
+
+```{sql connection=con}
+CREATE TABLE sleep_ad_cohort_with_demo AS
+SELECT 
+    s.PATID,
+    s.SLEEP_DISORDER_INDEX_DATE, 
+    s.AD_INDEX_DATE,
+    s.AD_STATUS,
+    p.BIRTH_DATE,
+    p.DEATH_DATE,
+    p.SEX,
+    p.RACE
+FROM sleep_ad_cohort s
+LEFT JOIN patients p 
+    ON s.PATID = p.PATID;
+```
+
+Because the `patients` table already contains one row per patient, this join should perserve the patient-level structure of the cohort.
+
+As before, it's worth verifying that no duplicate patients were introduced.
+
+```{sql connection=con}
+SELECT
+    COUNT(*) AS n_rows, 
+    COUNT(DISTINCT PATID) AS n_unique_patients
+FROM sleep_ad_cohort_with_demo; 
+
+```
+
+# Step 4. Summarise the cohort
+
+The patient-level cohort is now complete!
+
+Before moving on to more complex analyses, it is good practice to summarize the study cohort. A simple descriptive table helps confirm that the cohort looks reasonable and provides a snapshot of the patients included in the feasibility assessment.
+
+Although SQL is excellent for cohort construction, I usually switch to R for descriptive statistics and ready-to-use table.
+
+Let's import the final table.
+
+```{r}
+cohort_final <- DBI::dbGetQuery(
+  con,
+  "SELECT * FROM sleep_ad_cohort_with_demo"
+)
+```
+
+Since age isn't stored directly, calculate it from the date of birth and sleep disorder index date. Also, re-code value of AD_STATUS more readable.
+
+```{r}
+cohort_final <- cohort_final %>%
+  mutate(
+    AGE_AT_SLEEP_DISORDER_DX = 
+      as.numeric(
+        as.Date(SLEEP_DISORDER_INDEX_DATE) - as.Date(BIRTH_DATE)
+      )/365.25
+  ) %>%
+  mutate(
+    AD_STATUS = case_when(
+      AD_STATUS == 1 ~ "AD",
+      AD_STATUS == 0 ~ "No AD"
+    )
+  )
+```
+
+Finally, summarise the cohort characteristics by AD status.
+
+```{r}
+table1(~AGE_AT_SLEEP_DISORDER_DX+SEX+RACE | AD_STATUS, data = cohort_final)
+```
+
+### Interpretation
+
+This preliminary cohort contains **550 patients** with at least one recorded sleep disorder diagnosis.
+
+Of these,
+
+-   **101 (18.3%)** have at least one recorded Alzheimer's disease diagnosis
+-   **449 (81.6%)** do not have any recorded Alzheimer's disease diagnosis.
+
+The descriptive table also allows us to quickly assess whether the demographic characteristics appear reasonable before investing additional effort in refining the cohort or developing models.
+
+# Conclusion
+
+At this point, we have answered the original feasibility question:
+
+> *Can these data support the proposed study?*
+
+The answer appears to be **yes**. We successfully identified a patient-level cohort, linked potential outcomes, and summarized the study population. However, this cohort is still intentionally simple and small. In the next tutorial, we'll refine it by introducing baseline periods, follow-up requirement, and temporal ordering between exposure and outcome.
+
+*Note: All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.*
+
+> ## 📚 Real-World Data Engineering Series
+>
+> ✅ Part 1: Duplicate Records in EHR Data\
+> 📍 Part 2: Cohort Feasibility Assessment (current)\
+> ⏳ Part 3: Defining Baseline Lookback and Follow-up (coming soon)
