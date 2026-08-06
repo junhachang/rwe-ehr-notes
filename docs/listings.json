@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/sql-participant-table/index.html",
       "/posts/before-modeling-ehr-data/index.html"
     ]
   }

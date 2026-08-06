@@ -101,12 +101,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BVKYCF1CL8"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BVKYCF1CL8', { 'anonymize_ip': true});
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -140,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Duplicate Records in EHR Data</h1>
@@ -167,8 +176,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#example-1.-related-diagnosis-codes-on-the-same-date" id="toc-example-1.-related-diagnosis-codes-on-the-same-date" class="nav-link" data-scroll-target="#example-1.-related-diagnosis-codes-on-the-same-date">Example 1. Related diagnosis codes on the same date</a>
+  <ul class="collapse">
+  <li><a href="#toy-data-example" id="toc-toy-data-example" class="nav-link" data-scroll-target="#toy-data-example">Toy data example</a></li>
+  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why it matters</a></li>
+  <li><a href="#how-to-check" id="toc-how-to-check" class="nav-link" data-scroll-target="#how-to-check">How to check</a></li>
+  </ul></li>
+  <li><a href="#example-2.-merge-created-duplicates" id="toc-example-2.-merge-created-duplicates" class="nav-link" data-scroll-target="#example-2.-merge-created-duplicates">Example 2. Merge-created duplicates</a>
+  <ul class="collapse">
+  <li><a href="#toy-data-example-1" id="toc-toy-data-example-1" class="nav-link" data-scroll-target="#toy-data-example-1">Toy data example</a></li>
+  <li><a href="#why-it-matters-1" id="toc-why-it-matters-1" class="nav-link" data-scroll-target="#why-it-matters-1">Why it matters</a></li>
+  <li><a href="#how-to-check-1" id="toc-how-to-check-1" class="nav-link" data-scroll-target="#how-to-check-1">How to check</a></li>
+  </ul></li>
+  <li><a href="#example-3.-technical-duplication" id="toc-example-3.-technical-duplication" class="nav-link" data-scroll-target="#example-3.-technical-duplication">Example 3. Technical duplication</a>
+  <ul class="collapse">
+  <li><a href="#toy-data-example-2" id="toc-toy-data-example-2" class="nav-link" data-scroll-target="#toy-data-example-2">Toy data example</a></li>
+  <li><a href="#why-it-matters-2" id="toc-why-it-matters-2" class="nav-link" data-scroll-target="#why-it-matters-2">Why it matters</a></li>
+  <li><a href="#how-to-check-2" id="toc-how-to-check-2" class="nav-link" data-scroll-target="#how-to-check-2">How to check</a></li>
+  </ul></li>
+  <li><a href="#final-thought" id="toc-final-thought" class="nav-link" data-scroll-target="#final-thought">Final thought</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -208,6 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="toy-data-example">Toy data example</h3>
 <p>Suppose we extracted diagnosis records for patients with sleep disorders using G47.xx codes. The following table shows a small subset of the data:</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>( <span class="sc">~</span>PATID, <span class="sc">~</span>DATE_DX, <span class="sc">~</span>ICD10, <span class="sc">~</span>ICD10_TXT, </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"G47.00"</span>, <span class="st">"Insomnia, unspecified"</span>, </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"G47.33"</span>, <span class="st">"Obstructive sleep apnea"</span>, </span>
@@ -216,6 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"CC003"</span>, <span class="st">"2026-03-05"</span>, <span class="st">"G47.33"</span>, <span class="st">"Obstructive sleep apnea"</span> )</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ehr_dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   PATID DATE_DX    ICD10  ICD10_TXT                  
@@ -235,14 +277,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="why-it-matters">Why it matters</h3>
 <p>If we count each diagnosis code as a separate patient or event, we may overestimate the prevalence of sleep disorders. But, if we collapse all sleep-related codes too early, we may lose clinically useful information about specific conditions (e.g., subtypes).</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(ehr_dx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
 </div>
 <p>There are five diagnosis rows. But if we count unique patients, there are only three patients:</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(ehr_dx<span class="sc">$</span>PATID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -253,11 +301,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="how-to-check">How to check</h3>
 <p>A simple first check is to compare the number of rows with the number of unique patients.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_rows =</span> <span class="fu">n</span>(), </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unique_patients =</span> <span class="fu">n_distinct</span>(PATID)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   n_rows n_unique_patients
@@ -267,9 +318,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Next, check how many diagnosis codes each patient has on each date.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(PATID, DATE_DX, <span class="at">name =</span> <span class="st">"n_diagnosis_codes"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_diagnosis_codes <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   PATID DATE_DX    n_diagnosis_codes
@@ -279,10 +333,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If the goal is to create a patient-level sleep disorder cohort, we can collapse the data to one row per patient.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sleep_cohort_patient_level <span class="ot">&lt;-</span> ehr_dx <span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(PATID, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sleep_cohort_patient_level</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   PATID DATE_DX    ICD10  ICD10_TXT              
@@ -295,6 +352,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>However, I usually prefer keeping diagnosis-code information separately for later use. Reviewers, collaborators, or stakeholders may ask which specific diagnoses were included. Also, I may not need the subtype information today, but I often regret not keeping it later.</p>
 <p>One way to keep this information is to summarize the unique diagnosis codes for each patient.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ehr_dx <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(PATID) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
@@ -302,6 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">dx_codes =</span> <span class="fu">paste</span>(<span class="fu">unique</span>(ICD10), <span class="at">collapse =</span> <span class="st">" | "</span>),</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   PATID n_unique_dx_codes dx_codes               
@@ -328,6 +388,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="toy-data-example-1" class="level3">
 <h3 class="anchored" data-anchor-id="toy-data-example-1">Toy data example</h3>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>diagnosis_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>PATID,  <span class="sc">~</span>DATE_DX, <span class="sc">~</span>ENCOUNTER_ID, <span class="sc">~</span>ICD10, <span class="sc">~</span>ICD10_TXT,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>,    <span class="st">"E1001"</span>,      <span class="st">"G47.00"</span>,        <span class="st">"Insomnia, unspecified"</span>,</span>
@@ -350,14 +412,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB002"</span>, <span class="st">"2026-02-10"</span>,   <span class="st">"zolpidem"</span>,       <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,   <span class="dv">30</span></span>
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># CC003 had a medication order, but no dispensing record</span></span>
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now suppose we merge the dispensing data by “PATID” only.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>bad_merge <span class="ot">&lt;-</span> diagnosis_data <span class="sc">%&gt;%</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(medication_order_data, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"PATID"</span>, <span class="st">"ENCOUNTER_ID"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(pharmacy_dispensing_data, <span class="at">by =</span> <span class="st">"PATID"</span>)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>bad_merge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 15
   PATID DATE_DX    ENCOUNTER_ID ICD10  ICD10_TXT DATE_ORDER ATC_CODE.x RX_NAME.x
@@ -394,22 +460,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="how-to-check-1">How to check</h3>
 <p>First, check whether the merge increased the number of rows.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>diagnosis_data <span class="sc">%&gt;%</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">original_diagnosis_rows =</span> <span class="fu">n</span>(),</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">original_patients =</span> <span class="fu">n_distinct</span>(PATID)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   original_diagnosis_rows original_patients
                     &lt;int&gt;             &lt;int&gt;
 1                       3                 3</code></pre>
 </div>
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>bad_merge <span class="sc">%&gt;%</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">merged_rows =</span> <span class="fu">n</span>(),</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">merged_patients =</span> <span class="fu">n_distinct</span>(PATID)</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   merged_rows merged_patients
@@ -420,6 +492,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If the row count increased, do not automatically remove duplicates. First check whether the increase is clinically meaningful or caused by an overly broad join.</p>
 <p>For this case, we only need zolpidem dispensing records. One simple approach is to filter the dispensing data before merging.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pharmacy_dispensing_data_zolpidem <span class="ot">&lt;-</span> pharmacy_dispensing_data <span class="sc">%&gt;%</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(RX_NAME <span class="sc">==</span> <span class="st">"zolpidem"</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -432,6 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>better_merge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 12
   PATID DATE_DX   ENCOUNTER_ID ICD10 ICD10_TXT DATE_ORDER ATC_CODE RX_NAME DOSE 
@@ -445,6 +520,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Now we can answer the original question: who had an insomnia diagnosis, received a zolpidem order, and had evidence of pharmacy dispensing?</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>insomnia_zolpidem_dispensed <span class="ot">&lt;-</span> better_merge <span class="sc">%&gt;%</span> </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    ICD10 <span class="sc">==</span> <span class="st">"G47.00"</span>, </span>
@@ -455,6 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(PATID, ENCOUNTER_ID, DATE_DX, ICD10, RX_NAME, ATC_CODE, DATE_ORDER, DATE_DISPENSE, DOSE) </span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>insomnia_zolpidem_dispensed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 9
   PATID ENCOUNTER_ID DATE_DX    ICD10  RX_NAME ATC_CODE DATE_ORDER DATE_DISPENSE
@@ -476,6 +554,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="toy-data-example-2" class="level3">
 <h3 class="anchored" data-anchor-id="toy-data-example-2">Toy data example</h3>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>example3_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>PATID,  <span class="sc">~</span>DATE_DX,      <span class="sc">~</span>ENCOUNTER_ID, <span class="sc">~</span>ICD10,   <span class="sc">~</span>RX_NAME,   <span class="sc">~</span>ATC_CODE,  <span class="sc">~</span>DOSE,</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AA001"</span>, <span class="st">"2026-01-15"</span>, <span class="st">"E1001"</span>,       <span class="st">"G47.00"</span>, <span class="st">"zolpidem"</span>, <span class="st">"N05CF02"</span>, <span class="st">"5 mg"</span>,</span>
@@ -485,6 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>example3_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 7
   PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE 
@@ -502,8 +583,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Technical duplicates can inflate counts and distort downstream summaries.</p>
 <p>For example, if we count the number of zolpidem-related records, <em>AA001</em> is counted twice even though there is only one clinical episode.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>example3_data <span class="sc">%&gt;%</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(PATID, DATE_DX, ENCOUNTER_ID, ICD10, RX_NAME, ATC_CODE, DOSE, <span class="at">name =</span> <span class="st">"n_rows"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 8
   PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE  n_rows
@@ -519,9 +603,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="how-to-check-2">How to check</h3>
 <p>A simple check is to count repeated rows across the variables that should define a unique record.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>example3_data <span class="sc">%&gt;%</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(PATID, DATE_DX, ENCOUNTER_ID, ICD10, RX_NAME, ATC_CODE, DOSE, <span class="at">name =</span> <span class="st">"n_rows"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_rows <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 8
   PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE  n_rows
@@ -531,10 +618,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If the duplicated rows are truly identical and do not represent separate clinical events, they can be removed.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>example3_data_clean <span class="ot">&lt;-</span> example3_data <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>example3_data_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 7
   PATID DATE_DX    ENCOUNTER_ID ICD10  RX_NAME  ATC_CODE DOSE 
@@ -546,10 +636,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Then compare the number of rows before and after removing exact duplicates.</p>
 <div class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rows_before =</span> <span class="fu">nrow</span>(example3_data),</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rows_after =</span> <span class="fu">nrow</span>(example3_data_clean)</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   rows_before rows_after
@@ -575,6 +668,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In EHR data, “small” preprocessing decisions can become large analytic errors later. I hope sharing these practical examples helps others who are just starting to work with EHR data avoid some of these mistakes earlier.</p>
 <p><strong>Note: All examples are synthetic toy data created for educational purposes. They do not contain real patient records, patient identifiers, institutional data, or results from any specific health system. They are informed by common data patterns encountered in EHR/RWD work, but they do not represent any actual patient, clinical case, or health system.</strong></p>
 <p><strong>Scope.</strong> My research background is primarily in older adult populations, neurodegenerative diseases such as Alzheimer’s disease, Parkinson’s disease, and dementia, and sleep disorders. Many examples in this blog therefore use those clinical areas. The general data-quality principles may apply broadly, but the specific examples may not generalize to all clinical populations, such as pediatric populations.</p>
+<blockquote class="blockquote">
+<h2 id="real-world-data-engineering-series" class="anchored">📚 Real-World Data Engineering Series</h2>
+<p>📍 Part 1: Duplicate Records in EHR Data<br>
+⏳ Part 2: Cohort Feasibility Assessment (current)<br>
+⏳ Part 3: Defining Baseline Lookback and Follow-up (coming soon)</p>
+</blockquote>
 
 
 </section>
