@@ -94,8 +94,6 @@ For simplicity, this tutorial uses the ICD-10 prefixed `G47.` and `G30.`. In a r
 
 This example uses fully synthetic EHR data consisting of three relational tables (`patients`, `diagnoses`, and `encounters`). The synthetic datasets and the R script used to generate them are available through the links at the top of this page and in the accompanying GitHub repository, so you can reproduce the entire workflow or create your own practice data.
 
-
-
 # Prepare the working database
 
 ```{r}
@@ -199,12 +197,9 @@ The `encounters` table also contains multiple records per patient, with each row
 
 > **📌 Tip**
 >
-> You *can* build the entire cohort in one SQL query. I usually don't.  
-> Instead, I create one intermediate cohort at a time and check that everything looks reasonable before moving on. It takes a few extra lines of SQL, but it makes debugging much easier and real-world data almost always give you something unexpected to debug. 
+> You *can* build the entire cohort in one SQL query. I usually don't.\
+> Instead, I create one intermediate cohort at a time and check that everything looks reasonable before moving on. It takes a few extra lines of SQL, but it makes debugging much easier and real-world data almost always give you something unexpected to debug.
 >
->![](images/textbook_realworld.jpg){fig-alt="Textbook anatomy compared with a first real patient" width="70%"}
->
-> Perfect example for real-world data. The tidy capstone dataset and the first production EHR extract are rarely the same creature.
 
 # Step 1. Create the sleep disorder cohort
 
@@ -327,7 +322,7 @@ ORDER BY AD_STATUS;
 
 # Step 3. Add patient characteristics
 
-**Goal: Build the final patient-level cohort and summarize its demographic  characteristics.**
+**Goal: Build the final patient-level cohort and summarize its demographic characteristics.**
 
 At this point, the cohort contains the study variables needed to define sleep disorder and AD status. The final step is to attach patient-level demographic information so we can describe the potential study population.
 
